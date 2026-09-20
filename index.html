@@ -1,0 +1,1653 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KRISHNA PARSHAD BHATT // PLAYER PORTFOLIO [BSc. IT]</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@500;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        void: '#05070d',
+                        'void-card': 'rgba(12, 17, 30, 0.75)',
+                        'neon-cyan': '#00f3ff',
+                        'neon-blue': '#0066ff',
+                        'neon-purple': '#b026ff',
+                        'neon-emerald': '#00ff88',
+                        'neon-pink': '#ff0055',
+                        'cyber-gray': '#1e2638'
+                    },
+                    fontFamily: {
+                        orbitron: ['Orbitron', 'sans-serif'],
+                        rajdhani: ['Rajdhani', 'sans-serif'],
+                        fira: ['Fira Code', 'monospace'],
+                        inter: ['Inter', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'neon-cyan': '0 0 15px rgba(0, 243, 255, 0.4), inset 0 0 10px rgba(0, 243, 255, 0.2)',
+                        'neon-purple': '0 0 15px rgba(176, 38, 255, 0.4), inset 0 0 10px rgba(176, 38, 255, 0.2)',
+                        'neon-emerald': '0 0 15px rgba(0, 255, 136, 0.4), inset 0 0 10px rgba(0, 255, 136, 0.2)',
+                        'hud-glow': '0 0 25px rgba(0, 243, 255, 0.15)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Gaming CSS and Effects -->
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #05070d;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #00f3ff;
+            border-radius: 4px;
+            box-shadow: 0 0 10px #00f3ff;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b026ff;
+        }
+
+        /* Scanline Overlay Effect */
+        .scanlines {
+            background: linear-gradient(
+                rgba(18, 16, 16, 0) 50%, 
+                rgba(0, 0, 0, 0.25) 50%
+            );
+            background-size: 100% 4px;
+            pointer-events: none;
+        }
+
+        /* Tech Clip Path Corners */
+        .clip-corner {
+            clip-path: polygon(
+                0 0, 
+                calc(100% - 16px) 0, 
+                100% 16px, 
+                100% 100%, 
+                16px 100%, 
+                0 calc(100% - 16px)
+            );
+        }
+        .clip-corner-top-right {
+            clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
+        }
+        .clip-badge {
+            clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+        }
+
+        /* Animated Glowing Border */
+        @keyframes pulseGlow {
+            0%, 100% { border-color: rgba(0, 243, 255, 0.6); box-shadow: 0 0 15px rgba(0, 243, 255, 0.3); }
+            50% { border-color: rgba(176, 38, 255, 0.6); box-shadow: 0 0 20px rgba(176, 38, 255, 0.4); }
+        }
+        .glow-border {
+            animation: pulseGlow 4s infinite alternate ease-in-out;
+        }
+
+        /* Subtle Grid Pattern */
+        .grid-bg {
+            background-image: linear-gradient(to right, rgba(0, 243, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        /* Glitch Animation for Headings */
+        .glitch-text {
+            position: relative;
+            display: inline-block;
+        }
+        .glitch-text::before, .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            clip: rect(0, 0, 0, 0);
+        }
+        .glitch-text:hover::before {
+            left: -2px;
+            text-shadow: 2px 0 #ff0055;
+            clip: rect(24px, 550px, 90px, 0);
+            animation: glitch-anim 0.3s infinite linear alternate-reverse;
+        }
+        .glitch-text:hover::after {
+            left: 2px;
+            text-shadow: -2px 0 #00f3ff;
+            clip: rect(85px, 550px, 140px, 0);
+            animation: glitch-anim2 0.3s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+            0% { clip: rect(10px, 9999px, 30px, 0); }
+            50% { clip: rect(40px, 9999px, 70px, 0); }
+            100% { clip: rect(20px, 9999px, 50px, 0); }
+        }
+        @keyframes glitch-anim2 {
+            0% { clip: rect(60px, 9999px, 80px, 0); }
+            50% { clip: rect(10px, 9999px, 40px, 0); }
+            100% { clip: rect(50px, 9999px, 90px, 0); }
+        }
+
+        /* Terminal Cursor */
+        .cursor-blink {
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        /* Modal Overlay Backdrop Blur */
+        .modal-blur {
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-void text-gray-200 font-inter selection:bg-neon-cyan selection:text-black overflow-x-hidden relative">
+
+    <!-- Interactive Background Canvas -->
+    <canvas id="particleCanvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
+    
+    <!-- Scanlines Effect Layer -->
+    <div class="scanlines fixed inset-0 z-50 opacity-20"></div>
+
+    <!-- Boot Screen Loader (KRISHNA.EXE) -->
+    <div id="bootScreen" class="fixed inset-0 bg-void z-[100] flex flex-col items-center justify-center p-6 font-fira transition-opacity duration-700">
+        <div class="max-w-md w-full border border-neon-cyan/40 bg-void-card p-6 rounded-lg shadow-neon-cyan clip-corner relative">
+            <div class="flex items-center justify-between border-b border-neon-cyan/20 pb-3 mb-4">
+                <span class="text-neon-cyan text-xs font-orbitron tracking-widest flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-neon-cyan animate-ping"></span>
+                    BOOT SYSTEM V3.6.9
+                </span>
+                <span class="text-gray-500 text-xs">SYS_INIT</span>
+            </div>
+            
+            <div class="text-neon-cyan text-lg font-orbitron mb-4 font-bold flex items-center gap-2">
+                <i class="fa-solid fa-terminal text-neon-purple"></i>
+                INITIALIZING KRISHNA.EXE...
+            </div>
+
+            <!-- Terminal Checks -->
+            <div id="bootLog" class="text-xs space-y-2 mb-6 text-gray-300 h-32 overflow-hidden flex flex-col justify-end">
+                <div>> [OK] CPU Cores & Memory Allocated</div>
+                <div>> [OK] Quantum Sound Synthesizer Active</div>
+                <div>> [OK] Graphics Pipeline Initialized</div>
+                <div>> [OK] Fetching Player Data: Krishna Parshad Bhatt</div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="w-full bg-cyber-gray h-3 rounded-full overflow-hidden border border-neon-cyan/30 p-0.5">
+                <div id="bootProgressBar" class="h-full bg-gradient-to-r from-neon-blue via-neon-cyan to-neon-emerald rounded-full w-0 transition-all duration-200"></div>
+            </div>
+            <div class="flex justify-between items-center mt-2 text-xs font-rajdhani text-gray-400">
+                <span id="bootStatusText">LOADING MODULES...</span>
+                <span id="bootPercentText" class="text-neon-cyan font-bold">0%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dynamic HUD XP Toast Notification -->
+    <div id="xpToast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-500 pointer-events-none">
+        <div class="bg-void-card border border-neon-emerald px-4 py-3 rounded-lg shadow-neon-emerald flex items-center gap-3 backdrop-blur-md">
+            <div class="w-10 h-10 rounded-full bg-neon-emerald/20 flex items-center justify-center text-neon-emerald text-lg font-orbitron font-bold border border-neon-emerald">
+                +XP
+            </div>
+            <div>
+                <div id="xpToastTitle" class="text-xs font-orbitron text-neon-emerald uppercase font-bold tracking-wider">EXP GAINED!</div>
+                <div id="xpToastDesc" class="text-sm font-rajdhani text-gray-200">+50 XP — Section Discovered</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- God Mode Achievement Banner (Konami Code) -->
+    <div id="achievementBanner" class="fixed top-20 left-1/2 transform -translate-x-1/2 z-[90] hidden transition-all duration-500">
+        <div class="bg-void-card border-2 border-neon-pink px-8 py-4 rounded-xl shadow-lg shadow-neon-pink/50 flex items-center gap-4 clip-corner backdrop-blur-xl animate-bounce">
+            <i class="fa-solid fa-trophy text-3xl text-yellow-400 animate-pulse"></i>
+            <div>
+                <div class="text-neon-pink font-orbitron font-bold text-sm tracking-widest">SECRET ACHIEVEMENT UNLOCKED!</div>
+                <div class="text-white font-rajdhani font-bold text-xl">GOD MODE ACTIVE — OVERCLOCK 9000%</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fixed HUD Header Navigation -->
+    <header class="fixed top-0 left-0 w-full z-40 bg-void/80 backdrop-blur-md border-b border-neon-cyan/20">
+        <!-- Top HUD Depth Bar -->
+        <div id="scrollProgress" class="h-[2px] bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-emerald w-0 transition-all duration-150"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#hero" class="flex items-center gap-2 group" onclick="playAudio('click')">
+                <div class="w-10 h-10 rounded bg-neon-cyan/10 border border-neon-cyan flex items-center justify-center text-neon-cyan font-orbitron font-bold text-lg group-hover:bg-neon-cyan group-hover:text-black transition-all shadow-neon-cyan">
+                    K
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-orbitron font-bold text-sm sm:text-base text-white tracking-wider flex items-center gap-2">
+                        KPB <span id="navLevelBadge" class="text-xs text-neon-cyan border border-neon-cyan/50 px-1.5 py-0.5 rounded clip-badge bg-neon-cyan/10">LVL 01</span>
+                    </span>
+                    <span class="text-[10px] text-gray-400 font-fira tracking-tight">DEV_PORTFOLIO.EXE</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-1 lg:space-x-4 font-rajdhani font-semibold text-sm tracking-wider">
+                <a href="#hero" class="nav-link px-3 py-1.5 text-gray-300 hover:text-neon-cyan hover:bg-neon-cyan/10 rounded transition-all">HOME</a>
+                <a href="#profile" class="nav-link px-3 py-1.5 text-gray-300 hover:text-neon-cyan hover:bg-neon-cyan/10 rounded transition-all">PROFILE</a>
+                <a href="#skills" class="nav-link px-3 py-1.5 text-gray-300 hover:text-neon-cyan hover:bg-neon-cyan/10 rounded transition-all">SKILLS</a>
+                <a href="#quests" class="nav-link px-3 py-1.5 text-gray-300 hover:text-neon-cyan hover:bg-neon-cyan/10 rounded transition-all">QUESTS</a>
+                <a href="#education" class="nav-link px-3 py-1.5 text-gray-300 hover:text-neon-cyan hover:bg-neon-cyan/10 rounded transition-all">EDUCATION</a>
+                <a href="#sidequests" class="nav-link px-3 py-1.5 text-gray-300 hover:text-neon-cyan hover:bg-neon-cyan/10 rounded transition-all">HOBBIES</a>
+                <a href="#contact" class="nav-link px-3 py-1.5 text-gray-300 hover:text-neon-cyan hover:bg-neon-cyan/10 rounded transition-all">CONTACT</a>
+            </nav>
+
+            <!-- HUD Right Widgets (Sound Toggle & XP Tracker) -->
+            <div class="flex items-center gap-3">
+                <!-- Sound Toggle Button -->
+                <button id="audioToggleBtn" class="p-2 border border-neon-cyan/40 rounded bg-neon-cyan/5 text-neon-cyan hover:bg-neon-cyan hover:text-black transition-all flex items-center gap-1.5 text-xs font-fira" title="Toggle Sound FX">
+                    <i id="audioIcon" class="fa-solid fa-volume-high"></i>
+                    <span class="hidden sm:inline">SFX</span>
+                </button>
+
+                <!-- XP Display Box -->
+                <div class="hidden sm:flex items-center gap-2 bg-void-card border border-neon-purple/40 px-3 py-1 rounded text-xs font-fira">
+                    <i class="fa-solid fa-bolt text-neon-purple"></i>
+                    <span class="text-gray-400">XP:</span>
+                    <span id="currentXpText" class="text-neon-purple font-bold">0</span>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <button id="mobileMenuBtn" class="md:hidden p-2 text-neon-cyan hover:text-white focus:outline-none">
+                    <i class="fa-solid fa-bars-staggered text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-void/95 border-b border-neon-cyan/30 px-4 pt-2 pb-6 space-y-2 font-rajdhani font-semibold">
+            <a href="#hero" class="mobile-nav-link block px-3 py-2 text-gray-300 hover:bg-neon-cyan/10 hover:text-neon-cyan rounded">HOME</a>
+            <a href="#profile" class="mobile-nav-link block px-3 py-2 text-gray-300 hover:bg-neon-cyan/10 hover:text-neon-cyan rounded">PROFILE</a>
+            <a href="#skills" class="mobile-nav-link block px-3 py-2 text-gray-300 hover:bg-neon-cyan/10 hover:text-neon-cyan rounded">SKILLS</a>
+            <a href="#quests" class="mobile-nav-link block px-3 py-2 text-gray-300 hover:bg-neon-cyan/10 hover:text-neon-cyan rounded">QUESTS</a>
+            <a href="#education" class="mobile-nav-link block px-3 py-2 text-gray-300 hover:bg-neon-cyan/10 hover:text-neon-cyan rounded">EDUCATION</a>
+            <a href="#sidequests" class="mobile-nav-link block px-3 py-2 text-gray-300 hover:bg-neon-cyan/10 hover:text-neon-cyan rounded">HOBBIES</a>
+            <a href="#contact" class="mobile-nav-link block px-3 py-2 text-gray-300 hover:bg-neon-cyan/10 hover:text-neon-cyan rounded">CONTACT</a>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="relative z-10 pt-20">
+
+        <!-- 1. HERO SECTION -->
+        <section id="hero" class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16 relative">
+            <div class="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <!-- Main Text Content -->
+                <div class="lg:col-span-7 space-y-6">
+                    <!-- Status Badge -->
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-neon-emerald/10 border border-neon-emerald/40 text-neon-emerald text-xs font-fira font-medium">
+                        <span class="w-2 h-2 rounded-full bg-neon-emerald animate-pulse"></span>
+                        🟢 ONLINE — AVAILABLE TO BUILD
+                    </div>
+
+                    <!-- Main Name Heading -->
+                    <div class="space-y-2">
+                        <h2 class="text-xs font-fira text-neon-cyan tracking-widest uppercase">// DEVELOPER IDENTIFIER</h2>
+                        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-orbitron font-extrabold text-white tracking-tight glitch-text" data-text="KRISHNA PARSHAD BHATT">
+                            KRISHNA PARSHAD BHATT
+                        </h1>
+                        <!-- Typing Subtitle Effect -->
+                        <div class="text-xl sm:text-2xl font-rajdhani font-bold text-neon-cyan flex items-center gap-2 h-8">
+                            <span>ROLE:</span>
+                            <span id="typedText" class="text-neon-purple"></span><span class="cursor-blink text-neon-cyan">|</span>
+                        </div>
+                    </div>
+
+                    <!-- Short Introduction -->
+                    <p class="text-gray-300 text-base sm:text-lg max-w-xl font-inter leading-relaxed">
+                        "Exploring technology, building projects, and turning ideas into reality."
+                    </p>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="#quests" onclick="playAudio('click'); addXp(25, 'Quest Log Opened');" class="px-6 py-3.5 bg-gradient-to-r from-neon-cyan to-neon-blue text-black font-orbitron font-bold text-sm tracking-wider rounded shadow-neon-cyan hover:brightness-125 transition-all flex items-center gap-2 clip-corner">
+                            <i class="fa-solid fa-crosshairs"></i> VIEW MY PROJECTS
+                        </a>
+                        <a href="#profile" onclick="playAudio('click'); addXp(25, 'Profile Expanded');" class="px-6 py-3.5 border border-neon-cyan/50 text-neon-cyan hover:bg-neon-cyan/10 font-orbitron font-bold text-sm tracking-wider rounded transition-all flex items-center gap-2 clip-corner">
+                            <i class="fa-solid fa-user-gear"></i> EXPLORE MY PROFILE
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Interactive Hero Frame HUD Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-void-card border border-neon-cyan/40 p-6 rounded-xl shadow-hud-glow clip-corner relative glow-border">
+                        <div class="flex justify-between items-center border-b border-neon-cyan/20 pb-3 mb-4">
+                            <span class="text-xs font-fira text-neon-cyan flex items-center gap-2">
+                                <i class="fa-solid fa-microchip"></i> SYSTEM HUD
+                            </span>
+                            <span class="text-xs font-fira text-gray-400">LOC: NEPAL 🇳🇵</span>
+                        </div>
+
+                        <!-- Quick Avatar / Player Icon -->
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 rounded-lg bg-gradient-to-br from-neon-cyan/20 to-neon-purple/20 border-2 border-neon-cyan flex items-center justify-center text-3xl text-neon-cyan shadow-neon-cyan">
+                                <i class="fa-solid fa-user-ninja"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-orbitron font-bold text-white">KRISHNA P. BHATT</h3>
+                                <p class="text-xs font-rajdhani text-gray-400">CLASS: BSc. IT STUDENT</p>
+                                <div class="text-[11px] font-fira text-neon-emerald mt-1">AFFIL: APU MALAYSIA</div>
+                            </div>
+                        </div>
+
+                        <!-- Mini HUD Metrics -->
+                        <div class="space-y-3 font-fira text-xs">
+                            <div>
+                                <div class="flex justify-between text-gray-400 mb-1">
+                                    <span>SPECIALIZATION</span>
+                                    <span class="text-neon-cyan">WEB / AI / CYBER</span>
+                                </div>
+                                <div class="w-full bg-cyber-gray h-2 rounded">
+                                    <div class="bg-neon-cyan h-2 rounded w-[85%]"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-gray-400 mb-1">
+                                    <span>INSTITUTION</span>
+                                    <span class="text-neon-purple">TECHSPIRE UNIV</span>
+                                </div>
+                                <div class="w-full bg-cyber-gray h-2 rounded">
+                                    <div class="bg-neon-purple h-2 rounded w-[100%]"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-gray-400 mb-1">
+                                    <span>MOTIVATION LEVEL</span>
+                                    <span class="text-neon-emerald">100% OVERCLOCKED</span>
+                                </div>
+                                <div class="w-full bg-cyber-gray h-2 rounded">
+                                    <div class="bg-neon-emerald h-2 rounded w-full"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Status Terminal Line -->
+                        <div class="mt-6 pt-3 border-t border-neon-cyan/20 text-[11px] font-fira text-gray-400 flex items-center justify-between">
+                            <span class="text-neon-cyan">&gt; READY_FOR_DEPLOYMENT</span>
+                            <span class="animate-pulse">● SYNCED</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 2. PLAYER PROFILE / ABOUT ME -->
+        <section id="profile" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="text-xs font-fira text-neon-cyan tracking-widest uppercase">// CHARACTER DOSSIER</span>
+                <h2 class="text-3xl sm:text-5xl font-orbitron font-extrabold text-white mt-1">PLAYER PROFILE</h2>
+                <div class="w-24 h-1 bg-neon-cyan mx-auto mt-3 shadow-neon-cyan"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                
+                <!-- RPG Character Info Panel -->
+                <div class="lg:col-span-5 bg-void-card border border-neon-cyan/30 rounded-xl p-6 clip-corner shadow-hud-glow flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between border-b border-neon-cyan/20 pb-3 mb-4">
+                            <span class="font-orbitron text-xs text-neon-cyan font-bold tracking-wider">STATS & DATA SHEET</span>
+                            <span class="font-fira text-xs text-neon-emerald">STATUS: ACTIVE</span>
+                        </div>
+
+                        <div class="space-y-4 font-rajdhani text-sm sm:text-base">
+                            <div class="flex justify-between items-center border-b border-cyber-gray pb-2">
+                                <span class="text-gray-400 font-fira text-xs"><i class="fa-solid fa-id-card text-neon-cyan mr-2"></i>NAME</span>
+                                <span class="font-bold text-white">Krishna Parshad Bhatt</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-cyber-gray pb-2">
+                                <span class="text-gray-400 font-fira text-xs"><i class="fa-solid fa-flag text-neon-cyan mr-2"></i>NATIONALITY</span>
+                                <span class="font-bold text-white flex items-center gap-1">Nepali 🇳🇵</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-cyber-gray pb-2">
+                                <span class="text-gray-400 font-fira text-xs"><i class="fa-solid fa-location-dot text-neon-cyan mr-2"></i>HOMETOWN</span>
+                                <span class="font-bold text-white text-right text-xs sm:text-sm">Ajaymeru, Dadeldhura, Sudurpaschim, Nepal</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-cyber-gray pb-2">
+                                <span class="text-gray-400 font-fira text-xs"><i class="fa-solid fa-graduation-cap text-neon-cyan mr-2"></i>CURRENT STATUS</span>
+                                <span class="font-bold text-neon-cyan">BSc. IT Student</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-cyber-gray pb-2">
+                                <span class="text-gray-400 font-fira text-xs"><i class="fa-solid fa-building-columns text-neon-cyan mr-2"></i>UNIVERSITY</span>
+                                <span class="font-bold text-white">Techspire University</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-cyber-gray pb-2">
+                                <span class="text-gray-400 font-fira text-xs"><i class="fa-solid fa-award text-neon-cyan mr-2"></i>AFFILIATION</span>
+                                <span class="font-bold text-neon-purple text-right text-xs sm:text-sm">Asia Pacific University (APU), Malaysia</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-cyber-gray pb-2">
+                                <span class="text-gray-400 font-fira text-xs"><i class="fa-solid fa-cake-candles text-neon-cyan mr-2"></i>DATE OF BIRTH</span>
+                                <span class="font-bold text-white">February 17, 2008</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 p-3 bg-neon-cyan/5 border border-neon-cyan/30 rounded text-center font-fira text-xs text-neon-cyan">
+                        <i class="fa-solid fa-shield-halved mr-1"></i> PLAYER CLASS: TECH ADVENTURER
+                    </div>
+                </div>
+
+                <!-- Detailed Biography & Long-term Goals -->
+                <div class="lg:col-span-7 bg-void-card border border-neon-purple/30 rounded-xl p-6 sm:p-8 clip-corner flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 border-b border-neon-purple/20 pb-3 mb-6">
+                            <div class="w-3 h-3 rounded-full bg-neon-purple"></div>
+                            <h3 class="font-orbitron font-bold text-xl text-white">CHARACTER BACKGROUND & MOTIVATION</h3>
+                        </div>
+
+                        <div class="space-y-4 text-gray-300 font-inter leading-relaxed text-sm sm:text-base">
+                            <p>
+                                Hi, I'm <strong class="text-neon-cyan font-semibold">Krishna Parshad Bhatt</strong>, a BSc. IT student at Techspire University, Nepal, affiliated with Asia Pacific University of Technology & Innovation (APU), Malaysia.
+                            </p>
+                            <p>
+                                I'm passionate about web development, programming, networking, cybersecurity, and Artificial Intelligence. I enjoy learning through practical projects, experimenting with technologies, and turning ideas into working solutions.
+                            </p>
+                            <p>
+                                My long-term interests include cybersecurity, software development, AI, and building innovative IT solutions that solve real-world problems.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Interest Badges -->
+                    <div class="mt-8 pt-6 border-t border-neon-purple/20">
+                        <h4 class="text-xs font-fira text-neon-purple uppercase tracking-wider mb-3">// PRIMARY FOCUS NODES</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-cyber-gray border border-neon-cyan/40 text-neon-cyan text-xs font-rajdhani font-semibold rounded">Web Development</span>
+                            <span class="px-3 py-1 bg-cyber-gray border border-neon-purple/40 text-neon-purple text-xs font-rajdhani font-semibold rounded">Cybersecurity</span>
+                            <span class="px-3 py-1 bg-cyber-gray border border-neon-emerald/40 text-neon-emerald text-xs font-rajdhani font-semibold rounded">Artificial Intelligence</span>
+                            <span class="px-3 py-1 bg-cyber-gray border border-neon-blue/40 text-neon-blue text-xs font-rajdhani font-semibold rounded">Computer Networking</span>
+                            <span class="px-3 py-1 bg-cyber-gray border border-neon-pink/40 text-neon-pink text-xs font-rajdhani font-semibold rounded">Software Architecture</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 3. SKILLS — "ABILITY TREE" -->
+        <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center mb-10">
+                <span class="text-xs font-fira text-neon-cyan tracking-widest uppercase">// SKILL PROGRESSION MATRIX</span>
+                <h2 class="text-3xl sm:text-5xl font-orbitron font-extrabold text-white mt-1">ABILITY TREE</h2>
+                <div class="w-24 h-1 bg-neon-cyan mx-auto mt-3 shadow-neon-cyan"></div>
+            </div>
+
+            <!-- Disclaimer Badge -->
+            <div class="max-w-2xl mx-auto mb-8 bg-neon-cyan/5 border border-neon-cyan/40 p-3 rounded-lg text-center text-xs font-fira text-neon-cyan flex items-center justify-center gap-2">
+                <i class="fa-solid fa-circle-info text-neon-cyan text-base"></i>
+                <span>Skills presented as currently being actively learned and developed through academic & personal practice.</span>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-3 mb-10 font-rajdhani font-bold text-sm">
+                <button onclick="filterSkills('all', this)" class="skill-tab-btn active-tab px-5 py-2 bg-neon-cyan text-black rounded font-orbitron text-xs transition-all clip-corner shadow-neon-cyan">ALL ABILITIES</button>
+                <button onclick="filterSkills('dev', this)" class="skill-tab-btn px-5 py-2 bg-void-card border border-neon-cyan/40 text-neon-cyan hover:bg-neon-cyan/10 rounded font-orbitron text-xs transition-all clip-corner">PROGRAMMING & DEV</button>
+                <button onclick="filterSkills('net', this)" class="skill-tab-btn px-5 py-2 bg-void-card border border-neon-purple/40 text-neon-purple hover:bg-neon-purple/10 rounded font-orbitron text-xs transition-all clip-corner">NETWORKING</button>
+                <button onclick="filterSkills('interest', this)" class="skill-tab-btn px-5 py-2 bg-void-card border border-neon-emerald/40 text-neon-emerald hover:bg-neon-emerald/10 rounded font-orbitron text-xs transition-all clip-corner">AREAS OF INTEREST</button>
+            </div>
+
+            <!-- Ability Grid Nodes -->
+            <div id="skillsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- PROGRAMMING & DEV SKILLS -->
+                <!-- HTML -->
+                <div class="skill-card dev bg-void-card border border-neon-cyan/30 p-5 rounded-xl hover:border-neon-cyan transition-all hover:-translate-y-1 shadow-lg group" onclick="playAudio('hover'); addXp(15, 'Ability Checked: HTML');">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-brands fa-html5 text-3xl text-orange-500 group-hover:scale-110 transition-transform"></i>
+                            <h3 class="font-orbitron font-bold text-white text-base">HTML5</h3>
+                        </div>
+                        <span class="text-[10px] font-fira text-neon-cyan bg-neon-cyan/10 px-2 py-0.5 rounded border border-neon-cyan/30">LEVEL 4</span>
+                    </div>
+                    <p class="text-xs text-gray-400 font-inter mb-3">Semantic markup, responsive structuring, and clean document flow.</p>
+                    <div class="w-full bg-cyber-gray h-2 rounded overflow-hidden">
+                        <div class="bg-gradient-to-r from-orange-500 to-neon-cyan h-2 rounded w-[85%]"></div>
+                    </div>
+                </div>
+
+                <!-- CSS -->
+                <div class="skill-card dev bg-void-card border border-neon-cyan/30 p-5 rounded-xl hover:border-neon-cyan transition-all hover:-translate-y-1 shadow-lg group" onclick="playAudio('hover'); addXp(15, 'Ability Checked: CSS');">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-brands fa-css3-alt text-3xl text-blue-500 group-hover:scale-110 transition-transform"></i>
+                            <h3 class="font-orbitron font-bold text-white text-base">CSS3 & Tailwind</h3>
+                        </div>
+                        <span class="text-[10px] font-fira text-neon-cyan bg-neon-cyan/10 px-2 py-0.5 rounded border border-neon-cyan/30">LEVEL 4</span>
+                    </div>
+                    <p class="text-xs text-gray-400 font-inter mb-3">Flexbox, Grid layout, responsive styling, and modern UI components.</p>
+                    <div class="w-full bg-cyber-gray h-2 rounded overflow-hidden">
+                        <div class="bg-gradient-to-r from-blue-500 to-neon-cyan h-2 rounded w-[80%]"></div>
+                    </div>
+                </div>
+
+                <!-- JavaScript -->
+                <div class="skill-card dev bg-void-card border border-neon-cyan/30 p-5 rounded-xl hover:border-neon-cyan transition-all hover:-translate-y-1 shadow-lg group" onclick="playAudio('hover'); addXp(15, 'Ability Checked: JavaScript');">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-brands fa-js text-3xl text-yellow-400 group-hover:scale-110 transition-transform"></i>
+                            <h3 class="font-orbitron font-bold text-white text-base">JavaScript</h3>
+                        </div>
+                        <span class="text-[10px] font-fira text-neon-cyan bg-neon-cyan/10 px-2 py-0.5 rounded border border-neon-cyan/30">LEVEL 3</span>
+                    </div>
+                    <p class="text-xs text-gray-400 font-inter mb-3">DOM manipulation, event handling, ES6+ features, and dynamic web logic.</p>
+                    <div class="w-full bg-cyber-gray h-2 rounded overflow-hidden">
+                        <div class="bg-gradient-to-r from-yellow-400 to-neon-cyan h-2 rounded w-[70%]"></div>
+                    </div>
+                </div>
+
+                <!-- PHP -->
+                <div class="skill-card dev bg-void-card border border-neon-cyan/30 p-5 rounded-xl hover:border-neon-cyan transition-all hover:-translate-y-1 shadow-lg group" onclick="playAudio('hover'); addXp(15, 'Ability Checked: PHP');">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-brands fa-php text-3xl text-indigo-400 group-hover:scale-110 transition-transform"></i>
+                            <h3 class="font-orbitron font-bold text-white text-base">PHP</h3>
+                        </div>
+                        <span class="text-[10px] font-fira text-neon-cyan bg-neon-cyan/10 px-2 py-0.5 rounded border border-neon-cyan/30">LEVEL 3</span>
+                    </div>
+                    <p class="text-xs text-gray-400 font-inter mb-3">Server-side scripting, form handling, session management, and backend logic.</p>
+                    <div class="w-full bg-cyber-gray h-2 rounded overflow-hidden">
+                        <div class="bg-gradient-to-r from-indigo-400 to-neon-cyan h-2 rounded w-[68%]"></div>
+                    </div>
+                </div>
+
+                <!-- Python -->
+                <div class="skill-card dev bg-void-card border border-neon-cyan/30 p-5 rounded-xl hover:border-neon-cyan transition-all hover:-translate-y-1 shadow-lg group" onclick="playAudio('hover'); addXp(15, 'Ability Checked: Python');">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-brands fa-python text-3xl text-emerald-400 group-hover:scale-110 transition-transform"></i>
+                            <h3 class="font-orbitron font-bold text-white text-base">Python</h3>
+                        </div>
+                        <span class="text-[10px] font-fira text-neon-cyan bg-neon-cyan/10 px-2 py-0.5 rounded border border-neon-cyan/30">LEVEL 3</span>
+                    </div>
+                    <p class="text-xs text-gray-400 font-inter mb-3">Core syntax, data structures, scripting, and basic automation logic.</p>
+                    <div class="w-full bg-cyber-gray h-2 rounded overflow-hidden">
+                        <div class="bg-gradient-to-r from-emerald-400 to-neon-cyan h-2 rounded w-[65%]"></div>
+                    </div>
+                </div>
+
+                <!-- MySQL & XAMPP -->
+                <div class="skill-card dev bg-void-card border border-neon-cyan/30 p-5 rounded-xl hover:border-neon-cyan transition-all hover:-translate-y-1 shadow-lg group" onclick="playAudio('hover'); addXp(15, 'Ability Checked: MySQL');">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-database text-3xl text-cyan-400 group-hover:scale-110 transition-transform"></i>
+                            <h3 class="font-orbitron font-bold text-white text-base">MySQL & XAMPP</h3>
+                        </div>
+                        <span class="text-[10px] font-fira text-neon-cyan bg-neon-cyan/10 px-2 py-0.5 rounded border border-neon-cyan/30">LEVEL 3</span>
+                    </div>
+                    <p class="text-xs text-gray-400 font-inter mb-3">Relational database design, SQL queries, PHPMyAdmin, and local server setup.</p>
+                    <div class="w-full bg-cyber-gray h-2 rounded overflow-hidden">
+                        <div class="bg-gradient-to-r from-cyan-400 to-neon-cyan h-2 rounded w-[72%]"></div>
+                    </div>
+                </div>
+
+                <!-- NETWORKING SKILLS -->
+                <!-- Cisco Packet Tracer -->
+                <div class="skill-card net bg-void-card border border-neon-purple/30 p-5 rounded-xl hover:border-neon-purple transition-all hover:-translate-y-1 shadow-lg group" onclick="playAudio('hover'); addXp(15, 'Ability Checked: Packet Tracer');">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-network-wired text-3xl text-neon-purple group-hover:scale-110 transition-transform"></i>
+                            <h3 class="font-orbitron font-bold text-white text-base">Cisco Packet Tracer</h3>
+                        </div>
+                        <span class="text-[10px] font-fira text-neon-purple bg-neon-purple/10 px-2 py-0.5 rounded border border-neon-purple/30">LEVEL 3</span>
+                    </div>
+                    <p class="text-xs text-gray-400 font-inter mb-3">Simulating network topologies, devices, and traffic flow.</p>
+                    <div class="w-full bg-cyber-gray h-2 rounded overflow-hidden">
+                        <div class="bg-gradient-to-r from-neon-purple to-neon-blue h-2 rounded w-[70%]"></div>
+                    </div>
+                </div>
+
+                <!-- IPv4 & Subnetting -->
+                <div class="skill-card net bg-void-card border border-neon-purple/30 p-5 rounded-xl hover:border-neon-purple transition-all hover:-translate-y-1 shadow-lg group" onclick="playAudio('hover'); addXp(15, 'Ability Checked: Subnetting');">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-sitemap text-3xl text-neon-purple group-hover:scale-110 transition-transform"></i>
+                            <h3 class="font-orbitron font-bold text-white text-base">IPv4 & Subnetting</h3>
+                        </div>
+                        <span class="text-[10px] font-fira text-neon-purple bg-neon-purple/10 px-2 py-0.5 rounded border border-neon-purple/30">LEVEL 3</span>
+                    </div>
+                    <p class="text-xs text-gray-400 font-inter mb-3">IP addressing schemes, CIDR notation, and network partitioning.</p>
+                    <div class="w-full bg-cyber-gray h-2 rounded overflow-hidden">
+                        <div class="bg-gradient-to-r from-neon-purple to-neon-blue h-2 rounded w-[68%]"></div>
+                    </div>
+                </div>
+
+                <!-- Router & Switch Config -->
+                <div class="skill-card net bg-void-card border border-neon-purple/30 p-5 rounded-xl hover:border-neon-purple transition-all hover:-translate-y-1 shadow-lg group" onclick="playAudio('hover'); addXp(15, 'Ability Checked: Router Config');">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-server text-3xl text-neon-purple group-hover:scale-110 transition-transform"></i>
+                            <h3 class="font-orbitron font-bold text-white text-base">Router & Switch Config</h3>
+                        </div>
+                        <span class="text-[10px] font-fira text-neon-purple bg-neon-purple/10 px-2 py-0.5 rounded border border-neon-purple/30">LEVEL 2</span>
+                    </div>
+                    <p class="text-xs text-gray-400 font-inter mb-3">CLI commands, static routing, VLAN basics, and switch port setups.</p>
+                    <div class="w-full bg-cyber-gray h-2 rounded overflow-hidden">
+                        <div class="bg-gradient-to-r from-neon-purple to-neon-blue h-2 rounded w-[60%]"></div>
+                    </div>
+                </div>
+
+                <!-- AREAS OF INTEREST -->
+                <!-- Cybersecurity -->
+                <div class="skill-card interest bg-void-card border border-neon-emerald/30 p-5 rounded-xl hover:border-neon-emerald transition-all hover:-translate-y-1 shadow-lg group" onclick="playAudio('hover'); addXp(15, 'Interest: Cybersecurity');">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-user-shield text-3xl text-neon-emerald group-hover:scale-110 transition-transform"></i>
+                            <h3 class="font-orbitron font-bold text-white text-base">Cybersecurity</h3>
+                        </div>
+                        <span class="text-[10px] font-fira text-neon-emerald bg-neon-emerald/10 px-2 py-0.5 rounded border border-neon-emerald/30">FOCUS NODE</span>
+                    </div>
+                    <p class="text-xs text-gray-400 font-inter mb-3">Exploring network security fundamentals, web vulnerability analysis, and defense concepts.</p>
+                    <div class="w-full bg-cyber-gray h-2 rounded overflow-hidden">
+                        <div class="bg-gradient-to-r from-neon-emerald to-neon-cyan h-2 rounded w-[85%]"></div>
+                    </div>
+                </div>
+
+                <!-- Artificial Intelligence -->
+                <div class="skill-card interest bg-void-card border border-neon-emerald/30 p-5 rounded-xl hover:border-neon-emerald transition-all hover:-translate-y-1 shadow-lg group" onclick="playAudio('hover'); addXp(15, 'Interest: AI');">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-brain text-3xl text-neon-emerald group-hover:scale-110 transition-transform"></i>
+                            <h3 class="font-orbitron font-bold text-white text-base">Artificial Intelligence</h3>
+                        </div>
+                        <span class="text-[10px] font-fira text-neon-emerald bg-neon-emerald/10 px-2 py-0.5 rounded border border-neon-emerald/30">FOCUS NODE</span>
+                    </div>
+                    <p class="text-xs text-gray-400 font-inter mb-3">AI applications for practical productivity, intelligent tools, and automated business workflows.</p>
+                    <div class="w-full bg-cyber-gray h-2 rounded overflow-hidden">
+                        <div class="bg-gradient-to-r from-neon-emerald to-neon-cyan h-2 rounded w-[80%]"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. PROJECTS — "QUEST LOG" -->
+        <section id="quests" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center mb-10">
+                <span class="text-xs font-fira text-neon-cyan tracking-widest uppercase">// MISSION MANAGEMENT LOG</span>
+                <h2 class="text-3xl sm:text-5xl font-orbitron font-extrabold text-white mt-1">QUEST LOG</h2>
+                <div class="w-24 h-1 bg-neon-cyan mx-auto mt-3 shadow-neon-cyan"></div>
+            </div>
+
+            <!-- Project Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-3 mb-10 font-rajdhani font-bold text-sm">
+                <button onclick="filterQuests('all', this)" class="quest-tab-btn active-tab px-5 py-2 bg-neon-cyan text-black rounded font-orbitron text-xs transition-all clip-corner shadow-neon-cyan">ALL QUESTS</button>
+                <button onclick="filterQuests('in-progress', this)" class="quest-tab-btn px-5 py-2 bg-void-card border border-neon-cyan/40 text-neon-cyan hover:bg-neon-cyan/10 rounded font-orbitron text-xs transition-all clip-corner">IN PROGRESS</button>
+                <button onclick="filterQuests('completed', this)" class="quest-tab-btn px-5 py-2 bg-void-card border border-neon-emerald/40 text-neon-emerald hover:bg-neon-emerald/10 rounded font-orbitron text-xs transition-all clip-corner">COMPLETED</button>
+                <button onclick="filterQuests('planned', this)" class="quest-tab-btn px-5 py-2 bg-void-card border border-neon-purple/40 text-neon-purple hover:bg-neon-purple/10 rounded font-orbitron text-xs transition-all clip-corner">PLANNED</button>
+            </div>
+
+            <!-- Quests Cards Grid -->
+            <div id="questsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <!-- QUEST 01 -->
+                <div class="quest-card in-progress bg-void-card border border-neon-cyan/40 rounded-xl p-6 clip-corner hover:border-neon-cyan transition-all flex flex-col justify-between shadow-hud-glow relative group">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-xs font-fira text-neon-cyan font-bold tracking-widest">// QUEST 01</span>
+                            <span class="px-2.5 py-1 bg-neon-cyan/10 border border-neon-cyan/50 text-neon-cyan text-[11px] font-fira font-bold rounded clip-badge animate-pulse">
+                                IN PROGRESS
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-orbitron font-bold text-white mb-2 group-hover:text-neon-cyan transition-colors">Personal Portfolio Website</h3>
+                        <p class="text-gray-300 text-sm font-inter mb-4">
+                            A modern, gaming-themed personal portfolio website showcasing my skills, projects, education, and tech interests. Built with clean responsive architecture and interactive HUD elements.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="mb-4">
+                            <span class="text-[11px] font-fira text-gray-400 block mb-1">TECH STACK:</span>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="px-2 py-0.5 bg-cyber-gray text-neon-cyan text-xs font-fira rounded">HTML5</span>
+                                <span class="px-2 py-0.5 bg-cyber-gray text-neon-cyan text-xs font-fira rounded">CSS3 / Tailwind</span>
+                                <span class="px-2 py-0.5 bg-cyber-gray text-neon-cyan text-xs font-fira rounded">JavaScript ES6</span>
+                            </div>
+                        </div>
+                        <button onclick="openQuestModal('quest1'); playAudio('click'); addXp(30, 'Quest Inspected');" class="w-full py-2.5 bg-neon-cyan/10 border border-neon-cyan/60 text-neon-cyan hover:bg-neon-cyan hover:text-black font-orbitron text-xs font-bold rounded transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-scroll"></i> VIEW QUEST DETAILS
+                        </button>
+                    </div>
+                </div>
+
+                <!-- QUEST 02 -->
+                <div class="quest-card completed bg-void-card border border-neon-emerald/40 rounded-xl p-6 clip-corner hover:border-neon-emerald transition-all flex flex-col justify-between shadow-hud-glow relative group">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-xs font-fira text-neon-emerald font-bold tracking-widest">// QUEST 02</span>
+                            <span class="px-2.5 py-1 bg-neon-emerald/10 border border-neon-emerald/50 text-neon-emerald text-[11px] font-fira font-bold rounded clip-badge">
+                                COMPLETED
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-orbitron font-bold text-white mb-2 group-hover:text-neon-emerald transition-colors">Omnifood-Style Web Project</h3>
+                        <p class="text-gray-300 text-sm font-inter mb-4">
+                            A web project involving frontend UI design, PHP form processing, database integration with MySQL, and full mobile-first responsive layouts.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="mb-4">
+                            <span class="text-[11px] font-fira text-gray-400 block mb-1">TECH STACK:</span>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="px-2 py-0.5 bg-cyber-gray text-neon-emerald text-xs font-fira rounded">HTML</span>
+                                <span class="px-2 py-0.5 bg-cyber-gray text-neon-emerald text-xs font-fira rounded">CSS</span>
+                                <span class="px-2 py-0.5 bg-cyber-gray text-neon-emerald text-xs font-fira rounded">JavaScript</span>
+                                <span class="px-2 py-0.5 bg-cyber-gray text-neon-emerald text-xs font-fira rounded">PHP</span>
+                                <span class="px-2 py-0.5 bg-cyber-gray text-neon-emerald text-xs font-fira rounded">MySQL</span>
+                            </div>
+                        </div>
+                        <button onclick="openQuestModal('quest2'); playAudio('click'); addXp(30, 'Quest Inspected');" class="w-full py-2.5 bg-neon-emerald/10 border border-neon-emerald/60 text-neon-emerald hover:bg-neon-emerald hover:text-black font-orbitron text-xs font-bold rounded transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-scroll"></i> VIEW QUEST DETAILS
+                        </button>
+                    </div>
+                </div>
+
+                <!-- QUEST 03 -->
+                <div class="quest-card completed bg-void-card border border-neon-emerald/40 rounded-xl p-6 clip-corner hover:border-neon-emerald transition-all flex flex-col justify-between shadow-hud-glow relative group">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-xs font-fira text-neon-emerald font-bold tracking-widest">// QUEST 03</span>
+                            <span class="px-2.5 py-1 bg-neon-emerald/10 border border-neon-emerald/50 text-neon-emerald text-[11px] font-fira font-bold rounded clip-badge">
+                                COMPLETED
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-orbitron font-bold text-white mb-2 group-hover:text-neon-emerald transition-colors">Shayari / Quote Web Engine</h3>
+                        <p class="text-gray-300 text-sm font-inter mb-4">
+                            Interactive quote/shayari application featuring user profile management, admin portal, secure logout system, dynamic Sakura-inspired visual particle effects, and responsive layout.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="mb-4">
+                            <span class="text-[11px] font-fira text-gray-400 block mb-1">TECH STACK & FEATURES:</span>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="px-2 py-0.5 bg-cyber-gray text-neon-emerald text-xs font-fira rounded">HTML/CSS</span>
+                                <span class="px-2 py-0.5 bg-cyber-gray text-neon-emerald text-xs font-fira rounded">PHP</span>
+                                <span class="px-2 py-0.5 bg-cyber-gray text-neon-emerald text-xs font-fira rounded">Admin Portal</span>
+                                <span class="px-2 py-0.5 bg-cyber-gray text-neon-emerald text-xs font-fira rounded">Sakura Effects</span>
+                            </div>
+                        </div>
+                        <button onclick="openQuestModal('quest3'); playAudio('click'); addXp(30, 'Quest Inspected');" class="w-full py-2.5 bg-neon-emerald/10 border border-neon-emerald/60 text-neon-emerald hover:bg-neon-emerald hover:text-black font-orbitron text-xs font-bold rounded transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-scroll"></i> VIEW QUEST DETAILS
+                        </button>
+                    </div>
+                </div>
+
+                <!-- QUEST 04 -->
+                <div class="quest-card planned bg-void-card border border-neon-purple/40 rounded-xl p-6 clip-corner hover:border-neon-purple transition-all flex flex-col justify-between shadow-hud-glow relative group">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-xs font-fira text-neon-purple font-bold tracking-widest">// QUEST 04</span>
+                            <span class="px-2.5 py-1 bg-neon-purple/10 border border-neon-purple/50 text-neon-purple text-[11px] font-fira font-bold rounded clip-badge">
+                                PLANNED
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-orbitron font-bold text-white mb-2 group-hover:text-neon-purple transition-colors">Chess Analysis Platform</h3>
+                        <p class="text-gray-300 text-sm font-inter mb-4">
+                            A planned platform integrating game storage, opening databases, Stockfish engine evaluation, blunder detection, and game improvement analytics.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="mb-4">
+                            <span class="text-[11px] font-fira text-gray-400 block mb-1">PLANNED TECH STACK:</span>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="px-2 py-0.5 bg-cyber-gray text-neon-purple text-xs font-fira rounded">PHP</span>
+                                <span class="px-2 py-0.5 bg-cyber-gray text-neon-purple text-xs font-fira rounded">MySQL</span>
+                                <span class="px-2 py-0.5 bg-cyber-gray text-neon-purple text-xs font-fira rounded">XAMPP</span>
+                                <span class="px-2 py-0.5 bg-cyber-gray text-neon-purple text-xs font-fira rounded">Stockfish API</span>
+                            </div>
+                        </div>
+                        <button onclick="openQuestModal('quest4'); playAudio('click'); addXp(30, 'Quest Inspected');" class="w-full py-2.5 bg-neon-purple/10 border border-neon-purple/60 text-neon-purple hover:bg-neon-purple hover:text-black font-orbitron text-xs font-bold rounded transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-scroll"></i> VIEW QUEST DETAILS
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 5. CAREER MISSION — "MAIN QUEST" -->
+        <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+            <div class="bg-void-card border-2 border-neon-cyan/50 p-6 sm:p-10 rounded-2xl shadow-neon-cyan clip-corner relative overflow-hidden">
+                <div class="flex items-center justify-between border-b border-neon-cyan/30 pb-4 mb-6">
+                    <span class="text-xs font-fira text-neon-cyan font-bold tracking-widest flex items-center gap-2">
+                        <i class="fa-solid fa-flag-checkered text-neon-cyan"></i>
+                        PRIMARY DIRECTIVE
+                    </span>
+                    <span class="text-xs font-fira text-neon-emerald">QUEST STATUS: ACTIVE</span>
+                </div>
+
+                <h2 class="text-2xl sm:text-4xl font-orbitron font-extrabold text-white mb-4">MAIN QUEST</h2>
+                
+                <blockquote class="text-gray-200 font-inter text-base sm:text-lg italic border-l-4 border-neon-cyan pl-4 py-2 mb-8 bg-neon-cyan/5 rounded-r">
+                    "To continuously improve my technical skills, build useful software, explore cybersecurity and Artificial Intelligence, and eventually create innovative IT solutions that solve real-world problems."
+                </blockquote>
+
+                <!-- Progress Bar Workflow -->
+                <div class="space-y-4 font-fira text-xs">
+                    <div class="flex justify-between items-center text-gray-300">
+                        <span>CURRENT CLASS: <strong class="text-neon-cyan">BSc. IT Student</strong></span>
+                        <span>TARGET: <strong class="text-neon-purple">IT Professional / Entrepreneur</strong></span>
+                    </div>
+
+                    <div class="w-full bg-cyber-gray h-4 rounded-full p-0.5 border border-neon-cyan/30">
+                        <div class="bg-gradient-to-r from-neon-cyan via-neon-blue to-neon-purple h-full rounded-full w-[45%] animate-pulse"></div>
+                    </div>
+
+                    <div class="flex justify-between text-[11px] text-gray-400 font-rajdhani font-semibold">
+                        <span>STEP 1: Learn Basics</span>
+                        <span class="text-neon-cyan font-bold">NEXT OBJECTIVE: Build → Learn → Experiment → Improve</span>
+                        <span>STEP 3: Innovate</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. EDUCATION — "CHARACTER PROGRESSION" -->
+        <section id="education" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="text-xs font-fira text-neon-cyan tracking-widest uppercase">// ACADEMIC TIMELINE</span>
+                <h2 class="text-3xl sm:text-5xl font-orbitron font-extrabold text-white mt-1">CHARACTER PROGRESSION</h2>
+                <div class="w-24 h-1 bg-neon-cyan mx-auto mt-3 shadow-neon-cyan"></div>
+            </div>
+
+            <!-- Progression Timeline Card -->
+            <div class="max-w-4xl mx-auto relative pl-6 sm:pl-8 border-l-2 border-neon-cyan space-y-12">
+                
+                <div class="relative group" onclick="addXp(25, 'Education Checked');">
+                    <!-- Timeline Node Pin -->
+                    <div class="absolute -left-[31px] sm:-left-[39px] top-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-void border-2 border-neon-cyan flex items-center justify-center text-neon-cyan group-hover:bg-neon-cyan group-hover:text-black transition-all shadow-neon-cyan">
+                        <i class="fa-solid fa-graduation-cap text-xs"></i>
+                    </div>
+
+                    <div class="bg-void-card border border-neon-cyan/30 p-6 sm:p-8 rounded-xl clip-corner shadow-hud-glow">
+                        <div class="flex flex-wrap justify-between items-start gap-2 mb-3">
+                            <div>
+                                <span class="text-xs font-fira text-neon-cyan uppercase tracking-wider">// DEGREE LEVEL</span>
+                                <h3 class="text-2xl font-orbitron font-bold text-white">BSc. Information Technology</h3>
+                            </div>
+                            <span class="px-3 py-1 bg-neon-cyan/10 border border-neon-cyan/40 text-neon-cyan text-xs font-fira rounded font-semibold">
+                                CURRENTLY STUDYING
+                            </span>
+                        </div>
+
+                        <div class="space-y-2 text-gray-300 font-inter text-sm mb-4">
+                            <p class="font-semibold text-white flex items-center gap-2">
+                                <i class="fa-solid fa-building-columns text-neon-cyan"></i> Techspire University, Nepal
+                            </p>
+                            <p class="text-xs text-neon-purple font-fira">
+                                Affiliated with Asia Pacific University of Technology & Innovation (APU), Malaysia
+                            </p>
+                        </div>
+
+                        <p class="text-xs text-gray-400 font-inter leading-relaxed border-t border-cyber-gray pt-3">
+                            Focusing on core computer science fundamentals, web architecture, database design, software development, networking protocols, and modern technology frameworks.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 7. STATS SECTION — "PLAYER STATS" -->
+        <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center mb-10">
+                <span class="text-xs font-fira text-neon-cyan tracking-widest uppercase">// ATTRIBUTE METRICS</span>
+                <h2 class="text-3xl sm:text-5xl font-orbitron font-extrabold text-white mt-1">PLAYER STATS</h2>
+                <div class="w-24 h-1 bg-neon-cyan mx-auto mt-3 shadow-neon-cyan"></div>
+            </div>
+
+            <!-- Disclaimer Box -->
+            <div class="max-w-xl mx-auto mb-10 bg-void-card border border-neon-purple/40 p-3 rounded text-center text-xs font-fira text-neon-purple">
+                <i class="fa-solid fa-triangle-exclamation mr-1"></i> Visual portfolio metrics indicating learning focus and interest levels.
+            </div>
+
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 font-fira">
+                
+                <!-- Curiosity -->
+                <div class="bg-void-card border border-neon-cyan/30 p-4 rounded-lg clip-corner">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-xs text-white font-bold">Curiosity</span>
+                        <span class="text-xs text-neon-cyan font-bold">100% ██████████</span>
+                    </div>
+                    <div class="w-full bg-cyber-gray h-2 rounded overflow-hidden">
+                        <div class="bg-neon-cyan h-2 rounded w-full"></div>
+                    </div>
+                </div>
+
+                <!-- Learning -->
+                <div class="bg-void-card border border-neon-cyan/30 p-4 rounded-lg clip-corner">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-xs text-white font-bold">Learning</span>
+                        <span class="text-xs text-neon-cyan font-bold">100% ██████████</span>
+                    </div>
+                    <div class="w-full bg-cyber-gray h-2 rounded overflow-hidden">
+                        <div class="bg-neon-cyan h-2 rounded w-full"></div>
+                    </div>
+                </div>
+
+                <!-- Technology -->
+                <div class="bg-void-card border border-neon-cyan/30 p-4 rounded-lg clip-corner">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-xs text-white font-bold">Technology</span>
+                        <span class="text-xs text-neon-cyan font-bold">100% ██████████</span>
+                    </div>
+                    <div class="w-full bg-cyber-gray h-2 rounded overflow-hidden">
+                        <div class="bg-neon-cyan h-2 rounded w-full"></div>
+                    </div>
+                </div>
+
+                <!-- Creativity -->
+                <div class="bg-void-card border border-neon-cyan/30 p-4 rounded-lg clip-corner">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-xs text-white font-bold">Creativity</span>
+                        <span class="text-xs text-neon-cyan font-bold">90% █████████░</span>
+                    </div>
+                    <div class="w-full bg-cyber-gray h-2 rounded overflow-hidden">
+                        <div class="bg-neon-cyan h-2 rounded w-[90%]"></div>
+                    </div>
+                </div>
+
+                <!-- Programming -->
+                <div class="bg-void-card border border-neon-cyan/30 p-4 rounded-lg clip-corner">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-xs text-white font-bold">Programming</span>
+                        <span class="text-xs text-neon-cyan font-bold">70% ███████░░░</span>
+                    </div>
+                    <div class="w-full bg-cyber-gray h-2 rounded overflow-hidden">
+                        <div class="bg-neon-cyan h-2 rounded w-[70%]"></div>
+                    </div>
+                </div>
+
+                <!-- Problem Solving -->
+                <div class="bg-void-card border border-neon-cyan/30 p-4 rounded-lg clip-corner">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-xs text-white font-bold">Problem Solving</span>
+                        <span class="text-xs text-neon-cyan font-bold">70% ███████░░░</span>
+                    </div>
+                    <div class="w-full bg-cyber-gray h-2 rounded overflow-hidden">
+                        <div class="bg-neon-cyan h-2 rounded w-[70%]"></div>
+                    </div>
+                </div>
+
+                <!-- Networking -->
+                <div class="bg-void-card border border-neon-cyan/30 p-4 rounded-lg clip-corner md:col-span-2">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-xs text-white font-bold">Networking</span>
+                        <span class="text-xs text-neon-cyan font-bold">60% ██████░░░░</span>
+                    </div>
+                    <div class="w-full bg-cyber-gray h-2 rounded overflow-hidden">
+                        <div class="bg-neon-cyan h-2 rounded w-[60%]"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 8. HOBBIES — "SIDE QUESTS" -->
+        <section id="sidequests" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="text-xs font-fira text-neon-cyan tracking-widest uppercase">// OPTIONAL ACTIVITIES</span>
+                <h2 class="text-3xl sm:text-5xl font-orbitron font-extrabold text-white mt-1">SIDE QUESTS</h2>
+                <div class="w-24 h-1 bg-neon-cyan mx-auto mt-3 shadow-neon-cyan"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Chess -->
+                <div class="bg-void-card border border-neon-cyan/30 p-6 rounded-xl hover:border-neon-cyan transition-all hover:-translate-y-2 clip-corner shadow-lg group cursor-pointer" onclick="playAudio('click'); addXp(20, 'Side Quest: Chess');">
+                    <div class="text-4xl mb-3 group-hover:scale-125 transition-transform">♟️</div>
+                    <h3 class="font-orbitron font-bold text-lg text-white mb-1">Chess</h3>
+                    <p class="text-xs text-gray-400 font-inter">Strategic thinking, tactical calculation, and pattern recognition.</p>
+                </div>
+
+                <!-- Gaming -->
+                <div class="bg-void-card border border-neon-cyan/30 p-6 rounded-xl hover:border-neon-cyan transition-all hover:-translate-y-2 clip-corner shadow-lg group cursor-pointer" onclick="playAudio('click'); addXp(20, 'Side Quest: Gaming');">
+                    <div class="text-4xl mb-3 group-hover:scale-125 transition-transform">🎮</div>
+                    <h3 class="font-orbitron font-bold text-lg text-white mb-1">Gaming</h3>
+                    <p class="text-xs text-gray-400 font-inter">AAA immersive titles, strategy games, and open-world RPG mechanics.</p>
+                </div>
+
+                <!-- Technology -->
+                <div class="bg-void-card border border-neon-cyan/30 p-6 rounded-xl hover:border-neon-cyan transition-all hover:-translate-y-2 clip-corner shadow-lg group cursor-pointer" onclick="playAudio('click'); addXp(20, 'Side Quest: Technology');">
+                    <div class="text-4xl mb-3 group-hover:scale-125 transition-transform">💻</div>
+                    <h3 class="font-orbitron font-bold text-lg text-white mb-1">Technology</h3>
+                    <p class="text-xs text-gray-400 font-inter">Exploring hardware innovations, tech news, and system specs.</p>
+                </div>
+
+                <!-- Artificial Intelligence -->
+                <div class="bg-void-card border border-neon-cyan/30 p-6 rounded-xl hover:border-neon-cyan transition-all hover:-translate-y-2 clip-corner shadow-lg group cursor-pointer" onclick="playAudio('click'); addXp(20, 'Side Quest: AI');">
+                    <div class="text-4xl mb-3 group-hover:scale-125 transition-transform">🤖</div>
+                    <h3 class="font-orbitron font-bold text-lg text-white mb-1">Artificial Intelligence</h3>
+                    <p class="text-xs text-gray-400 font-inter">Experimenting with modern LLMs, prompts, and developer AI tools.</p>
+                </div>
+
+                <!-- Movies & Series -->
+                <div class="bg-void-card border border-neon-cyan/30 p-6 rounded-xl hover:border-neon-cyan transition-all hover:-translate-y-2 clip-corner shadow-lg group cursor-pointer" onclick="playAudio('click'); addXp(20, 'Side Quest: Movies');">
+                    <div class="text-4xl mb-3 group-hover:scale-125 transition-transform">🎬</div>
+                    <h3 class="font-orbitron font-bold text-lg text-white mb-1">Movies & Series</h3>
+                    <p class="text-xs text-gray-400 font-inter">Sci-fi narratives, tech thrillers, and futuristic storytelling.</p>
+                </div>
+
+                <!-- Anime & Manga -->
+                <div class="bg-void-card border border-neon-cyan/30 p-6 rounded-xl hover:border-neon-cyan transition-all hover:-translate-y-2 clip-corner shadow-lg group cursor-pointer" onclick="playAudio('click'); addXp(20, 'Side Quest: Anime');">
+                    <div class="text-4xl mb-3 group-hover:scale-125 transition-transform">📺</div>
+                    <h3 class="font-orbitron font-bold text-lg text-white mb-1">Anime & Manga</h3>
+                    <p class="text-xs text-gray-400 font-inter">Cyberpunk themes, shonen action, and creative animation aesthetics.</p>
+                </div>
+
+                <!-- Building Projects -->
+                <div class="bg-void-card border border-neon-cyan/30 p-6 rounded-xl hover:border-neon-cyan transition-all hover:-translate-y-2 clip-corner shadow-lg sm:col-span-2 group cursor-pointer" onclick="playAudio('click'); addXp(20, 'Side Quest: Projects');">
+                    <div class="text-4xl mb-3 group-hover:scale-125 transition-transform">🚀</div>
+                    <h3 class="font-orbitron font-bold text-lg text-white mb-1">Building Projects</h3>
+                    <p class="text-xs text-gray-400 font-inter">Transforming concepts into functional web solutions through hands-on coding.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 9. CONTACT SECTION — "ESTABLISH CONNECTION" -->
+        <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="text-xs font-fira text-neon-cyan tracking-widest uppercase">// TRANSMISSION TERMINAL</span>
+                <h2 class="text-3xl sm:text-5xl font-orbitron font-extrabold text-white mt-1">ESTABLISH CONNECTION</h2>
+                <div class="w-24 h-1 bg-neon-cyan mx-auto mt-3 shadow-neon-cyan"></div>
+                <p class="text-gray-300 font-inter text-sm sm:text-base mt-4 max-w-md mx-auto">
+                    "Have an idea, project, or opportunity? Let's connect."
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                
+                <!-- Direct Channel Buttons -->
+                <div class="lg:col-span-5 space-y-4">
+                    <div class="bg-void-card border border-neon-cyan/30 p-6 rounded-xl clip-corner">
+                        <h3 class="font-orbitron font-bold text-lg text-white mb-4">// DIRECT CHANNELS</h3>
+
+                        <div class="space-y-3 font-fira text-xs">
+                            <!-- GitHub Link -->
+                            <a href="https://github.com/Krishna-Bhatt-369" target="_blank" rel="noopener noreferrer" onclick="playAudio('click'); addXp(30, 'GitHub Accessed');" class="flex items-center justify-between p-3 bg-cyber-gray border border-neon-cyan/40 rounded hover:bg-neon-cyan/20 transition-all text-white group">
+                                <span class="flex items-center gap-3">
+                                    <i class="fa-brands fa-github text-xl text-neon-cyan"></i>
+                                    <span>GitHub Profile</span>
+                                </span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-neon-cyan group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+
+                            <!-- LinkedIn Link -->
+                            <a href="https://www.linkedin.com/in/krishna-parshad-bhatt-a80402330/" target="_blank" rel="noopener noreferrer" onclick="playAudio('click'); addXp(30, 'LinkedIn Accessed');" class="flex items-center justify-between p-3 bg-cyber-gray border border-neon-blue/40 rounded hover:bg-neon-blue/20 transition-all text-white group">
+                                <span class="flex items-center gap-3">
+                                    <i class="fa-brands fa-linkedin text-xl text-neon-blue"></i>
+                                    <span>LinkedIn Profile</span>
+                                </span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-neon-blue group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+
+                            <!-- Email Link -->
+                            <a href="mailto:kb9291972@gmail.com" onclick="playAudio('click'); addXp(30, 'Email Initiated');" class="flex items-center justify-between p-3 bg-cyber-gray border border-neon-emerald/40 rounded hover:bg-neon-emerald/20 transition-all text-white group">
+                                <span class="flex items-center gap-3">
+                                    <i class="fa-solid fa-envelope text-xl text-neon-emerald"></i>
+                                    <span class="truncate max-w-[180px] sm:max-w-none">kb9291972@gmail.com</span>
+                                </span>
+                                <i class="fa-solid fa-paper-plane text-neon-emerald group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terminal Transmission Form -->
+                <div class="lg:col-span-7 bg-void-card border border-neon-cyan/40 p-6 sm:p-8 rounded-xl clip-corner shadow-hud-glow">
+                    <div class="flex justify-between items-center border-b border-neon-cyan/20 pb-3 mb-6">
+                        <span class="font-fira text-xs text-neon-cyan font-bold">&gt; TRANSMIT_MESSAGE.SH</span>
+                        <span class="text-[10px] font-fira text-gray-400">ENCRYPTED PORT 8080</span>
+                    </div>
+
+                    <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4 font-fira text-xs">
+                        <div>
+                            <label class="block text-gray-300 mb-1">CALLSIGN / SENDER NAME:</label>
+                            <input type="text" required placeholder="Commander Shepard" class="w-full bg-cyber-gray border border-neon-cyan/30 rounded p-3 text-white focus:border-neon-cyan focus:outline-none transition-all">
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-300 mb-1">COMMUNICATION EMAIL:</label>
+                            <input type="email" required placeholder="shepard@normandy.com" class="w-full bg-cyber-gray border border-neon-cyan/30 rounded p-3 text-white focus:border-neon-cyan focus:outline-none transition-all">
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-300 mb-1">TRANSMISSION PAYLOAD / MESSAGE:</label>
+                            <textarea rows="4" required placeholder="Initiating contact regarding project collaboration..." class="w-full bg-cyber-gray border border-neon-cyan/30 rounded p-3 text-white focus:border-neon-cyan focus:outline-none transition-all"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-neon-cyan to-neon-blue text-black font-orbitron font-bold text-sm tracking-wider rounded shadow-neon-cyan hover:brightness-125 transition-all flex items-center justify-center gap-2 clip-corner">
+                            <i class="fa-solid fa-satellite-dish"></i> TRANSMIT DATA PACKET
+                        </button>
+                    </form>
+
+                    <!-- Submission Feedback Alert -->
+                    <div id="formSuccess" class="hidden mt-4 p-4 bg-neon-emerald/10 border border-neon-emerald rounded text-neon-emerald font-fira text-xs text-center animate-pulse">
+                        <i class="fa-solid fa-circle-check mr-2"></i> TRANSMISSION RECEIVED! DATA PACKET DISPATCHED SUCCESSFULLY.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-neon-cyan/20 bg-void py-8 px-4 relative z-10 font-fira text-xs text-gray-400">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div>
+                <span class="text-neon-cyan font-bold font-orbitron">KRISHNA PARSHAD BHATT</span> &copy; 2026 // ALL RIGHTS RESERVED
+            </div>
+            <div class="text-[11px] text-gray-500">
+                BSc. IT Student | Techspire University & APU Malaysia
+            </div>
+            <div class="text-neon-purple text-[11px]">
+                PRESS UP UP DOWN DOWN LEFT RIGHT LEFT RIGHT B A FOR SURPRISE
+            </div>
+        </div>
+    </footer>
+
+    <!-- QUEST DETAIL MODAL -->
+    <div id="questModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 modal-blur bg-void/80">
+        <div class="bg-void-card border-2 border-neon-cyan max-w-2xl w-full p-6 sm:p-8 rounded-2xl clip-corner shadow-2xl relative space-y-6">
+            <button onclick="closeQuestModal(); playAudio('click');" class="absolute top-4 right-4 text-gray-400 hover:text-neon-cyan text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div id="modalContent">
+                <!-- Modal content dynamically injected via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT SYSTEM ENGINE -->
+    <script>
+        // ==========================================
+        // 1. WEB AUDIO API SYNTH SOUND ENGINE
+        // ==========================================
+        let audioEnabled = true;
+        let audioCtx = null;
+
+        function initAudio() {
+            if (!audioCtx) {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                if (AudioContext) {
+                    audioCtx = new AudioContext();
+                }
+            }
+        }
+
+        function playAudio(type) {
+            if (!audioEnabled) return;
+            initAudio();
+            if (!audioCtx) return;
+
+            try {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+
+                const now = audioCtx.currentTime;
+
+                if (type === 'hover') {
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(600, now);
+                    gain.gain.setValueAtTime(0.02, now);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+                    osc.start(now);
+                    osc.stop(now + 0.08);
+                } else if (type === 'click') {
+                    osc.type = 'triangle';
+                    osc.frequency.setValueAtTime(1000, now);
+                    osc.frequency.exponentialRampToValueAtTime(300, now + 0.12);
+                    gain.gain.setValueAtTime(0.08, now);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
+                    osc.start(now);
+                    osc.stop(now + 0.12);
+                } else if (type === 'achievement') {
+                    osc.type = 'square';
+                    osc.frequency.setValueAtTime(523.25, now);
+                    osc.frequency.setValueAtTime(659.25, now + 0.1);
+                    osc.frequency.setValueAtTime(783.99, now + 0.2);
+                    gain.gain.setValueAtTime(0.05, now);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.4);
+                    osc.start(now);
+                    osc.stop(now + 0.4);
+                }
+            } catch (e) {
+                console.log('Audio playback prevented');
+            }
+        }
+
+        // Sound Toggle Handler
+        document.getElementById('audioToggleBtn').addEventListener('click', () => {
+            audioEnabled = !audioEnabled;
+            const icon = document.getElementById('audioIcon');
+            if (audioEnabled) {
+                icon.className = 'fa-solid fa-volume-high';
+                playAudio('click');
+            } else {
+                icon.className = 'fa-solid fa-volume-xmark';
+            }
+        });
+
+        // ==========================================
+        // 2. XP & LEVELING SYSTEM
+        // ==========================================
+        let totalXp = 0;
+        let currentLevel = 1;
+        const recordedInteractions = new Set();
+
+        function addXp(amount, source) {
+            if (recordedInteractions.has(source)) return;
+            recordedInteractions.add(source);
+
+            totalXp += amount;
+            document.getElementById('currentXpText').innerText = totalXp;
+
+            // Calculate Level
+            const newLevel = Math.floor(totalXp / 100) + 1;
+            if (newLevel > currentLevel) {
+                currentLevel = newLevel;
+                document.getElementById('navLevelBadge').innerText = `LVL ${currentLevel < 10 ? '0' + currentLevel : currentLevel}`;
+                playAudio('achievement');
+            }
+
+            // Show Toast
+            showXpToast(`+${amount} XP`, source);
+        }
+
+        function showXpToast(xpText, desc) {
+            const toast = document.getElementById('xpToast');
+            document.getElementById('xpToastTitle').innerText = `${xpText} EARNED!`;
+            document.getElementById('xpToastDesc').innerText = desc;
+
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            playAudio('hover');
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        // ==========================================
+        // 3. BOOT SCREEN SIMULATOR
+        // ==========================================
+        window.addEventListener('load', () => {
+            const bootLog = document.getElementById('bootLog');
+            const bootBar = document.getElementById('bootProgressBar');
+            const bootPercent = document.getElementById('bootPercentText');
+            const bootStatus = document.getElementById('bootStatusText');
+            const bootScreen = document.getElementById('bootScreen');
+
+            const logs = [
+                "> [OK] Verifying BSc. IT Credentials...",
+                "> [OK] Connecting to APU Malaysia & Techspire Node...",
+                "> [OK] Launching Cyberpunk HUD Matrix...",
+                "> [OK] ALL SYSTEMS OPERATIONAL ✓"
+            ];
+
+            let index = 0;
+            let progress = 0;
+
+            const interval = setInterval(() => {
+                progress += 25;
+                bootBar.style.width = `${progress}%`;
+                bootPercent.innerText = `${progress}%`;
+
+                if (index < logs.length) {
+                    const logItem = document.createElement('div');
+                    logItem.innerText = logs[index];
+                    bootLog.appendChild(logItem);
+                    index++;
+                }
+
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    bootStatus.innerText = "SYSTEM ONLINE ✓";
+                    playAudio('achievement');
+                    setTimeout(() => {
+                        bootScreen.classList.add('opacity-0', 'pointer-events-none');
+                        setTimeout(() => bootScreen.style.display = 'none', 700);
+                        addXp(50, 'System Initialized');
+                    }, 600);
+                }
+            }, 350);
+        });
+
+        // ==========================================
+        // 4. TYPING SUBTITLE ANIMATION
+        // ==========================================
+        const phrases = [
+            "BSc. IT Student",
+            "Web Developer",
+            "Tech Enthusiast",
+            "Cybersecurity Explorer"
+        ];
+        let phraseIdx = 0;
+        let charIdx = 0;
+        let isDeleting = false;
+        const typedEl = document.getElementById('typedText');
+
+        function typeLoop() {
+            const currentPhrase = phrases[phraseIdx];
+            
+            if (isDeleting) {
+                typedEl.textContent = currentPhrase.substring(0, charIdx - 1);
+                charIdx--;
+            } else {
+                typedEl.textContent = currentPhrase.substring(0, charIdx + 1);
+                charIdx++;
+            }
+
+            let speed = isDeleting ? 40 : 80;
+
+            if (!isDeleting && charIdx === currentPhrase.length) {
+                speed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIdx === 0) {
+                isDeleting = false;
+                phraseIdx = (phraseIdx + 1) % phrases.length;
+                speed = 500;
+            }
+
+            setTimeout(typeLoop, speed);
+        }
+        typeLoop();
+
+        // ==========================================
+        // 5. FILTERING FUNCTIONS
+        // ==========================================
+        function filterSkills(category, btn) {
+            playAudio('click');
+            document.querySelectorAll('.skill-tab-btn').forEach(b => {
+                b.className = 'skill-tab-btn px-5 py-2 bg-void-card border border-neon-cyan/40 text-neon-cyan hover:bg-neon-cyan/10 rounded font-orbitron text-xs transition-all clip-corner';
+            });
+            btn.className = 'skill-tab-btn active-tab px-5 py-2 bg-neon-cyan text-black rounded font-orbitron text-xs transition-all clip-corner shadow-neon-cyan';
+
+            const cards = document.querySelectorAll('.skill-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function filterQuests(category, btn) {
+            playAudio('click');
+            document.querySelectorAll('.quest-tab-btn').forEach(b => {
+                b.className = 'quest-tab-btn px-5 py-2 bg-void-card border border-neon-cyan/40 text-neon-cyan hover:bg-neon-cyan/10 rounded font-orbitron text-xs transition-all clip-corner';
+            });
+            btn.className = 'quest-tab-btn active-tab px-5 py-2 bg-neon-cyan text-black rounded font-orbitron text-xs transition-all clip-corner shadow-neon-cyan';
+
+            const cards = document.querySelectorAll('.quest-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // ==========================================
+        // 6. QUEST MODAL DATA & HANDLER
+        // ==========================================
+        const questData = {
+            quest1: {
+                title: "QUEST 01: Personal Portfolio Website",
+                status: "IN PROGRESS",
+                tech: ["HTML5", "CSS3", "Tailwind CDN", "JavaScript ES6"],
+                desc: "A personal portfolio website showcasing my skills, projects, education, and interests built using a modern cyberpunk / AAA gaming HUD theme.",
+                features: [
+                    "Web Audio API synthesized sound effects",
+                    "Gamified XP progression & level counter",
+                    "Konami Code Easter egg detection",
+                    "Interactive particle canvas background",
+                    "Fully responsive mobile HUD layout"
+                ]
+            },
+            quest2: {
+                title: "QUEST 02: Omnifood-Style Web Project",
+                status: "COMPLETED",
+                tech: ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "XAMPP"],
+                desc: "A web project involving full-stack frontend development, PHP backend logic, contact form processing, database integration, and responsive layout optimization.",
+                features: [
+                    "Database schema in MySQL",
+                    "PHP form handling & validation",
+                    "Responsive grid & flexbox design",
+                    "Local server deployment with XAMPP"
+                ]
+            },
+            quest3: {
+                title: "QUEST 03: Shayari / Quote Website",
+                status: "COMPLETED",
+                tech: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
+                desc: "An interactive website for discovering and sharing poetry, quotes, and shayaris with full user authentication and admin tools.",
+                features: [
+                    "Quotes / Shayari browsing engine",
+                    "User Profile & Account functionality",
+                    "Admin dashboard for quote management",
+                    "Secure Logout system",
+                    "Sakura-inspired visual particle effects",
+                    "Fully responsive cross-device layout"
+                ]
+            },
+            quest4: {
+                title: "QUEST 04: Chess Analysis Platform",
+                status: "PLANNED",
+                tech: ["PHP", "MySQL", "XAMPP", "Stockfish API"],
+                desc: "A planned web platform designed to analyze chess games, evaluate positions, and provide blunder detection insights for players.",
+                features: [
+                    "Chess PGN game storage",
+                    "Opening database lookup",
+                    "Stockfish engine evaluation",
+                    "Blunder detection system",
+                    "Personalized game improvement recommendations"
+                ]
+            }
+        };
+
+        function openQuestModal(questKey) {
+            const modal = document.getElementById('questModal');
+            const content = document.getElementById('modalContent');
+            const data = questData[questKey];
+
+            content.innerHTML = `
+                <div class="flex items-center justify-between border-b border-neon-cyan/20 pb-3 mb-4">
+                    <span class="text-xs font-fira text-neon-cyan">${data.status}</span>
+                    <span class="text-xs font-fira text-gray-500">QUEST_INSPECTOR.EXE</span>
+                </div>
+                <h3 class="text-2xl font-orbitron font-bold text-white mb-3">${data.title}</h3>
+                <p class="text-gray-300 text-sm font-inter mb-4">${data.desc}</p>
+
+                <div class="mb-4">
+                    <span class="text-xs font-fira text-gray-400 block mb-2">TECHNOLOGIES USED:</span>
+                    <div class="flex flex-wrap gap-2">
+                        ${data.tech.map(t => `<span class="px-2.5 py-1 bg-cyber-gray text-neon-cyan text-xs font-fira rounded border border-neon-cyan/30">${t}</span>`).join('')}
+                    </div>
+                </div>
+
+                <div>
+                    <span class="text-xs font-fira text-gray-400 block mb-2">KEY OBJECTIVES & FEATURES:</span>
+                    <ul class="list-disc list-inside text-xs text-gray-300 font-inter space-y-1">
+                        ${data.features.map(f => `<li>${f}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeQuestModal() {
+            const modal = document.getElementById('questModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Form Submit Handler
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            playAudio('achievement');
+            addXp(50, 'Form Transmission Sent');
+            const successEl = document.getElementById('formSuccess');
+            successEl.classList.remove('hidden');
+            e.target.reset();
+            setTimeout(() => successEl.classList.add('hidden'), 5000);
+        }
+
+        // ==========================================
+        // 7. KONAMI CODE EASTER EGG
+        // ==========================================
+        const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+        let konamiIndex = 0;
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key.toLowerCase() === konamiCode[konamiIndex].toLowerCase()) {
+                konamiIndex++;
+                if (konamiIndex === konamiCode.length) {
+                    triggerGodMode();
+                    konamiIndex = 0;
+                }
+            } else {
+                konamiIndex = 0;
+            }
+        });
+
+        function triggerGodMode() {
+            playAudio('achievement');
+            addXp(200, 'Secret Konami Code Discovered!');
+            const banner = document.getElementById('achievementBanner');
+            banner.classList.remove('hidden');
+            setTimeout(() => banner.classList.add('hidden'), 5000);
+        }
+
+        // Dev Console Easter Egg
+        console.log("%c KRISHNA.EXE PORTFOLIO SYSTEM ONLINE ", "background: #00f3ff; color: #000; font-size: 16px; font-weight: bold; padding: 4px;");
+        console.log("%c Looking for easter eggs? Try entering the Konami Code on your keyboard: ↑ ↑ ↓ ↓ ← → ← → B A ", "color: #b026ff; font-size: 12px;");
+
+        // Mobile Nav Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            playAudio('click');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // ==========================================
+        // 8. INTERACTIVE CANVAS & SCROLL HUD
+        // ==========================================
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        const particles = [];
+        const particleCount = 45;
+
+        for (let i = 0; i < particleCount; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                radius: Math.random() * 1.5 + 0.5,
+                vx: (Math.random() - 0.5) * 0.4,
+                vy: (Math.random() - 0.5) * 0.4,
+                color: Math.random() > 0.5 ? '#00f3ff' : '#b026ff'
+            });
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            particles.forEach(p => {
+                p.x += p.vx;
+                p.y += p.vy;
+
+                if (p.x < 0) p.x = canvas.width;
+                if (p.x > canvas.width) p.x = 0;
+                if (p.y < 0) p.y = canvas.height;
+                if (p.y > canvas.height) p.y = 0;
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fillStyle = p.color;
+                ctx.shadowBlur = 8;
+                ctx.shadowColor = p.color;
+                ctx.fill();
+            });
+
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        // Scroll Depth Tracker
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('scrollProgress').style.width = scrolled + '%';
+        });
+
+        // Intersection Observer for Section Discovery XP
+        const observerOptions = {
+            threshold: 0.3
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionId = entry.target.id;
+                    if (sectionId) {
+                        addXp(30, `Explored ${sectionId.toUpperCase()} Section`);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(sec => observer.observe(sec));
+    </script>
+</body>
+</html>
