@@ -1,1361 +1,1376 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Krishna Parshad Bhatt - BSc. IT Student, Developer & Tech Enthusiast from Nepal. Personal portfolio showcasing skills, projects, and education.">
-    <title>Krishna Parshad Bhatt // Developer Portfolio</title>
-    
-    <!-- Google Fonts: Inter & JetBrains Mono -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        darkBg: '#090d16',
-                        darkCard: '#111827',
-                        navyCard: '#0f172a',
-                        accentBlue: '#3b82f6',
-                        accentCyan: '#06b6d4',
-                        accentPurple: '#8b5cf6',
-                        borderDark: '#1e293b',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    },
-                    animation: {
-                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                        'glow': 'glow 4s ease-in-out infinite alternate',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                        },
-                        glow: {
-                            '0%': { opacity: '0.4', filter: 'blur(20px)' },
-                            '100%': { opacity: '0.8', filter: 'blur(30px)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- Custom CSS Styles -->
-    <style>
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #090d16;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1e293b;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #06b6d4;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Krishna Bhatt — Personal Website & Digital Notebook</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-        /* Glassmorphism effects */
-        .glass-panel {
-            background: rgba(17, 24, 39, 0.7);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .glass-nav {
-            background: rgba(9, 13, 22, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
+  <!-- Google Fonts: Caveat (Handwritten), Newsreader (Editorial Serif), Plus Jakarta Sans (UI), Space Mono (Monospace) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
-        /* Terminal Cursor */
-        .cursor-blink {
-            display: inline-block;
-            width: 8px;
-            height: 18px;
-            background-color: #06b6d4;
-            margin-left: 2px;
-            animation: blink 1s step-end infinite;
-            vertical-align: middle;
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            paper: '#FAF7F2',
+            paperDark: '#161513',
+            ink: '#1E1C1A',
+            inkLight: '#E8E5DF',
+            terracotta: '#D96B43',
+            sage: '#5C8374',
+            inkBlue: '#2C3E50',
+            stickyYellow: '#FEF3C7',
+            stickyYellowDark: '#2D2816',
+            stickyMint: '#D1FAE5',
+            stickyPink: '#FCE7F3',
+            stickyBlue: '#E0F2FE',
+          },
+          fontFamily: {
+            handwriting: ['Caveat', 'cursive'],
+            editorial: ['Newsreader', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['Space Mono', 'monospace'],
+          }
         }
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
+      }
+    }
+  </script>
 
-        /* Custom Gradients */
-        .text-gradient {
-            background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 50%, #8b5cf6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+  <style>
+    /* Dot Grid Backgrounds */
+    .bg-grid-light {
+      background-image: radial-gradient(#1E1C1A 0.8px, transparent 0.8px);
+      background-size: 24px 24px;
+      background-position: 0 0;
+      background-color: #FAF7F2;
+    }
+    .dark .bg-grid-light {
+      background-image: radial-gradient(#E8E5DF 0.8px, transparent 0.8px);
+      background-size: 24px 24px;
+      background-position: 0 0;
+      background-color: #161513;
+    }
 
-        .border-gradient {
-            border-image: linear-gradient(to right, #3b82f6, #06b6d4) 1;
-        }
+    /* Paper Effect & Tape Strips */
+    .tape-strip {
+      background: rgba(240, 235, 224, 0.7);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      backdrop-filter: blur(2px);
+      position: absolute;
+      height: 26px;
+      width: 110px;
+      z-index: 10;
+      border-left: 2px dashed rgba(0,0,0,0.05);
+      border-right: 2px dashed rgba(0,0,0,0.05);
+    }
+    .dark .tape-strip {
+      background: rgba(50, 48, 44, 0.7);
+    }
 
-        /* Particle Canvas Fix */
-        #bg-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 0;
-            pointer-events: none;
-        }
+    /* Pushpin graphic */
+    .pushpin {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #D96B43;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3), inset -2px -2px 0px rgba(0,0,0,0.2);
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+    }
 
-        /* Card Hover Effects */
-        .hover-glow {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .hover-glow:hover {
-            transform: translateY(-4px);
-            border-color: rgba(6, 182, 212, 0.4);
-            box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.15);
-        }
+    /* Stamp graphic effect */
+    .stamp-badge {
+      border: 2px dashed #D96B43;
+      color: #D96B43;
+      border-radius: 6px;
+      padding: 4px 10px;
+      display: inline-block;
+      font-family: 'Space Mono', monospace;
+      font-weight: 700;
+      transform: rotate(-3deg);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
 
-        /* Animated Progress Meter */
-        @keyframes meterFill {
-            from { width: 0%; }
-        }
-        .meter-bar {
-            animation: meterFill 1.5s ease-out forwards;
-        }
-    </style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FAF7F2;
+    }
+    .dark ::webkit-scrollbar-track {
+      background: #161513;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D5CFC5;
+      border-radius: 5px;
+    }
+    .dark ::-webkit-scrollbar-thumb {
+      background: #3A3732;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #D96B43;
+    }
+
+    /* Animated Underline */
+    .underline-sketch {
+      background-image: linear-gradient(120deg, #D96B43 0%, #D96B43 100%);
+      background-repeat: no-repeat;
+      background-size: 100% 30%;
+      background-position: 0 88%;
+      transition: background-size 0.25s ease-in;
+    }
+    .underline-sketch:hover {
+      background-size: 100% 88%;
+    }
+
+    /* Paper Shadows */
+    .paper-shadow {
+      box-shadow: 3px 4px 15px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .dark .paper-shadow {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+
+    /* Desk Light Spotlight Effect in Dark Mode */
+    .dark .desk-spotlight {
+      background: radial-gradient(circle at 50% 20%, rgba(217, 107, 67, 0.08) 0%, transparent 70%);
+    }
+
+    /* Interactive Stamp Animation */
+    @keyframes stampDrop {
+      0% { transform: scale(3) rotate(15deg); opacity: 0; }
+      100% { transform: scale(1) rotate(var(--stamp-rotate, 0deg)); opacity: 1; }
+    }
+    .animate-stamp {
+      animation: stampDrop 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+  </style>
 </head>
-<body class="bg-darkBg text-gray-200 font-sans antialiased selection:bg-accentCyan selection:text-darkBg overflow-x-hidden relative min-h-screen">
 
-    <!-- PRELOADER -->
-    <div id="preloader" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-darkBg text-mono font-mono transition-opacity duration-700">
-        <div class="max-w-md w-full px-6 text-center">
-            <div class="text-xs text-accentCyan mb-2 tracking-widest">// INITIALIZING SYSTEM</div>
-            <div class="relative w-full bg-slate-800/60 h-1.5 rounded-full overflow-hidden mb-4 border border-slate-700/50">
-                <div id="loader-bar" class="absolute top-0 left-0 bottom-0 bg-gradient-to-r from-accentBlue via-accentCyan to-accentPurple w-0 transition-all duration-300"></div>
-            </div>
-            <div id="loader-status" class="text-sm text-gray-400 font-mono tracking-wider">
-                INITIALIZING...
-            </div>
+<body class="bg-grid-light text-ink dark:text-inkLight transition-colors duration-300 antialiased font-sans min-h-screen relative selection:bg-terracotta selection:text-white desk-spotlight">
+
+  <!-- TOP NAVIGATION / BOOKMARK BAR -->
+  <header class="sticky top-0 z-50 w-full px-4 py-3 backdrop-blur-md bg-paper/80 dark:bg-paperDark/80 border-b border-stone-200 dark:border-stone-800 transition-colors">
+    <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      
+      <!-- Logo / Page Bookmark Title -->
+      <a href="#hero" onclick="playAudio('click')" class="flex items-center gap-2 group">
+        <div class="w-8 h-8 rounded bg-terracotta text-white font-mono font-bold flex items-center justify-center text-sm shadow transform group-hover:rotate-6 transition-transform">
+          KB
         </div>
+        <div>
+          <span class="font-editorial text-lg font-bold tracking-tight block leading-none">Krishna Bhatt</span>
+          <span class="font-handwriting text-xs text-stone-500 dark:text-stone-400 block -mt-0.5">nepal // bsc.it</span>
+        </div>
+      </a>
+
+      <!-- Quick Jumps -->
+      <nav class="hidden md:flex items-center gap-6 font-mono text-xs tracking-tight text-stone-600 dark:text-stone-300">
+        <a href="#about" onclick="playAudio('paper')" class="hover:text-terracotta transition-colors">[01. Who Am I]</a>
+        <a href="#journey" onclick="playAudio('paper')" class="hover:text-terracotta transition-colors">[02. Journey]</a>
+        <a href="#projects" onclick="playAudio('paper')" class="hover:text-terracotta transition-colors">[03. Projects]</a>
+        <a href="#skills" onclick="playAudio('paper')" class="hover:text-terracotta transition-colors">[04. Skills]</a>
+        <a href="#now" onclick="playAudio('paper')" class="hover:text-terracotta transition-colors">[05. Now]</a>
+        <a href="#contact" onclick="playAudio('paper')" class="hover:text-terracotta transition-colors">[06. Note]</a>
+      </nav>
+
+      <!-- Right Toolbar Controls -->
+      <div class="flex items-center gap-3">
+        <!-- Live Clock (Nepal Time) -->
+        <div class="hidden sm:flex flex-col text-right font-mono text-[11px] leading-tight text-stone-500 dark:text-stone-400 border-r border-stone-300 dark:border-stone-700 pr-3">
+          <span id="nepal-clock" class="font-bold text-ink dark:text-inkLight">12:00:00 AM</span>
+          <span class="text-[9px]">KATHMANDU, NP (NPT)</span>
+        </div>
+
+        <!-- Audio FX Toggle -->
+        <button id="sound-toggle" onclick="toggleSound()" class="p-2 rounded-lg bg-stone-200/60 dark:bg-stone-800 hover:bg-stone-300/60 dark:hover:bg-stone-700 transition text-xs flex items-center gap-1" title="Toggle Mechanical Audio FX">
+          <span id="sound-icon">🔊</span>
+          <span class="text-[10px] font-mono hidden sm:inline">FX ON</span>
+        </button>
+
+        <!-- Desk Lamp / Night Mode Switch -->
+        <button id="theme-toggle" onclick="toggleTheme()" class="px-3 py-1.5 rounded-lg bg-stone-200/80 dark:bg-stone-800 hover:bg-stone-300 dark:hover:bg-stone-700 transition text-xs font-mono flex items-center gap-1.5 border border-stone-300 dark:border-stone-700 shadow-sm" title="Toggle Desk Lamp (Dark/Light Mode)">
+          <span id="theme-icon">💡</span>
+          <span id="theme-text" class="text-[11px]">Desk Lamp</span>
+        </button>
+      </div>
     </div>
+  </header>
 
-    <!-- BACKGROUND CANVAS -->
-    <canvas id="bg-canvas"></canvas>
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 pt-8 pb-24 space-y-28">
 
-    <!-- FLOATING BLOBS FOR AMBIENT LIGHT -->
-    <div class="fixed top-1/4 left-10 w-96 h-96 bg-accentBlue/10 rounded-full blur-[120px] pointer-events-none animate-glow z-0"></div>
-    <div class="fixed bottom-1/4 right-10 w-96 h-96 bg-accentPurple/10 rounded-full blur-[120px] pointer-events-none animate-glow z-0" style="animation-delay: -2s;"></div>
-
-    <div class="relative z-10 flex flex-col min-h-screen">
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative pt-6">
+      
+      <!-- Tape graphic top right -->
+      <div class="tape-strip -top-3 right-8 rotate-12 hidden sm:block"></div>
+      
+      <!-- Asymmetric Hero Paper Card -->
+      <div class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-6 sm:p-10 paper-shadow relative overflow-hidden transition-all">
         
-        <!-- NAVIGATION BAR -->
-        <header id="navbar" class="fixed top-0 left-0 w-full z-40 transition-all duration-300 glass-nav">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-                <!-- Logo -->
-                <a href="#home" class="flex items-center gap-2 group">
-                    <span class="font-mono font-bold text-lg text-white group-hover:text-accentCyan transition-colors tracking-wider">
-                        &lt;KRISHNA<span class="text-accentCyan">BHATT</span>/&gt;
-                    </span>
-                </a>
+        <!-- Subtle Coffee Stain Visual SVG in Background -->
+        <svg class="absolute -right-12 -bottom-12 opacity-10 pointer-events-none w-64 h-64 text-stone-900 dark:text-stone-100" viewBox="0 0 100 100" fill="currentColor">
+          <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="4" stroke-dasharray="3 2" />
+          <circle cx="50" cy="50" r="36" fill="none" stroke="currentColor" stroke-width="1.5" />
+        </svg>
 
-                <!-- Desktop Nav Links -->
-                <nav class="hidden md:flex items-center gap-1 lg:gap-2">
-                    <a href="#home" class="nav-link px-3 py-1.5 text-xs font-mono text-gray-300 hover:text-accentCyan hover:bg-white/5 rounded-md transition-all">Home</a>
-                    <a href="#about" class="nav-link px-3 py-1.5 text-xs font-mono text-gray-300 hover:text-accentCyan hover:bg-white/5 rounded-md transition-all">About</a>
-                    <a href="#skills" class="nav-link px-3 py-1.5 text-xs font-mono text-gray-300 hover:text-accentCyan hover:bg-white/5 rounded-md transition-all">Skills</a>
-                    <a href="#projects" class="nav-link px-3 py-1.5 text-xs font-mono text-gray-300 hover:text-accentCyan hover:bg-white/5 rounded-md transition-all">Projects</a>
-                    <a href="#education" class="nav-link px-3 py-1.5 text-xs font-mono text-gray-300 hover:text-accentCyan hover:bg-white/5 rounded-md transition-all">Education</a>
-                    <a href="#focus" class="nav-link px-3 py-1.5 text-xs font-mono text-gray-300 hover:text-accentCyan hover:bg-white/5 rounded-md transition-all">Focus</a>
-                    <a href="#interests" class="nav-link px-3 py-1.5 text-xs font-mono text-gray-300 hover:text-accentCyan hover:bg-white/5 rounded-md transition-all">Interests</a>
-                    <a href="#contact" class="px-4 py-2 text-xs font-mono text-darkBg bg-gradient-to-r from-accentCyan to-accentBlue rounded-md font-semibold hover:opacity-90 transition-opacity ml-2">Contact</a>
-                </nav>
-
-                <!-- Mobile Hamburger Button -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-300 hover:text-white focus:outline-none" aria-label="Toggle Navigation">
-                    <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
-                </button>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+          
+          <!-- Main Hero Text (Left Col) -->
+          <div class="md:col-span-7 space-y-5">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100/80 dark:bg-amber-950/60 text-amber-900 dark:text-amber-200 font-mono text-xs border border-amber-200 dark:border-amber-800">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              Welcome to my digital notebook
             </div>
 
-            <!-- Mobile Menu Dropdown -->
-            <div id="mobile-menu" class="hidden md:hidden border-b border-borderDark/60 bg-darkBg/95 backdrop-blur-xl px-6 py-4 transition-all">
-                <div class="flex flex-col gap-3 font-mono text-sm">
-                    <a href="#home" class="mobile-nav-link py-2 text-gray-300 hover:text-accentCyan border-b border-white/5">Home</a>
-                    <a href="#about" class="mobile-nav-link py-2 text-gray-300 hover:text-accentCyan border-b border-white/5">About</a>
-                    <a href="#skills" class="mobile-nav-link py-2 text-gray-300 hover:text-accentCyan border-b border-white/5">Skills</a>
-                    <a href="#projects" class="mobile-nav-link py-2 text-gray-300 hover:text-accentCyan border-b border-white/5">Projects</a>
-                    <a href="#education" class="mobile-nav-link py-2 text-gray-300 hover:text-accentCyan border-b border-white/5">Education</a>
-                    <a href="#focus" class="mobile-nav-link py-2 text-gray-300 hover:text-accentCyan border-b border-white/5">Focus</a>
-                    <a href="#interests" class="mobile-nav-link py-2 text-gray-300 hover:text-accentCyan border-b border-white/5">Interests</a>
-                    <a href="#contact" class="mobile-nav-link py-2 text-accentCyan font-bold">Contact Me &rarr;</a>
-                </div>
+            <h1 class="font-editorial text-5xl sm:text-7xl font-extrabold tracking-tight text-ink dark:text-inkLight leading-[0.95]">
+              KRISHNA BHATT
+            </h1>
+
+            <p class="font-editorial italic text-2xl sm:text-3xl text-stone-700 dark:text-stone-300 leading-snug">
+              "Just another human trying to understand computers."
+            </p>
+
+            <!-- Handwritten Annotation with Doodle Arrow -->
+            <div class="relative pt-2 pl-4 border-l-2 border-terracotta/40">
+              <p class="font-handwriting text-2xl sm:text-3xl text-terracotta dark:text-terracotta leading-tight rotate-[-1deg]">
+                currently learning, building, breaking, fixing & repeating.
+              </p>
+              <span class="font-handwriting text-stone-400 text-lg block -mt-1">~ entry #001</span>
             </div>
-        </header>
 
-        <!-- MAIN CONTENT AREA -->
-        <main class="flex-grow pt-20">
-
-            <!-- HERO SECTION -->
-            <section id="home" class="min-h-[calc(100vh-5rem)] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-                <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    
-                    <!-- Hero Text Content -->
-                    <div class="lg:col-span-7 flex flex-col items-start space-y-6">
-                        <!-- Status Badge -->
-                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-panel border border-accentCyan/30 text-xs font-mono text-accentCyan">
-                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                            <span>Currently learning &amp; building</span>
-                        </div>
-
-                        <!-- Main Titles -->
-                        <div class="space-y-2">
-                            <p class="font-mono text-accentCyan text-sm tracking-widest uppercase">// Hello World, I am</p>
-                            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
-                                KRISHNA PARSHAD <span class="text-gradient">BHATT</span>
-                            </h1>
-                            <p class="text-lg sm:text-xl text-gray-300 font-medium tracking-wide">
-                                BSc. IT Student <span class="text-accentCyan">•</span> Developer <span class="text-accentBlue">•</span> Tech Enthusiast
-                            </p>
-                        </div>
-
-                        <!-- Tagline -->
-                        <p class="text-gray-400 text-base sm:text-lg max-w-2xl leading-relaxed">
-                            I’m a technology enthusiast passionate about building things, learning new technologies, and turning ideas into practical solutions.
-                        </p>
-
-                        <!-- Action Buttons -->
-                        <div class="flex flex-wrap items-center gap-4 pt-2 w-full sm:w-auto">
-                            <a href="#projects" class="px-6 py-3 text-sm font-mono font-semibold text-darkBg bg-accentCyan hover:bg-cyan-400 rounded-lg shadow-lg shadow-accentCyan/20 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2 w-full sm:w-auto">
-                                <i class="fa-solid fa-code"></i> View My Projects
-                            </a>
-                            <a href="#contact" class="px-6 py-3 text-sm font-mono font-semibold text-white glass-panel hover:bg-white/10 rounded-lg border border-gray-700 hover:border-accentCyan/50 transition-all flex items-center justify-center gap-2 w-full sm:w-auto">
-                                <i class="fa-solid fa-paper-plane"></i> Contact Me
-                            </a>
-                        </div>
-
-                        <!-- Subtle Meta note -->
-                        <div class="pt-4 font-mono text-xs text-gray-500 flex items-center gap-2">
-                            <i class="fa-solid fa-location-dot text-accentCyan"></i>
-                            <span>Based in Nepal &bull; Techspire University / APU Affiliate</span>
-                        </div>
-                    </div>
-
-                    <!-- Hero Visual: Interactive Code Window -->
-                    <div class="lg:col-span-5 w-full">
-                        <div class="glass-panel rounded-xl overflow-hidden border border-slate-700/60 shadow-2xl hover:border-accentCyan/40 transition-colors">
-                            <!-- Terminal Bar -->
-                            <div class="bg-slate-900/90 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
-                                <div class="flex items-center gap-2">
-                                    <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
-                                    <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                                    <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
-                                </div>
-                                <div class="font-mono text-xs text-gray-400 flex items-center gap-1">
-                                    <i class="fa-solid fa-terminal text-accentCyan text-2xs"></i>
-                                    <span>developer.sh</span>
-                                </div>
-                                <button id="copy-hero-code" class="text-xs text-gray-400 hover:text-accentCyan transition-colors" title="Copy code">
-                                    <i class="fa-regular fa-copy"></i>
-                                </button>
-                            </div>
-
-                            <!-- Terminal Content -->
-                            <div class="p-5 font-mono text-xs sm:text-sm space-y-4 bg-slate-950/80 leading-relaxed overflow-x-auto text-gray-300">
-                                <div class="flex items-center gap-2 text-accentCyan">
-                                    <span class="text-emerald-400">krishna@dev-box</span>:<span class="text-accentBlue">~</span>$ whoami
-                                </div>
-                                <div class="pl-4 text-gray-200 border-l-2 border-accentCyan/30 space-y-1">
-                                    <p><span class="text-accentPurple">Name:</span> "Krishna Parshad Bhatt"</p>
-                                    <p><span class="text-accentPurple">Role:</span> "BSc. IT Student & Developer"</p>
-                                    <p><span class="text-accentPurple">Location:</span> "Dadeldhura, Nepal"</p>
-                                </div>
-
-                                <div class="flex items-center gap-2 text-accentCyan pt-2">
-                                    <span class="text-emerald-400">krishna@dev-box</span>:<span class="text-accentBlue">~</span>$ cat current_focus.json
-                                </div>
-                                <div class="pl-4 text-gray-300 border-l-2 border-accentBlue/30 font-mono text-xs">
-                                    <p>{</p>
-                                    <p class="pl-4"><span class="text-accentCyan">"currentlyLearning"</span>: [</p>
-                                    <p class="pl-8 text-amber-300">"Python", "Web Dev", "Networking"</p>
-                                    <p class="pl-4">],</p>
-                                    <p class="pl-4"><span class="text-accentCyan">"interests"</span>: [</p>
-                                    <p class="pl-8 text-emerald-300">"AI", "Cybersecurity", "Software Dev"</p>
-                                    <p class="pl-4">]</p>
-                                    <p>}</p>
-                                </div>
-
-                                <div class="flex items-center gap-2 text-accentCyan pt-1">
-                                    <span class="text-emerald-400">krishna@dev-box</span>:<span class="text-accentBlue">~</span>$ <span id="typing-text"></span><span class="cursor-blink"></span>
-                                </div>
-                            </div>
-
-                            <!-- Terminal Footer -->
-                            <div class="bg-slate-900/60 px-4 py-2 border-t border-slate-800/60 flex justify-between items-center text-3xs font-mono text-gray-500">
-                                <span>STATUS: READY</span>
-                                <span>UTF-8 &bull; LF &bull; HTML5/JS</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            <!-- ABOUT ME SECTION -->
-            <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-borderDark/40">
-                <div class="max-w-7xl mx-auto space-y-12">
-                    
-                    <!-- Section Header -->
-                    <div class="space-y-2">
-                        <div class="inline-flex items-center gap-2 font-mono text-xs text-accentCyan uppercase tracking-widest">
-                            <i class="fa-solid fa-user-astronaut"></i>
-                            <span>// System Bio</span>
-                        </div>
-                        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">About Me</h2>
-                        <div class="w-16 h-1 bg-gradient-to-r from-accentCyan to-accentBlue rounded-full"></div>
-                    </div>
-
-                    <!-- Two-Column Layout -->
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-                        
-                        <!-- Bio Narrative -->
-                        <div class="lg:col-span-7 glass-panel rounded-2xl p-6 sm:p-8 space-y-6 flex flex-col justify-between hover-glow">
-                            <div class="space-y-4 text-gray-300 leading-relaxed text-sm sm:text-base">
-                                <p class="text-lg text-white font-medium">
-                                    Hi, I'm <span class="text-accentCyan font-semibold">Krishna Parshad Bhatt</span>, a BSc. IT student at Techspire University, Nepal, affiliated with Asia Pacific University of Technology &amp; Innovation (APU), Malaysia.
-                                </p>
-                                <p>
-                                    I'm passionate about web development, programming, networking, cybersecurity, and Artificial Intelligence. I enjoy learning through practical projects, experimenting with technologies, and turning ideas into working solutions.
-                                </p>
-                                <p>
-                                    I'm continuously developing my technical skills and exploring different areas of Information Technology. My long-term interests include cybersecurity, software development, AI, and building innovative IT solutions that solve real-world problems.
-                                </p>
-                            </div>
-
-                            <div class="pt-4 border-t border-slate-800 flex flex-wrap gap-3 font-mono text-xs">
-                                <span class="px-3 py-1 bg-accentBlue/10 text-accentBlue border border-accentBlue/30 rounded-md">
-                                    <i class="fa-solid fa-graduation-cap mr-1"></i> Student
-                                </span>
-                                <span class="px-3 py-1 bg-accentCyan/10 text-accentCyan border border-accentCyan/30 rounded-md">
-                                    <i class="fa-solid fa-laptop-code mr-1"></i> Developer
-                                </span>
-                                <span class="px-3 py-1 bg-accentPurple/10 text-accentPurple border border-accentPurple/30 rounded-md">
-                                    <i class="fa-solid fa-lightbulb mr-1"></i> Problem Solver
-                                </span>
-                            </div>
-                        </div>
-
-                        <!-- Profile Info Card -->
-                        <div class="lg:col-span-5 glass-panel rounded-2xl p-6 sm:p-8 flex flex-col justify-between hover-glow border-l-4 border-l-accentCyan">
-                            <div class="space-y-4">
-                                <div class="flex items-center justify-between pb-3 border-b border-slate-800">
-                                    <h3 class="font-mono font-bold text-white text-base tracking-wide uppercase flex items-center gap-2">
-                                        <i class="fa-solid fa-id-card text-accentCyan"></i> Profile Overview
-                                    </h3>
-                                    <span class="font-mono text-3xs text-gray-500">// Student ID: BSc. IT</span>
-                                </div>
-
-                                <div class="space-y-3 font-mono text-xs sm:text-sm">
-                                    <div class="flex flex-col sm:flex-row justify-between py-1 border-b border-slate-800/50">
-                                        <span class="text-gray-400">Full Name</span>
-                                        <span class="text-white font-medium">Krishna Parshad Bhatt</span>
-                                    </div>
-                                    <div class="flex flex-col sm:flex-row justify-between py-1 border-b border-slate-800/50">
-                                        <span class="text-gray-400">Location</span>
-                                        <span class="text-accentCyan">Nepal</span>
-                                    </div>
-                                    <div class="flex flex-col sm:flex-row justify-between py-1 border-b border-slate-800/50">
-                                        <span class="text-gray-400">Hometown</span>
-                                        <span class="text-white">Dadeldhura, Sudurpaschim</span>
-                                    </div>
-                                    <div class="flex flex-col sm:flex-row justify-between py-1 border-b border-slate-800/50">
-                                        <span class="text-gray-400">Education</span>
-                                        <span class="text-white">BSc. IT</span>
-                                    </div>
-                                    <div class="flex flex-col sm:flex-row justify-between py-1 border-b border-slate-800/50">
-                                        <span class="text-gray-400">University</span>
-                                        <span class="text-white">Techspire University</span>
-                                    </div>
-                                    <div class="flex flex-col sm:flex-row justify-between py-1 border-b border-slate-800/50">
-                                        <span class="text-gray-400">Affiliation</span>
-                                        <span class="text-accentBlue">APU, Malaysia</span>
-                                    </div>
-                                    <div class="flex flex-col sm:flex-row justify-between py-1">
-                                        <span class="text-gray-400">DOB</span>
-                                        <span class="text-white">17 February 2008</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mt-6 pt-3 text-3xs font-mono text-gray-500 text-center bg-slate-900/50 rounded p-2">
-                                <code>// Ready for internships &amp; collaborative learning</code>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-            <!-- SKILLS & TECHNOLOGIES SECTION -->
-            <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-950/40 border-t border-borderDark/40">
-                <div class="max-w-7xl mx-auto space-y-12">
-                    
-                    <!-- Section Header -->
-                    <div class="space-y-2">
-                        <div class="inline-flex items-center gap-2 font-mono text-xs text-accentCyan uppercase tracking-widest">
-                            <i class="fa-solid fa-microchip"></i>
-                            <span>// Technical Stack</span>
-                        </div>
-                        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Skills &amp; Technologies</h2>
-                        <div class="w-16 h-1 bg-gradient-to-r from-accentCyan to-accentBlue rounded-full"></div>
-                    </div>
-
-                    <!-- Skill Categories Grid -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                        <!-- Development -->
-                        <div class="glass-panel p-6 rounded-xl space-y-4 hover-glow">
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center gap-3">
-                                    <div class="p-2 bg-accentBlue/10 text-accentBlue rounded-lg">
-                                        <i class="fa-solid fa-code text-xl"></i>
-                                    </div>
-                                    <h3 class="font-bold text-white text-lg">Development</h3>
-                                </div>
-                                <span class="text-3xs font-mono px-2 py-0.5 rounded bg-blue-950 text-accentBlue border border-blue-800/40">Working With</span>
-                            </div>
-                            <div class="flex flex-wrap gap-2 pt-2">
-                                <span class="px-3 py-1.5 rounded-md bg-slate-800/80 text-xs font-mono text-gray-200 border border-slate-700/60 flex items-center gap-2">
-                                    <i class="fa-brands fa-html5 text-orange-500"></i> HTML5
-                                </span>
-                                <span class="px-3 py-1.5 rounded-md bg-slate-800/80 text-xs font-mono text-gray-200 border border-slate-700/60 flex items-center gap-2">
-                                    <i class="fa-brands fa-css3-alt text-blue-500"></i> CSS3
-                                </span>
-                                <span class="px-3 py-1.5 rounded-md bg-slate-800/80 text-xs font-mono text-gray-200 border border-slate-700/60 flex items-center gap-2">
-                                    <i class="fa-brands fa-js text-yellow-400"></i> JavaScript
-                                </span>
-                                <span class="px-3 py-1.5 rounded-md bg-slate-800/80 text-xs font-mono text-gray-200 border border-slate-700/60 flex items-center gap-2">
-                                    <i class="fa-brands fa-php text-indigo-400"></i> PHP
-                                </span>
-                                <span class="px-3 py-1.5 rounded-md bg-slate-800/80 text-xs font-mono text-gray-200 border border-slate-700/60 flex items-center gap-2">
-                                    <i class="fa-brands fa-python text-yellow-300"></i> Python
-                                </span>
-                            </div>
-                        </div>
-
-                        <!-- Database & Tools -->
-                        <div class="glass-panel p-6 rounded-xl space-y-4 hover-glow">
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center gap-3">
-                                    <div class="p-2 bg-accentCyan/10 text-accentCyan rounded-lg">
-                                        <i class="fa-solid fa-database text-xl"></i>
-                                    </div>
-                                    <h3 class="font-bold text-white text-lg">Database &amp; Tools</h3>
-                                </div>
-                                <span class="text-3xs font-mono px-2 py-0.5 rounded bg-cyan-950 text-accentCyan border border-cyan-800/40">Working With</span>
-                            </div>
-                            <div class="flex flex-wrap gap-2 pt-2">
-                                <span class="px-3 py-1.5 rounded-md bg-slate-800/80 text-xs font-mono text-gray-200 border border-slate-700/60 flex items-center gap-2">
-                                    <i class="fa-solid fa-server text-blue-400"></i> MySQL
-                                </span>
-                                <span class="px-3 py-1.5 rounded-md bg-slate-800/80 text-xs font-mono text-gray-200 border border-slate-700/60 flex items-center gap-2">
-                                    <i class="fa-solid fa-box-open text-orange-400"></i> XAMPP
-                                </span>
-                                <span class="px-3 py-1.5 rounded-md bg-slate-800/80 text-xs font-mono text-gray-200 border border-slate-700/60 flex items-center gap-2">
-                                    <i class="fa-brands fa-git-alt text-red-500"></i> Git
-                                </span>
-                                <span class="px-3 py-1.5 rounded-md bg-slate-800/80 text-xs font-mono text-gray-200 border border-slate-700/60 flex items-center gap-2">
-                                    <i class="fa-brands fa-github text-white"></i> GitHub
-                                </span>
-                            </div>
-                        </div>
-
-                        <!-- Networking -->
-                        <div class="glass-panel p-6 rounded-xl space-y-4 hover-glow">
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center gap-3">
-                                    <div class="p-2 bg-accentPurple/10 text-accentPurple rounded-lg">
-                                        <i class="fa-solid fa-network-wired text-xl"></i>
-                                    </div>
-                                    <h3 class="font-bold text-white text-lg">Networking</h3>
-                                </div>
-                                <span class="text-3xs font-mono px-2 py-0.5 rounded bg-purple-950 text-accentPurple border border-purple-800/40">Currently Learning</span>
-                            </div>
-                            <div class="flex flex-wrap gap-2 pt-2">
-                                <span class="px-2.5 py-1 rounded bg-slate-800/80 text-3xs font-mono text-gray-300">Cisco Packet Tracer</span>
-                                <span class="px-2.5 py-1 rounded bg-slate-800/80 text-3xs font-mono text-gray-300">IPv4 Addressing</span>
-                                <span class="px-2.5 py-1 rounded bg-slate-800/80 text-3xs font-mono text-gray-300">Subnetting</span>
-                                <span class="px-2.5 py-1 rounded bg-slate-800/80 text-3xs font-mono text-gray-300">Router Config</span>
-                                <span class="px-2.5 py-1 rounded bg-slate-800/80 text-3xs font-mono text-gray-300">Switch Config</span>
-                                <span class="px-2.5 py-1 rounded bg-slate-800/80 text-3xs font-mono text-gray-300">Static Routing</span>
-                                <span class="px-2.5 py-1 rounded bg-slate-800/80 text-3xs font-mono text-gray-300">Troubleshooting</span>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- Areas of Interest Banner -->
-                    <div class="glass-panel rounded-2xl p-6 sm:p-8 space-y-4 border border-slate-800">
-                        <h3 class="font-mono text-sm text-accentCyan uppercase tracking-wider flex items-center gap-2">
-                            <i class="fa-solid fa-compass"></i> Areas of Domain Interest
-                        </h3>
-                        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 pt-2">
-                            <div class="p-3 bg-slate-900/60 rounded-lg text-center hover:bg-slate-800/60 transition-colors">
-                                <i class="fa-solid fa-brain text-accentPurple text-lg mb-2 block"></i>
-                                <span class="text-xs text-gray-200 font-medium">Artificial Intelligence</span>
-                            </div>
-                            <div class="p-3 bg-slate-900/60 rounded-lg text-center hover:bg-slate-800/60 transition-colors">
-                                <i class="fa-solid fa-shield-halved text-accentCyan text-lg mb-2 block"></i>
-                                <span class="text-xs text-gray-200 font-medium">Cybersecurity</span>
-                            </div>
-                            <div class="p-3 bg-slate-900/60 rounded-lg text-center hover:bg-slate-800/60 transition-colors">
-                                <i class="fa-solid fa-globe text-accentBlue text-lg mb-2 block"></i>
-                                <span class="text-xs text-gray-200 font-medium">Web Development</span>
-                            </div>
-                            <div class="p-3 bg-slate-900/60 rounded-lg text-center hover:bg-slate-800/60 transition-colors">
-                                <i class="fa-solid fa-cubes text-emerald-400 text-lg mb-2 block"></i>
-                                <span class="text-xs text-gray-200 font-medium">Software Dev</span>
-                            </div>
-                            <div class="p-3 bg-slate-900/60 rounded-lg text-center hover:bg-slate-800/60 transition-colors">
-                                <i class="fa-solid fa-diagram-project text-amber-400 text-lg mb-2 block"></i>
-                                <span class="text-xs text-gray-200 font-medium">Networking</span>
-                            </div>
-                            <div class="p-3 bg-slate-900/60 rounded-lg text-center hover:bg-slate-800/60 transition-colors">
-                                <i class="fa-solid fa-chart-line text-rose-400 text-lg mb-2 block"></i>
-                                <span class="text-xs text-gray-200 font-medium">AI for Business</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            <!-- SELECTED PROJECTS SECTION -->
-            <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-borderDark/40">
-                <div class="max-w-7xl mx-auto space-y-12">
-                    
-                    <!-- Section Header -->
-                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
-                        <div class="space-y-2">
-                            <div class="inline-flex items-center gap-2 font-mono text-xs text-accentCyan uppercase tracking-widest">
-                                <i class="fa-solid fa-folder-open"></i>
-                                <span>// Works &amp; Software</span>
-                            </div>
-                            <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Selected Projects</h2>
-                            <div class="w-16 h-1 bg-gradient-to-r from-accentCyan to-accentBlue rounded-full"></div>
-                        </div>
-                        <p class="font-mono text-xs text-gray-400 max-w-xs">
-                            Practical projects built during BSc. IT studies and personal technical experimentation.
-                        </p>
-                    </div>
-
-                    <!-- Projects Grid -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-                        <!-- Project 01 -->
-                        <div class="glass-panel rounded-2xl p-6 sm:p-8 space-y-6 hover-glow flex flex-col justify-between relative overflow-hidden group">
-                            <div class="space-y-4">
-                                <div class="flex items-center justify-between">
-                                    <span class="font-mono text-xs text-accentCyan tracking-widest font-bold">PROJECT 01</span>
-                                    <span class="px-2.5 py-1 text-3xs font-mono rounded-full bg-blue-950 text-accentBlue border border-blue-800/50 flex items-center gap-1.5">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-accentBlue animate-pulse"></span>
-                                        In Progress
-                                    </span>
-                                </div>
-                                <h3 class="text-2xl font-bold text-white group-hover:text-accentCyan transition-colors">Personal Portfolio</h3>
-                                <p class="text-gray-300 text-sm leading-relaxed">
-                                    A modern, futuristic personal portfolio website designed to showcase my academic background, technical skills, project showcase, education, and interests.
-                                </p>
-                                <div class="flex flex-wrap gap-2 pt-2">
-                                    <span class="px-2.5 py-1 rounded bg-slate-800 text-3xs font-mono text-gray-300">HTML5</span>
-                                    <span class="px-2.5 py-1 rounded bg-slate-800 text-3xs font-mono text-gray-300">CSS3</span>
-                                    <span class="px-2.5 py-1 rounded bg-slate-800 text-3xs font-mono text-gray-300">JavaScript</span>
-                                </div>
-                            </div>
-                            <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
-                                <a href="https://github.com/Krishna-Bhatt-369" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-gray-300 hover:text-accentCyan flex items-center gap-2 transition-colors">
-                                    <i class="fa-brands fa-github text-base"></i> View Repository
-                                </a>
-                                <button onclick="openProjectModal('Personal Portfolio', 'A personal portfolio website engineered with clean responsive layout, glassmorphism UI, particle background effects, and modern styling.', ['HTML', 'CSS', 'JavaScript'], 'In Progress')" class="text-xs font-mono text-accentCyan hover:underline">
-                                    Details &rarr;
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Project 02 -->
-                        <div class="glass-panel rounded-2xl p-6 sm:p-8 space-y-6 hover-glow flex flex-col justify-between relative overflow-hidden group">
-                            <div class="space-y-4">
-                                <div class="flex items-center justify-between">
-                                    <span class="font-mono text-xs text-accentCyan tracking-widest font-bold">PROJECT 02</span>
-                                    <span class="px-2.5 py-1 text-3xs font-mono rounded-full bg-emerald-950 text-emerald-400 border border-emerald-800/50 flex items-center gap-1.5">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                                        Completed
-                                    </span>
-                                </div>
-                                <h3 class="text-2xl font-bold text-white group-hover:text-accentCyan transition-colors">Omnifood-Style Website</h3>
-                                <p class="text-gray-300 text-sm leading-relaxed">
-                                    A full-stack web development project featuring responsive frontend presentation, dynamic PHP form processing, and database integration with MySQL via XAMPP.
-                                </p>
-                                <div class="flex flex-wrap gap-2 pt-2">
-                                    <span class="px-2.5 py-1 rounded bg-slate-800 text-3xs font-mono text-gray-300">HTML</span>
-                                    <span class="px-2.5 py-1 rounded bg-slate-800 text-3xs font-mono text-gray-300">CSS</span>
-                                    <span class="px-2.5 py-1 rounded bg-slate-800 text-3xs font-mono text-gray-300">JavaScript</span>
-                                    <span class="px-2.5 py-1 rounded bg-slate-800 text-3xs font-mono text-gray-300">PHP</span>
-                                    <span class="px-2.5 py-1 rounded bg-slate-800 text-3xs font-mono text-gray-300">MySQL</span>
-                                </div>
-                            </div>
-                            <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
-                                <a href="https://github.com/Krishna-Bhatt-369" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-gray-300 hover:text-accentCyan flex items-center gap-2 transition-colors">
-                                    <i class="fa-brands fa-github text-base"></i> View Repository
-                                </a>
-                                <button onclick="openProjectModal('Omnifood-Style Website', 'Food landing and ordering platform constructed with responsive CSS flexbox/grid layout, PHP backend form verification, and database records handling.', ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL', 'XAMPP'], 'Completed')" class="text-xs font-mono text-accentCyan hover:underline">
-                                    Details &rarr;
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Project 03 -->
-                        <div class="glass-panel rounded-2xl p-6 sm:p-8 space-y-6 hover-glow flex flex-col justify-between relative overflow-hidden group">
-                            <div class="space-y-4">
-                                <div class="flex items-center justify-between">
-                                    <span class="font-mono text-xs text-accentCyan tracking-widest font-bold">PROJECT 03</span>
-                                    <span class="px-2.5 py-1 text-3xs font-mono rounded-full bg-emerald-950 text-emerald-400 border border-emerald-800/50 flex items-center gap-1.5">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                                        Completed
-                                    </span>
-                                </div>
-                                <h3 class="text-2xl font-bold text-white group-hover:text-accentCyan transition-colors">Shayari / Quote Website</h3>
-                                <p class="text-gray-300 text-sm leading-relaxed">
-                                    A responsive web platform showcasing quotes &amp; Shayari. Features profile functionality, administrative dashboard controls, secure session logout, and subtle sakura-inspired visual aesthetics.
-                                </p>
-                                <div class="flex flex-wrap gap-2 pt-2">
-                                    <span class="px-2.5 py-1 rounded bg-slate-800 text-3xs font-mono text-gray-300">HTML</span>
-                                    <span class="px-2.5 py-1 rounded bg-slate-800 text-3xs font-mono text-gray-300">CSS</span>
-                                    <span class="px-2.5 py-1 rounded bg-slate-800 text-3xs font-mono text-gray-300">JavaScript</span>
-                                    <span class="px-2.5 py-1 rounded bg-slate-800 text-3xs font-mono text-gray-300">PHP</span>
-                                </div>
-                            </div>
-                            <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
-                                <a href="https://github.com/Krishna-Bhatt-369" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-gray-300 hover:text-accentCyan flex items-center gap-2 transition-colors">
-                                    <i class="fa-brands fa-github text-base"></i> View Repository
-                                </a>
-                                <button onclick="openProjectModal('Shayari / Quote Website', 'Dynamic web application with full CRUD for quotes, user profile pages, session handling, custom authentication module, and custom animation effects.', ['HTML', 'CSS', 'JavaScript', 'PHP'], 'Completed')" class="text-xs font-mono text-accentCyan hover:underline">
-                                    Details &rarr;
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Project 04 -->
-                        <div class="glass-panel rounded-2xl p-6 sm:p-8 space-y-6 hover-glow flex flex-col justify-between relative overflow-hidden group border-dashed border-slate-700">
-                            <div class="space-y-4">
-                                <div class="flex items-center justify-between">
-                                    <span class="font-mono text-xs text-accentPurple tracking-widest font-bold">PROJECT 04</span>
-                                    <span class="px-2.5 py-1 text-3xs font-mono rounded-full bg-purple-950 text-accentPurple border border-purple-800/50 flex items-center gap-1.5">
-                                        <i class="fa-solid fa-flask text-2xs"></i>
-                                        Planned Project
-                                    </span>
-                                </div>
-                                <h3 class="text-2xl font-bold text-white group-hover:text-accentPurple transition-colors">Chess Analysis Platform</h3>
-                                <p class="text-gray-300 text-sm leading-relaxed">
-                                    A planned web-based platform focused on chess game storage, opening databases, Stockfish engine analysis, blunder detection, and personal skill improvement tracking.
-                                </p>
-                                <div class="flex flex-wrap gap-2 pt-2">
-                                    <span class="px-2.5 py-1 rounded bg-slate-800 text-3xs font-mono text-gray-300">PHP</span>
-                                    <span class="px-2.5 py-1 rounded bg-slate-800 text-3xs font-mono text-gray-300">MySQL</span>
-                                    <span class="px-2.5 py-1 rounded bg-slate-800 text-3xs font-mono text-gray-300">XAMPP</span>
-                                    <span class="px-2.5 py-1 rounded bg-slate-800 text-3xs font-mono text-gray-300">Stockfish Engine</span>
-                                </div>
-                            </div>
-                            <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
-                                <span class="text-3xs font-mono text-gray-500 italic">// Architecture &amp; design in progress</span>
-                                <button onclick="openProjectModal('Chess Analysis Platform', 'Planned web application designed to parse PGN files, integrate Stockfish engine worker threads, display interactive chessboards, and track blunder trends.', ['PHP', 'MySQL', 'Stockfish API', 'XAMPP'], 'Planned Project')" class="text-xs font-mono text-accentPurple hover:underline">
-                                    Roadmap &rarr;
-                                </button>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-            <!-- EDUCATION SECTION -->
-            <section id="education" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-950/40 border-t border-borderDark/40">
-                <div class="max-w-7xl mx-auto space-y-12">
-                    
-                    <!-- Section Header -->
-                    <div class="space-y-2">
-                        <div class="inline-flex items-center gap-2 font-mono text-xs text-accentCyan uppercase tracking-widest">
-                            <i class="fa-solid fa-graduation-cap"></i>
-                            <span>// Academic Background</span>
-                        </div>
-                        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Education</h2>
-                        <div class="w-16 h-1 bg-gradient-to-r from-accentCyan to-accentBlue rounded-full"></div>
-                    </div>
-
-                    <!-- Clean Timeline Structure -->
-                    <div class="relative pl-6 sm:pl-8 border-l-2 border-slate-800 space-y-8 max-w-3xl">
-                        
-                        <!-- Timeline Item -->
-                        <div class="relative group">
-                            <!-- Glowing Node Dot -->
-                            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-darkBg border-2 border-accentCyan group-hover:bg-accentCyan transition-colors"></div>
-
-                            <div class="glass-panel rounded-2xl p-6 space-y-4 hover-glow">
-                                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-slate-800">
-                                    <div>
-                                        <h3 class="text-xl font-bold text-white">Bachelor of Science in Information Technology (BSc. IT)</h3>
-                                        <p class="text-accentCyan font-mono text-sm">Techspire University, Nepal</p>
-                                    </div>
-                                    <span class="px-3 py-1 rounded-full bg-emerald-950 text-emerald-400 border border-emerald-800/50 text-3xs font-mono w-fit">
-                                        ● Currently Studying
-                                    </span>
-                                </div>
-
-                                <div class="space-y-2 text-sm text-gray-300 leading-relaxed">
-                                    <p>
-                                        <span class="font-mono text-xs text-gray-400">International Affiliation:</span><br>
-                                        <strong class="text-white">Asia Pacific University of Technology &amp; Innovation (APU), Malaysia</strong>
-                                    </p>
-                                    <p class="text-xs text-gray-400 pt-1">
-                                        Focusing on computing fundamentals, software engineering concepts, database management, network architecture, and modern application development.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-            <!-- CAREER & CURRENT FOCUS SECTION -->
-            <section id="focus" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-borderDark/40">
-                <div class="max-w-7xl mx-auto space-y-12">
-                    
-                    <!-- Section Header -->
-                    <div class="space-y-2">
-                        <div class="inline-flex items-center gap-2 font-mono text-xs text-accentCyan uppercase tracking-widest">
-                            <i class="fa-solid fa-bullseye"></i>
-                            <span>// Strategic Direction</span>
-                        </div>
-                        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">What I'm Working Toward</h2>
-                        <div class="w-16 h-1 bg-gradient-to-r from-accentCyan to-accentBlue rounded-full"></div>
-                    </div>
-
-                    <!-- Focus Narrative & Pathway -->
-                    <div class="glass-panel rounded-2xl p-6 sm:p-10 space-y-8 hover-glow">
-                        <p class="text-base sm:text-lg text-gray-300 leading-relaxed max-w-4xl">
-                            I'm focused on continuously improving my technical skills, building practical projects, and exploring areas such as Artificial Intelligence, cybersecurity, software development, and networking.
-                        </p>
-
-                        <!-- Progression Stepper -->
-                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center font-mono text-xs">
-                            <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
-                                <span class="text-accentCyan font-bold text-sm">01. LEARN</span>
-                                <p class="text-3xs text-gray-400">Core Concepts &amp; Theory</p>
-                            </div>
-                            <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
-                                <span class="text-accentBlue font-bold text-sm">02. BUILD</span>
-                                <p class="text-3xs text-gray-400">Practical Projects</p>
-                            </div>
-                            <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
-                                <span class="text-accentPurple font-bold text-sm">03. EXPERIMENT</span>
-                                <p class="text-3xs text-gray-400">New Technologies</p>
-                            </div>
-                            <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
-                                <span class="text-emerald-400 font-bold text-sm">04. IMPROVE</span>
-                                <p class="text-3xs text-gray-400">Continuous Mastery</p>
-                            </div>
-                        </div>
-
-                        <!-- Milestone Breakdown -->
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2 border-t border-slate-800">
-                            <div>
-                                <span class="font-mono text-3xs text-gray-500 uppercase tracking-wider block mb-1">Current State</span>
-                                <h4 class="font-bold text-white text-sm">BSc. IT Student</h4>
-                            </div>
-                            <div>
-                                <span class="font-mono text-3xs text-accentCyan uppercase tracking-wider block mb-1">Core Focus Areas</span>
-                                <h4 class="font-bold text-gray-200 text-sm">Development &bull; Networking &bull; AI &bull; Cybersecurity</h4>
-                            </div>
-                            <div>
-                                <span class="font-mono text-3xs text-accentPurple uppercase tracking-wider block mb-1">Future Aspiration</span>
-                                <h4 class="font-bold text-white text-sm">Technology Professional / IT Entrepreneur</h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Currently Learning Cards with Progress Meters (No Fake Scores) -->
-                    <div class="space-y-4">
-                        <h3 class="font-mono text-sm text-gray-300 flex items-center gap-2">
-                            <i class="fa-solid fa-spinner animate-spin text-accentCyan text-xs"></i>
-                            <span>Currently Learning Subjects</span>
-                        </h3>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                            <!-- Learning item -->
-                            <div class="p-4 rounded-xl bg-slate-900/70 border border-slate-800/80 space-y-2">
-                                <div class="flex items-center justify-between font-mono text-xs">
-                                    <span class="text-white font-medium">Python Programming</span>
-                                    <span class="text-accentCyan text-3xs">Active Study</span>
-                                </div>
-                                <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
-                                    <div class="bg-gradient-to-r from-accentBlue to-accentCyan h-full w-3/4 meter-bar"></div>
-                                </div>
-                            </div>
-
-                            <!-- Learning item -->
-                            <div class="p-4 rounded-xl bg-slate-900/70 border border-slate-800/80 space-y-2">
-                                <div class="flex items-center justify-between font-mono text-xs">
-                                    <span class="text-white font-medium">Web Development</span>
-                                    <span class="text-accentCyan text-3xs">Active Projects</span>
-                                </div>
-                                <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
-                                    <div class="bg-gradient-to-r from-accentBlue to-accentCyan h-full w-4/5 meter-bar"></div>
-                                </div>
-                            </div>
-
-                            <!-- Learning item -->
-                            <div class="p-4 rounded-xl bg-slate-900/70 border border-slate-800/80 space-y-2">
-                                <div class="flex items-center justify-between font-mono text-xs">
-                                    <span class="text-white font-medium">Networking &amp; Routing</span>
-                                    <span class="text-accentCyan text-3xs">Lab Simulation</span>
-                                </div>
-                                <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
-                                    <div class="bg-gradient-to-r from-accentBlue to-accentCyan h-full w-2/3 meter-bar"></div>
-                                </div>
-                            </div>
-
-                            <!-- Learning item -->
-                            <div class="p-4 rounded-xl bg-slate-900/70 border border-slate-800/80 space-y-2">
-                                <div class="flex items-center justify-between font-mono text-xs">
-                                    <span class="text-white font-medium">System Software</span>
-                                    <span class="text-accentCyan text-3xs">Coursework</span>
-                                </div>
-                                <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
-                                    <div class="bg-gradient-to-r from-accentBlue to-accentCyan h-full w-3/5 meter-bar"></div>
-                                </div>
-                            </div>
-
-                            <!-- Learning item -->
-                            <div class="p-4 rounded-xl bg-slate-900/70 border border-slate-800/80 space-y-2">
-                                <div class="flex items-center justify-between font-mono text-xs">
-                                    <span class="text-white font-medium">Database Systems</span>
-                                    <span class="text-accentCyan text-3xs">SQL Practice</span>
-                                </div>
-                                <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
-                                    <div class="bg-gradient-to-r from-accentBlue to-accentCyan h-full w-3/4 meter-bar"></div>
-                                </div>
-                            </div>
-
-                            <!-- Learning item -->
-                            <div class="p-4 rounded-xl bg-slate-900/70 border border-slate-800/80 space-y-2">
-                                <div class="flex items-center justify-between font-mono text-xs">
-                                    <span class="text-white font-medium">Artificial Intelligence</span>
-                                    <span class="text-accentCyan text-3xs">Exploration</span>
-                                </div>
-                                <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
-                                    <div class="bg-gradient-to-r from-accentBlue to-accentCyan h-full w-1/2 meter-bar"></div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            <!-- BEYOND TECHNOLOGY (INTERESTS) SECTION -->
-            <section id="interests" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-950/40 border-t border-borderDark/40">
-                <div class="max-w-7xl mx-auto space-y-12">
-                    
-                    <!-- Section Header -->
-                    <div class="space-y-2">
-                        <div class="inline-flex items-center gap-2 font-mono text-xs text-accentCyan uppercase tracking-widest">
-                            <i class="fa-solid fa-gamepad"></i>
-                            <span>// Personal Hobbies</span>
-                        </div>
-                        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Beyond Technology</h2>
-                        <div class="w-16 h-1 bg-gradient-to-r from-accentCyan to-accentBlue rounded-full"></div>
-                    </div>
-
-                    <!-- Clean Interest Cards Grid -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-                        <!-- Chess -->
-                        <div class="glass-panel p-6 rounded-2xl space-y-3 hover-glow">
-                            <div class="text-3xl">♟️</div>
-                            <h3 class="font-bold text-white text-lg">Chess</h3>
-                            <p class="text-gray-400 text-xs leading-relaxed">
-                                Strategic thinking, pattern recognition, and tactical problem-solving under pressure.
-                            </p>
-                        </div>
-
-                        <!-- Gaming -->
-                        <div class="glass-panel p-6 rounded-2xl space-y-3 hover-glow">
-                            <div class="text-3xl">🎮</div>
-                            <h3 class="font-bold text-white text-lg">Gaming</h3>
-                            <p class="text-gray-400 text-xs leading-relaxed">
-                                Appreciating interactive mechanics, immersive storytelling, and virtual world design.
-                            </p>
-                        </div>
-
-                        <!-- Technology -->
-                        <div class="glass-panel p-6 rounded-2xl space-y-3 hover-glow">
-                            <div class="text-3xl">💻</div>
-                            <h3 class="font-bold text-white text-lg">Technology</h3>
-                            <p class="text-gray-400 text-xs leading-relaxed">
-                                Following hardware advancements, software paradigms, and developer ecosystems.
-                            </p>
-                        </div>
-
-                        <!-- Artificial Intelligence -->
-                        <div class="glass-panel p-6 rounded-2xl space-y-3 hover-glow">
-                            <div class="text-3xl">🤖</div>
-                            <h3 class="font-bold text-white text-lg">Artificial Intelligence</h3>
-                            <p class="text-gray-400 text-xs leading-relaxed">
-                                Exploring language models, machine intelligence, and AI tools for productivity.
-                            </p>
-                        </div>
-
-                        <!-- Movies & Series -->
-                        <div class="glass-panel p-6 rounded-2xl space-y-3 hover-glow">
-                            <div class="text-3xl">🎬</div>
-                            <h3 class="font-bold text-white text-lg">Movies &amp; Series</h3>
-                            <p class="text-gray-400 text-xs leading-relaxed">
-                                Sci-fi, technical thrillers, and cinematic storytelling.
-                            </p>
-                        </div>
-
-                        <!-- Anime & Manga -->
-                        <div class="glass-panel p-6 rounded-2xl space-y-3 hover-glow">
-                            <div class="text-3xl">📺</div>
-                            <h3 class="font-bold text-white text-lg">Anime &amp; Manga</h3>
-                            <p class="text-gray-400 text-xs leading-relaxed">
-                                Creative narrative arcs, visual art styles, and character development.
-                            </p>
-                        </div>
-
-                        <!-- Building Projects -->
-                        <div class="glass-panel p-6 rounded-2xl space-y-3 hover-glow sm:col-span-2">
-                            <div class="text-3xl">🚀</div>
-                            <h3 class="font-bold text-white text-lg">Building Projects</h3>
-                            <p class="text-gray-400 text-xs leading-relaxed">
-                                Turning conceptual ideas into functional code repositories, experimenting with new frameworks, and solving daily utility challenges through software.
-                            </p>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-            <!-- CONTACT SECTION -->
-            <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-borderDark/40">
-                <div class="max-w-7xl mx-auto space-y-12">
-                    
-                    <!-- Section Header -->
-                    <div class="text-center space-y-4 max-w-2xl mx-auto">
-                        <div class="inline-flex items-center gap-2 font-mono text-xs text-accentCyan uppercase tracking-widest">
-                            <i class="fa-solid fa-paper-plane"></i>
-                            <span>// Get In Touch</span>
-                        </div>
-                        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Let's Connect</h2>
-                        <div class="w-16 h-1 bg-gradient-to-r from-accentCyan to-accentBlue rounded-full mx-auto"></div>
-                        <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
-                            Have a project idea, collaboration opportunity, or just want to connect? Feel free to reach out.
-                        </p>
-                    </div>
-
-                    <!-- Contact Cards -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                        
-                        <!-- GitHub Card -->
-                        <a href="https://github.com/Krishna-Bhatt-369" target="_blank" rel="noopener noreferrer" class="glass-panel p-6 rounded-2xl hover-glow flex flex-col items-center text-center space-y-4 group">
-                            <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-white text-2xl group-hover:bg-accentCyan group-hover:text-darkBg transition-colors">
-                                <i class="fa-brands fa-github"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-white text-base">GitHub</h3>
-                                <p class="text-3xs font-mono text-gray-400">@Krishna-Bhatt-369</p>
-                            </div>
-                            <span class="text-xs font-mono text-accentCyan group-hover:underline">Visit Profile &rarr;</span>
-                        </a>
-
-                        <!-- LinkedIn Card -->
-                        <a href="https://www.linkedin.com/in/krishna-parshad-bhatt-a80402330/" target="_blank" rel="noopener noreferrer" class="glass-panel p-6 rounded-2xl hover-glow flex flex-col items-center text-center space-y-4 group">
-                            <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-accentBlue text-2xl group-hover:bg-accentBlue group-hover:text-white transition-colors">
-                                <i class="fa-brands fa-linkedin-in"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-white text-base">LinkedIn</h3>
-                                <p class="text-3xs font-mono text-gray-400">Krishna Parshad Bhatt</p>
-                            </div>
-                            <span class="text-xs font-mono text-accentBlue group-hover:underline">Connect &rarr;</span>
-                        </a>
-
-                        <!-- Email Card -->
-                        <div class="glass-panel p-6 rounded-2xl hover-glow flex flex-col items-center text-center space-y-4 group relative">
-                            <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-accentCyan text-2xl group-hover:bg-accentCyan group-hover:text-darkBg transition-colors">
-                                <i class="fa-regular fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-white text-base">Email</h3>
-                                <p class="text-3xs font-mono text-gray-400">kb9291972@gmail.com</p>
-                            </div>
-                            <div class="flex items-center gap-2 pt-1">
-                                <a href="mailto:kb9291972@gmail.com" class="text-xs font-mono px-3 py-1 bg-accentCyan/10 text-accentCyan rounded border border-accentCyan/30 hover:bg-accentCyan hover:text-darkBg transition-colors">
-                                    Send Email
-                                </a>
-                                <button onclick="copyEmailToClipboard()" class="text-xs font-mono p-1 px-2 text-gray-400 hover:text-white border border-slate-700 rounded" title="Copy Email">
-                                    <i class="fa-regular fa-copy"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- Direct Developer Comment Footer Message -->
-                    <div class="text-center font-mono text-xs text-gray-500 pt-6">
-                        <code>// Open for internship roles, open-source projects, and technical discussions</code>
-                    </div>
-
-                </div>
-            </section>
-
-        </main>
-
-        <!-- FOOTER -->
-        <footer class="border-t border-borderDark/60 bg-slate-950/80 py-8 px-4 sm:px-6 lg:px-8 z-10 relative">
-            <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-gray-500">
-                <div class="flex items-center gap-2">
-                    <span>&copy; <span id="current-year">2026</span> Krishna Parshad Bhatt.</span>
-                    <span class="hidden sm:inline">&bull;</span>
-                    <span class="text-gray-400">Built with HTML, CSS, JS</span>
-                </div>
-                <div class="flex items-center gap-4 text-3xs">
-                    <span>// Sudurpaschim, Nepal</span>
-                    <span>&bull;</span>
-                    <a href="#home" class="text-accentCyan hover:underline">Back to top &uarr;</a>
-                </div>
+            <!-- Social Links Quick Pill -->
+            <div class="pt-4 flex flex-wrap items-center gap-3 font-mono text-xs">
+              <a href="https://github.com/Krishna-Bhatt-369" target="_blank" rel="noopener" onclick="playAudio('click')" class="px-3 py-1.5 rounded-lg bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 border border-stone-200 dark:border-stone-700 transition flex items-center gap-1.5">
+                <span>🐙</span> GitHub
+              </a>
+              <a href="https://www.linkedin.com/in/krishna-parshad-bhatt-a80402330/" target="_blank" rel="noopener" onclick="playAudio('click')" class="px-3 py-1.5 rounded-lg bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 border border-stone-200 dark:border-stone-700 transition flex items-center gap-1.5">
+                <span>💼</span> LinkedIn
+              </a>
+              <a href="mailto:kb9291972@gmail.com" onclick="playAudio('click')" class="px-3 py-1.5 rounded-lg bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 border border-stone-200 dark:border-stone-700 transition flex items-center gap-1.5">
+                <span>✉️</span> Email Me
+              </a>
             </div>
-        </footer>
+          </div>
 
-    </div>
+          <!-- Sticky Note / ID Card (Right Col) -->
+          <div class="md:col-span-5 relative">
+            <div class="tape-strip -top-3 left-6 -rotate-6"></div>
 
-    <!-- PROJECT DETAILS MODAL -->
-    <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md hidden opacity-0 transition-opacity duration-300">
-        <div class="glass-panel w-full max-w-lg rounded-2xl p-6 space-y-6 border border-slate-700 relative transform scale-95 transition-transform duration-300">
-            <button onclick="closeProjectModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-lg">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div class="space-y-2">
-                <span id="modal-status" class="px-2.5 py-0.5 text-3xs font-mono rounded-full bg-slate-800 text-accentCyan"></span>
-                <h3 id="modal-title" class="text-2xl font-bold text-white"></h3>
+            <div class="bg-stickyYellow dark:bg-stickyYellowDark text-stone-900 dark:text-amber-100 p-6 rounded-lg shadow-lg border border-amber-200 dark:border-amber-900 transform rotate-2 hover:rotate-0 transition-transform duration-300 relative">
+              <div class="pushpin"></div>
+
+              <div class="border-b border-amber-300 dark:border-amber-800 pb-3 mb-4 flex justify-between items-center pt-2">
+                <span class="font-mono text-xs font-bold tracking-widest text-amber-800 dark:text-amber-300">CURRENTLY</span>
+                <span class="font-mono text-[10px] bg-amber-200 dark:bg-amber-900/80 px-2 py-0.5 rounded text-amber-900 dark:text-amber-200">2026 STATUS</span>
+              </div>
+
+              <ul class="space-y-3 font-mono text-xs sm:text-sm">
+                <li class="flex items-start gap-2">
+                  <span class="text-terracotta">🎓</span>
+                  <div>
+                    <strong class="block text-ink dark:text-amber-200 font-sans">BSc. IT Student</strong>
+                    <span class="text-xs text-stone-600 dark:text-amber-300/80">Techspire University (APU Malaysia)</span>
+                  </div>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-terracotta">⚡</span>
+                  <div>
+                    <strong class="block text-ink dark:text-amber-200 font-sans">Learning</strong>
+                    <span class="text-xs text-stone-600 dark:text-amber-300/80">Web Development + Python</span>
+                  </div>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-terracotta">🔍</span>
+                  <div>
+                    <strong class="block text-ink dark:text-amber-200 font-sans">Exploring</strong>
+                    <span class="text-xs text-stone-600 dark:text-amber-300/80">Cybersecurity + AI</span>
+                  </div>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-terracotta">📍</span>
+                  <div>
+                    <strong class="block text-ink dark:text-amber-200 font-sans">Based in</strong>
+                    <span class="text-xs text-stone-600 dark:text-amber-300/80">Nepal 🇳🇵</span>
+                  </div>
+                </li>
+              </ul>
+
+              <!-- Tiny doodle note at bottom -->
+              <div class="mt-4 pt-3 border-t border-amber-200 dark:border-amber-800/60 font-handwriting text-xl text-amber-900 dark:text-amber-200 text-center">
+                "learning one thing at a time ✨"
+              </div>
             </div>
-            <p id="modal-description" class="text-gray-300 text-sm leading-relaxed"></p>
-            <div class="space-y-2">
-                <h4 class="font-mono text-xs text-gray-400 uppercase">Technologies Used:</h4>
-                <div id="modal-tech" class="flex flex-wrap gap-2"></div>
-            </div>
-            <div class="pt-4 border-t border-slate-800 flex justify-end">
-                <button onclick="closeProjectModal()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-xs font-mono text-white rounded-lg">
-                    Close Window
-                </button>
-            </div>
+          </div>
+
         </div>
+
+        <!-- Scroll down hint -->
+        <div class="mt-8 pt-6 border-t border-stone-100 dark:border-stone-800/80 flex justify-between items-center">
+          <div class="font-handwriting text-xl text-stone-500 dark:text-stone-400 flex items-center gap-2">
+            <span>scroll to explore</span>
+            <span class="animate-bounce inline-block">↓</span>
+          </div>
+          <div class="stamp-badge text-xs">VERIFIED HUMAN</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 01: ABOUT / ENTRY 01 -->
+    <section id="about" class="relative scroll-mt-20">
+      
+      <!-- Section Stamp Header -->
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-3 h-3 rounded-full bg-terracotta"></div>
+        <h2 class="font-mono text-xs uppercase tracking-widest text-stone-500 dark:text-stone-400">ENTRY 01 — WHO AM I?</h2>
+        <div class="flex-1 h-[1px] bg-stone-200 dark:bg-stone-800"></div>
+        <span class="font-mono text-xs text-stone-400">PAGE 01</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Main Journal Page Body -->
+        <div class="lg:col-span-8 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-6 sm:p-8 paper-shadow space-y-6 relative">
+          
+          <div class="flex justify-between items-start border-b border-stone-100 dark:border-stone-800 pb-4">
+            <div>
+              <span class="font-handwriting text-stone-400 text-lg">Entry date: Today</span>
+              <h3 class="font-editorial text-3xl font-bold text-ink dark:text-inkLight">Curiosity Driven Student</h3>
+            </div>
+            <span class="text-3xl">☕</span>
+          </div>
+
+          <div class="space-y-4 font-sans text-stone-700 dark:text-stone-300 leading-relaxed text-base sm:text-lg">
+            <p class="first-letter:font-editorial first-letter:text-5xl first-letter:font-bold first-letter:mr-2 first-letter:float-left first-letter:text-terracotta">
+              Hey, I'm <strong class="text-ink dark:text-white font-semibold">Krishna Bhatt</strong> — an IT student from Nepal who enjoys figuring out how technology works and then trying to build something with it.
+            </p>
+            <p>
+              I am currently pursuing my <strong class="text-ink dark:text-white">BSc. IT degree at Techspire University</strong>, affiliated with <strong class="text-ink dark:text-white">Asia Pacific University of Technology & Innovation (APU), Malaysia</strong>.
+            </p>
+            <p>
+              Rather than sticking to just one narrow path, I find myself deeply curious about the whole technological spectrum — from front-end web design and back-end logic to networking infrastructure, cybersecurity principles, and AI tools.
+            </p>
+          </div>
+
+          <!-- Highlight Box inside Journal -->
+          <div class="p-4 rounded-xl bg-stone-50 dark:bg-stone-800/60 border-l-4 border-sage space-y-1">
+            <p class="font-mono text-xs text-sage font-bold uppercase tracking-wider">My Core Philosophy</p>
+            <p class="font-editorial italic text-stone-800 dark:text-stone-200 text-lg">
+              "Code isn't just about syntax; it's about solving real problems, making mistakes, and taking the time to understand why something broke."
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Margin Notes / Annotations Column (Right) -->
+        <div class="lg:col-span-4 space-y-4">
+          
+          <!-- Sticky Margin Note 1 -->
+          <div class="bg-stickyMint dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/60 p-4 rounded-xl shadow-sm transform -rotate-1 hover:rotate-0 transition-transform">
+            <span class="font-mono text-[10px] text-emerald-700 dark:text-emerald-300 font-bold tracking-widest block mb-1">MARGIN NOTE</span>
+            <p class="font-handwriting text-2xl text-emerald-900 dark:text-emerald-200 leading-snug">
+              "still figuring things out... one bug at a time."
+            </p>
+          </div>
+
+          <!-- Sticky Margin Note 2 -->
+          <div class="bg-stickyPink dark:bg-pink-950/40 border border-pink-200 dark:border-pink-800/60 p-4 rounded-xl shadow-sm transform rotate-2 hover:rotate-0 transition-transform">
+            <span class="font-mono text-[10px] text-pink-700 dark:text-pink-300 font-bold tracking-widest block mb-1">DAILY LOOP</span>
+            <p class="font-handwriting text-2xl text-pink-900 dark:text-pink-200 leading-snug">
+              coffee ☕ → code 💻 → mistake ⚠️ → fix 🔧
+            </p>
+          </div>
+
+          <!-- Sticky Margin Note 3 -->
+          <div class="bg-stickyBlue dark:bg-sky-950/40 border border-sky-200 dark:border-sky-800/60 p-4 rounded-xl shadow-sm transform -rotate-2 hover:rotate-0 transition-transform">
+            <span class="font-mono text-[10px] text-sky-700 dark:text-sky-300 font-bold tracking-widest block mb-1">CURRENT LOCATION</span>
+            <p class="font-sans text-xs font-semibold text-sky-950 dark:text-sky-200">
+              Kathmandu, Nepal 🇳🇵
+            </p>
+            <p class="font-handwriting text-xl text-sky-800 dark:text-sky-300 mt-1">
+              probably debugging something right now!
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 02: MY CURRENT CHAPTER (TIMELINE) -->
+    <section id="journey" class="relative scroll-mt-20">
+      
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-3 h-3 rounded-full bg-sage"></div>
+        <h2 class="font-mono text-xs uppercase tracking-widest text-stone-500 dark:text-stone-400">MY CURRENT CHAPTER — THE JOURNEY</h2>
+        <div class="flex-1 h-[1px] bg-stone-200 dark:bg-stone-800"></div>
+        <span class="font-mono text-xs text-stone-400">2026</span>
+      </div>
+
+      <div class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-6 sm:p-8 paper-shadow">
+        
+        <p class="font-editorial text-2xl text-stone-700 dark:text-stone-300 mb-8 italic">
+          "A handwritten roadmap of how things started and where they are heading."
+        </p>
+
+        <!-- Timeline Map Grid -->
+        <div class="relative border-l-2 border-dashed border-stone-300 dark:border-stone-700 ml-4 sm:ml-8 space-y-8 pl-6 sm:pl-10">
+          
+          <!-- Node 1 -->
+          <div class="relative group cursor-pointer" onclick="playAudio('paper'); highlightNode(this)">
+            <div class="absolute -left-[31px] sm:-left-[47px] top-0 w-6 h-6 rounded-full bg-terracotta border-4 border-white dark:border-stone-900 group-hover:scale-125 transition-transform"></div>
+            <div class="bg-stone-50 dark:bg-stone-800/50 p-4 rounded-xl border border-stone-200 dark:border-stone-700 group-hover:border-terracotta transition-colors">
+              <span class="font-mono text-xs font-bold text-terracotta">2026 • STARTING POINT</span>
+              <h4 class="font-editorial text-xl font-bold text-ink dark:text-white">BSc. IT @ Techspire University (APU Malaysia)</h4>
+              <p class="font-sans text-sm text-stone-600 dark:text-stone-300 mt-1">Enrolled in formal IT education, building foundation in computer science and software development concepts.</p>
+            </div>
+          </div>
+
+          <!-- Node 2 -->
+          <div class="relative group cursor-pointer" onclick="playAudio('paper'); highlightNode(this)">
+            <div class="absolute -left-[31px] sm:-left-[47px] top-0 w-6 h-6 rounded-full bg-amber-500 border-4 border-white dark:border-stone-900 group-hover:scale-125 transition-transform"></div>
+            <div class="bg-stone-50 dark:bg-stone-800/50 p-4 rounded-xl border border-stone-200 dark:border-stone-700 group-hover:border-amber-500 transition-colors">
+              <span class="font-mono text-xs font-bold text-amber-600 dark:text-amber-400">STEP 01 • WEB DEV</span>
+              <h4 class="font-editorial text-xl font-bold text-ink dark:text-white">Building Websites & Web Applications</h4>
+              <p class="font-sans text-sm text-stone-600 dark:text-stone-300 mt-1">Mastered HTML, CSS, JavaScript, PHP & MySQL by crafting real web layouts, quote platforms, and food showcase apps.</p>
+            </div>
+          </div>
+
+          <!-- Node 3 -->
+          <div class="relative group cursor-pointer" onclick="playAudio('paper'); highlightNode(this)">
+            <div class="absolute -left-[31px] sm:-left-[47px] top-0 w-6 h-6 rounded-full bg-sage border-4 border-white dark:border-stone-900 group-hover:scale-125 transition-transform"></div>
+            <div class="bg-stone-50 dark:bg-stone-800/50 p-4 rounded-xl border border-stone-200 dark:border-stone-700 group-hover:border-sage transition-colors">
+              <span class="font-mono text-xs font-bold text-sage">STEP 02 • NETWORKING</span>
+              <h4 class="font-editorial text-xl font-bold text-ink dark:text-white">Exploring Networking & Protocols</h4>
+              <p class="font-sans text-sm text-stone-600 dark:text-stone-300 mt-1">Diving into OSI models, IP routing, subnetting, and Cisco Packet Tracer to understand how the global web communicates.</p>
+            </div>
+          </div>
+
+          <!-- Node 4 -->
+          <div class="relative group cursor-pointer" onclick="playAudio('paper'); highlightNode(this)">
+            <div class="absolute -left-[31px] sm:-left-[47px] top-0 w-6 h-6 rounded-full bg-inkBlue border-4 border-white dark:border-stone-900 group-hover:scale-125 transition-transform"></div>
+            <div class="bg-stone-50 dark:bg-stone-800/50 p-4 rounded-xl border border-stone-200 dark:border-stone-700 group-hover:border-inkBlue transition-colors">
+              <span class="font-mono text-xs font-bold text-inkBlue dark:text-sky-400">STEP 03 • CYBERSECURITY & PYTHON</span>
+              <h4 class="font-editorial text-xl font-bold text-ink dark:text-white">Cybersecurity & Scripting</h4>
+              <p class="font-sans text-sm text-stone-600 dark:text-stone-300 mt-1">Learning defensive practices, system security concepts, and scripting with Python for automation.</p>
+            </div>
+          </div>
+
+          <!-- Node 5 -->
+          <div class="relative group cursor-pointer" onclick="playAudio('paper'); highlightNode(this)">
+            <div class="absolute -left-[31px] sm:-left-[47px] top-0 w-6 h-6 rounded-full bg-purple-500 border-4 border-white dark:border-stone-900 group-hover:scale-125 transition-transform"></div>
+            <div class="bg-stone-50 dark:bg-stone-800/50 p-4 rounded-xl border border-stone-200 dark:border-stone-700 group-hover:border-purple-500 transition-colors">
+              <span class="font-mono text-xs font-bold text-purple-600 dark:text-purple-400">NEXT HORIZON • AI & BEYOND</span>
+              <h4 class="font-editorial text-xl font-bold text-ink dark:text-white">Building Scalable & Intelligent Systems</h4>
+              <p class="font-sans text-sm text-stone-600 dark:text-stone-300 mt-1">Combining full-stack software development with Stockfish AI algorithms, database optimization, and intelligent automation tools.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 03: PROJECTS — "THINGS I BROKE AND BUILT" -->
+    <section id="projects" class="relative scroll-mt-20">
+      
+      <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+        <div class="flex items-center gap-3">
+          <div class="w-3 h-3 rounded-full bg-terracotta"></div>
+          <h2 class="font-mono text-xs uppercase tracking-widest text-stone-500 dark:text-stone-400">THINGS I BROKE AND BUILT</h2>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap items-center gap-1.5 font-mono text-xs">
+          <button onclick="filterProjects('all', this)" class="proj-btn active px-3 py-1 rounded-full bg-terracotta text-white font-semibold transition">All</button>
+          <button onclick="filterProjects('web', this)" class="proj-btn px-3 py-1 rounded-full bg-stone-200 dark:bg-stone-800 hover:bg-stone-300 dark:hover:bg-stone-700 transition">Web Dev</button>
+          <button onclick="filterProjects('backend', this)" class="proj-btn px-3 py-1 rounded-full bg-stone-200 dark:bg-stone-800 hover:bg-stone-300 dark:hover:bg-stone-700 transition">PHP / SQL</button>
+          <button onclick="filterProjects('ideas', this)" class="proj-btn px-3 py-1 rounded-full bg-stone-200 dark:bg-stone-800 hover:bg-stone-300 dark:hover:bg-stone-700 transition">R&D / Ideas</button>
+        </div>
+      </div>
+
+      <!-- Projects Grid (Tilted Cards Scrapbook Aesthetic) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- Project 01: Personal Portfolio -->
+        <div class="project-card web bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 p-6 rounded-2xl paper-shadow relative transform -rotate-1 hover:rotate-0 hover:scale-[1.01] transition-all duration-300 flex flex-col justify-between">
+          <div class="tape-strip -top-3 left-8 rotate-3"></div>
+
+          <div>
+            <div class="flex justify-between items-start mb-3">
+              <span class="font-mono text-[10px] font-bold px-2.5 py-1 rounded bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300">
+                PROJECT 01
+              </span>
+              <span class="flex items-center gap-1.5 font-mono text-xs text-emerald-600 dark:text-emerald-400">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Live & Evolving
+              </span>
+            </div>
+
+            <h3 class="font-editorial text-2xl font-bold text-ink dark:text-white mb-2">Personal Portfolio & Scrapbook</h3>
+            <p class="font-sans text-sm text-stone-600 dark:text-stone-300 mb-4 leading-relaxed">
+              A personal website built to experiment with unconventional design, HTML, CSS, JavaScript, and Web Audio API interactions. Crafted to feel like an organic personal corner.
+            </p>
+
+            <!-- Tech Badges -->
+            <div class="flex flex-wrap gap-1.5 mb-6 font-mono text-[11px]">
+              <span class="px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300">HTML5</span>
+              <span class="px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300">CSS3</span>
+              <span class="px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300">JavaScript</span>
+              <span class="px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300">Web Audio API</span>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-stone-100 dark:border-stone-800 flex justify-between items-center">
+            <span class="font-handwriting text-stone-400 text-lg">"you are viewing it now"</span>
+            <a href="https://github.com/Krishna-Bhatt-369" target="_blank" rel="noopener" onclick="playAudio('click')" class="px-3 py-1.5 rounded-lg bg-stone-900 text-white dark:bg-stone-100 dark:text-stone-900 font-mono text-xs hover:opacity-90 transition">
+              GitHub Repo →
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 02: Omnifood-style Website -->
+        <div class="project-card web backend bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 p-6 rounded-2xl paper-shadow relative transform rotate-1 hover:rotate-0 hover:scale-[1.01] transition-all duration-300 flex flex-col justify-between">
+          <div class="tape-strip -top-3 right-8 -rotate-6"></div>
+
+          <div>
+            <div class="flex justify-between items-start mb-3">
+              <span class="font-mono text-[10px] font-bold px-2.5 py-1 rounded bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300">
+                PROJECT 02
+              </span>
+              <span class="flex items-center gap-1.5 font-mono text-xs text-emerald-600 dark:text-emerald-400">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Completed
+              </span>
+            </div>
+
+            <h3 class="font-editorial text-2xl font-bold text-ink dark:text-white mb-2">Omnifood-style Food Platform</h3>
+            <p class="font-sans text-sm text-stone-600 dark:text-stone-300 mb-4 leading-relaxed">
+              A comprehensive food showcase and delivery service platform featuring dynamic user options, PHP backend integration, and MySQL database connection.
+            </p>
+
+            <!-- Tech Badges -->
+            <div class="flex flex-wrap gap-1.5 mb-6 font-mono text-[11px]">
+              <span class="px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300">HTML</span>
+              <span class="px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300">CSS</span>
+              <span class="px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300">JavaScript</span>
+              <span class="px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300">PHP</span>
+              <span class="px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300">MySQL</span>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-stone-100 dark:border-stone-800 flex justify-between items-center">
+            <span class="font-handwriting text-stone-400 text-lg">"delicious code"</span>
+            <a href="https://github.com/Krishna-Bhatt-369" target="_blank" rel="noopener" onclick="playAudio('click')" class="px-3 py-1.5 rounded-lg bg-stone-900 text-white dark:bg-stone-100 dark:text-stone-900 font-mono text-xs hover:opacity-90 transition">
+              View Source →
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 03: Shayari / Quote Website -->
+        <div class="project-card web backend bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 p-6 rounded-2xl paper-shadow relative transform rotate-2 hover:rotate-0 hover:scale-[1.01] transition-all duration-300 flex flex-col justify-between">
+          <div class="pushpin"></div>
+
+          <div>
+            <div class="flex justify-between items-start mb-3 pt-2">
+              <span class="font-mono text-[10px] font-bold px-2.5 py-1 rounded bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300">
+                PROJECT 03
+              </span>
+              <span class="flex items-center gap-1.5 font-mono text-xs text-emerald-600 dark:text-emerald-400">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Active Project
+              </span>
+            </div>
+
+            <h3 class="font-editorial text-2xl font-bold text-ink dark:text-white mb-2">Shayari & Quote Portal</h3>
+            <p class="font-sans text-sm text-stone-600 dark:text-stone-300 mb-4 leading-relaxed">
+              Personal quote and shayari sharing portal featuring user profiles, administrative dashboard, secure user authentication/logout, and customized visual CSS card effects.
+            </p>
+
+            <!-- Tech Badges -->
+            <div class="flex flex-wrap gap-1.5 mb-6 font-mono text-[11px]">
+              <span class="px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300">PHP</span>
+              <span class="px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300">MySQL</span>
+              <span class="px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300">CSS3</span>
+              <span class="px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300">Auth / Admin</span>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-stone-100 dark:border-stone-800 flex justify-between items-center">
+            <span class="font-handwriting text-stone-400 text-lg">"words & logic"</span>
+            <a href="https://github.com/Krishna-Bhatt-369" target="_blank" rel="noopener" onclick="playAudio('click')" class="px-3 py-1.5 rounded-lg bg-stone-900 text-white dark:bg-stone-100 dark:text-stone-900 font-mono text-xs hover:opacity-90 transition">
+              View Source →
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 04: Chess Analysis Platform — IDEA -->
+        <div class="project-card ideas backend bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 p-6 rounded-2xl paper-shadow relative transform -rotate-2 hover:rotate-0 hover:scale-[1.01] transition-all duration-300 flex flex-col justify-between">
+          <div class="tape-strip -top-3 left-12 rotate-6"></div>
+
+          <div>
+            <div class="flex justify-between items-start mb-3">
+              <span class="font-mono text-[10px] font-bold px-2.5 py-1 rounded bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-300">
+                PROJECT 04
+              </span>
+              <span class="flex items-center gap-1.5 font-mono text-xs text-amber-600 dark:text-amber-400">
+                <span class="w-2 h-2 rounded-full bg-amber-500 animate-ping"></span> In Concept / R&D
+              </span>
+            </div>
+
+            <h3 class="font-editorial text-2xl font-bold text-ink dark:text-white mb-2">Chess Analysis Platform ♟</h3>
+            <p class="font-sans text-sm text-stone-600 dark:text-stone-300 mb-4 leading-relaxed">
+              A planned intelligent chess match analysis platform leveraging Stockfish engine integration, database tracking for tactical mistakes, and game improvement recommendations.
+            </p>
+
+            <!-- Tech Badges -->
+            <div class="flex flex-wrap gap-1.5 mb-6 font-mono text-[11px]">
+              <span class="px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300">PHP</span>
+              <span class="px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300">MySQL</span>
+              <span class="px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300">XAMPP</span>
+              <span class="px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300">Stockfish API</span>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-stone-100 dark:border-stone-800 flex justify-between items-center">
+            <span class="font-handwriting text-stone-400 text-lg">"e4 e5 Nf3..."</span>
+            <span class="px-3 py-1.5 rounded-lg bg-stone-100 dark:bg-stone-800 font-mono text-xs text-stone-500">
+              Active R&D
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SECTION 04: SKILLS — "THINGS I KNOW (KIND OF)" -->
+    <section id="skills" class="relative scroll-mt-20">
+      
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-3 h-3 rounded-full bg-inkBlue"></div>
+        <h2 class="font-mono text-xs uppercase tracking-widest text-stone-500 dark:text-stone-400">THINGS I KNOW (KIND OF)</h2>
+        <div class="flex-1 h-[1px] bg-stone-200 dark:bg-stone-800"></div>
+        <span class="font-mono text-xs text-stone-400">NO FAKE % BARS</span>
+      </div>
+
+      <!-- Categories Container -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+
+        <!-- WEB -->
+        <div class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 p-5 rounded-2xl paper-shadow space-y-3">
+          <div class="flex items-center justify-between border-b border-stone-100 dark:border-stone-800 pb-2">
+            <h3 class="font-mono text-xs font-bold text-terracotta tracking-wider">WEB DEV</h3>
+            <span class="text-xs">🌐</span>
+          </div>
+          <ul class="space-y-2 font-mono text-xs text-stone-700 dark:text-stone-300">
+            <li onclick="stampSkill('HTML5')" class="cursor-pointer hover:text-terracotta transition flex items-center gap-1.5">
+              <span>•</span> HTML / HTML5
+            </li>
+            <li onclick="stampSkill('CSS3')" class="cursor-pointer hover:text-terracotta transition flex items-center gap-1.5">
+              <span>•</span> CSS3 / Styling
+            </li>
+            <li onclick="stampSkill('JavaScript')" class="cursor-pointer hover:text-terracotta transition flex items-center gap-1.5">
+              <span>•</span> JavaScript (ES6)
+            </li>
+            <li onclick="stampSkill('PHP')" class="cursor-pointer hover:text-terracotta transition flex items-center gap-1.5">
+              <span>•</span> PHP
+            </li>
+          </ul>
+        </div>
+
+        <!-- DATABASE -->
+        <div class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 p-5 rounded-2xl paper-shadow space-y-3">
+          <div class="flex items-center justify-between border-b border-stone-100 dark:border-stone-800 pb-2">
+            <h3 class="font-mono text-xs font-bold text-sage tracking-wider">DATABASE</h3>
+            <span class="text-xs">🗄️</span>
+          </div>
+          <ul class="space-y-2 font-mono text-xs text-stone-700 dark:text-stone-300">
+            <li onclick="stampSkill('MySQL')" class="cursor-pointer hover:text-sage transition flex items-center gap-1.5">
+              <span>•</span> MySQL
+            </li>
+            <li onclick="stampSkill('SQL Queries')" class="cursor-pointer hover:text-sage transition flex items-center gap-1.5">
+              <span>•</span> SQL Queries & Schemas
+            </li>
+            <li onclick="stampSkill('Relational DB')" class="cursor-pointer hover:text-sage transition flex items-center gap-1.5">
+              <span>•</span> Relational Databases
+            </li>
+          </ul>
+        </div>
+
+        <!-- TOOLS & ENV -->
+        <div class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 p-5 rounded-2xl paper-shadow space-y-3">
+          <div class="flex items-center justify-between border-b border-stone-100 dark:border-stone-800 pb-2">
+            <h3 class="font-mono text-xs font-bold text-inkBlue dark:text-sky-400 tracking-wider">TOOLS & ENV</h3>
+            <span class="text-xs">🛠️</span>
+          </div>
+          <ul class="space-y-2 font-mono text-xs text-stone-700 dark:text-stone-300">
+            <li onclick="stampSkill('Git')" class="cursor-pointer hover:text-inkBlue transition flex items-center gap-1.5">
+              <span>•</span> Git Version Control
+            </li>
+            <li onclick="stampSkill('GitHub')" class="cursor-pointer hover:text-inkBlue transition flex items-center gap-1.5">
+              <span>•</span> GitHub Repos
+            </li>
+            <li onclick="stampSkill('XAMPP')" class="cursor-pointer hover:text-inkBlue transition flex items-center gap-1.5">
+              <span>•</span> XAMPP Local Server
+            </li>
+            <li onclick="stampSkill('Packet Tracer')" class="cursor-pointer hover:text-inkBlue transition flex items-center gap-1.5">
+              <span>•</span> Cisco Packet Tracer
+            </li>
+          </ul>
+        </div>
+
+        <!-- CURRENTLY LEARNING -->
+        <div class="bg-amber-50/50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800/60 p-5 rounded-2xl paper-shadow space-y-3">
+          <div class="flex items-center justify-between border-b border-amber-200 dark:border-amber-800 pb-2">
+            <h3 class="font-mono text-xs font-bold text-amber-800 dark:text-amber-300 tracking-wider">CURRENTLY LEARNING</h3>
+            <span class="text-xs">🌱</span>
+          </div>
+          <ul class="space-y-2 font-mono text-xs text-stone-700 dark:text-stone-300">
+            <li onclick="stampSkill('Python 🐍')" class="cursor-pointer hover:text-amber-600 transition flex items-center gap-1.5">
+              <span>•</span> Python
+            </li>
+            <li onclick="stampSkill('Networking 📡')" class="cursor-pointer hover:text-amber-600 transition flex items-center gap-1.5">
+              <span>•</span> Networking
+            </li>
+            <li onclick="stampSkill('Cybersecurity 🔐')" class="cursor-pointer hover:text-amber-600 transition flex items-center gap-1.5">
+              <span>•</span> Cybersecurity
+            </li>
+            <li onclick="stampSkill('AI Concepts 🤖')" class="cursor-pointer hover:text-amber-600 transition flex items-center gap-1.5">
+              <span>•</span> AI Concepts & Prompts
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Interactive Skill Stamp Canvas Box -->
+      <div class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-6 paper-shadow relative overflow-hidden">
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-4 border-b border-stone-100 dark:border-stone-800 pb-3">
+          <div>
+            <h4 class="font-editorial text-xl font-bold text-ink dark:text-white">Interactive Skill Stamper Pad</h4>
+            <p class="font-handwriting text-lg text-stone-500">Click any skill above or button below to stamp onto Krishna's pad!</p>
+          </div>
+          <button onclick="clearStamps()" class="px-3 py-1 text-xs font-mono rounded bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 text-stone-600 dark:text-stone-300">
+            Clear Pad 🧼
+          </button>
+        </div>
+
+        <!-- Stamp Board Container -->
+        <div id="stamp-board" class="min-h-[120px] bg-stone-50 dark:bg-stone-950/60 rounded-xl border-2 border-dashed border-stone-200 dark:border-stone-800 p-4 relative flex flex-wrap gap-3 items-center justify-center">
+          <span id="empty-stamp-text" class="font-handwriting text-2xl text-stone-400 select-none">
+            [ Pad is clean. Click a skill to stamp here! ]
+          </span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SECTION 05: "THE STUFF I LIKE" -->
+    <section id="stuff" class="relative scroll-mt-20">
+      
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-3 h-3 rounded-full bg-terracotta"></div>
+        <h2 class="font-mono text-xs uppercase tracking-widest text-stone-500 dark:text-stone-400">THE STUFF I LIKE</h2>
+        <div class="flex-1 h-[1px] bg-stone-200 dark:bg-stone-800"></div>
+        <span class="font-mono text-xs text-stone-400">COLLECTIBLES</span>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+        
+        <!-- Badge 1: Chess -->
+        <div onclick="showInterestNote('Chess', 'Chess is my favorite mental workout! I love analyzing tactical moves and endgames.', '♟️')" class="group cursor-pointer bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 p-4 rounded-xl paper-shadow hover:scale-105 transition transform text-center space-y-1">
+          <div class="text-3xl group-hover:rotate-12 transition-transform">♟️</div>
+          <div class="font-editorial font-bold text-lg text-ink dark:text-white">Chess</div>
+          <div class="font-handwriting text-sm text-stone-500">Tactics & Stockfish</div>
+        </div>
+
+        <!-- Badge 2: Gaming -->
+        <div onclick="showInterestNote('Gaming', 'Immersive world building, strategy, and casual games to unwind after coding sessions.', '🎮')" class="group cursor-pointer bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 p-4 rounded-xl paper-shadow hover:scale-105 transition transform text-center space-y-1">
+          <div class="text-3xl group-hover:rotate-12 transition-transform">🎮</div>
+          <div class="font-editorial font-bold text-lg text-ink dark:text-white">Gaming</div>
+          <div class="font-handwriting text-sm text-stone-500">Unwinding & Strategy</div>
+        </div>
+
+        <!-- Badge 3: Technology -->
+        <div onclick="showInterestNote('Technology', 'From CPU hardware architecture to full-stack web applications.', '💻')" class="group cursor-pointer bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 p-4 rounded-xl paper-shadow hover:scale-105 transition transform text-center space-y-1">
+          <div class="text-3xl group-hover:rotate-12 transition-transform">💻</div>
+          <div class="font-editorial font-bold text-lg text-ink dark:text-white">Technology</div>
+          <div class="font-handwriting text-sm text-stone-500">Always Curious</div>
+        </div>
+
+        <!-- Badge 4: AI -->
+        <div onclick="showInterestNote('AI', 'Exploring machine learning models, prompt engineering, and local LLM workflows.', '🤖')" class="group cursor-pointer bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 p-4 rounded-xl paper-shadow hover:scale-105 transition transform text-center space-y-1">
+          <div class="text-3xl group-hover:rotate-12 transition-transform">🤖</div>
+          <div class="font-editorial font-bold text-lg text-ink dark:text-white">AI & Automation</div>
+          <div class="font-handwriting text-sm text-stone-500">Building Smart Tools</div>
+        </div>
+
+        <!-- Badge 5: Web Dev -->
+        <div onclick="showInterestNote('Web Dev', 'Crafting unique web layouts that do not look like generic enterprise templates!', '🌐')" class="group cursor-pointer bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 p-4 rounded-xl paper-shadow hover:scale-105 transition transform text-center space-y-1">
+          <div class="text-3xl group-hover:rotate-12 transition-transform">🌐</div>
+          <div class="font-editorial font-bold text-lg text-ink dark:text-white">Web Development</div>
+          <div class="font-handwriting text-sm text-stone-500">UI / Frontend / PHP</div>
+        </div>
+
+        <!-- Badge 6: Cybersecurity -->
+        <div onclick="showInterestNote('Cybersecurity', 'Understanding network packets, vulnerabilities, and digital defense.', '🔐')" class="group cursor-pointer bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 p-4 rounded-xl paper-shadow hover:scale-105 transition transform text-center space-y-1">
+          <div class="text-3xl group-hover:rotate-12 transition-transform">🔐</div>
+          <div class="font-editorial font-bold text-lg text-ink dark:text-white">Cybersecurity</div>
+          <div class="font-handwriting text-sm text-stone-500">Security Fundamentals</div>
+        </div>
+
+        <!-- Badge 7: Movies & Series -->
+        <div onclick="showInterestNote('Movies & Series', 'Sci-fi, thrillers, tech documentaries, and mind-bending cinema.', '🎬')" class="group cursor-pointer bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 p-4 rounded-xl paper-shadow hover:scale-105 transition transform text-center space-y-1">
+          <div class="text-3xl group-hover:rotate-12 transition-transform">🎬</div>
+          <div class="font-editorial font-bold text-lg text-ink dark:text-white">Movies & Series</div>
+          <div class="font-handwriting text-sm text-stone-500">Sci-Fi & Thrillers</div>
+        </div>
+
+        <!-- Badge 8: Anime / Manga -->
+        <div onclick="showInterestNote('Anime / Manga', 'Appreciating creative storytelling, detailed artwork, and character arcs.', '📚')" class="group cursor-pointer bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 p-4 rounded-xl paper-shadow hover:scale-105 transition transform text-center space-y-1">
+          <div class="text-3xl group-hover:rotate-12 transition-transform">📚</div>
+          <div class="font-editorial font-bold text-lg text-ink dark:text-white">Anime / Manga</div>
+          <div class="font-handwriting text-sm text-stone-500">Art & Stories</div>
+        </div>
+
+      </div>
+
+      <!-- Mini Chess Tactic Thought Box -->
+      <div class="bg-stone-900 text-stone-100 rounded-2xl p-6 paper-shadow relative overflow-hidden flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="space-y-1 text-center sm:text-left">
+          <div class="font-mono text-xs text-amber-400 font-bold uppercase tracking-wider">♟️ Mini Chess Tactic Note</div>
+          <p id="chess-quote-text" class="font-editorial text-xl italic text-stone-200">
+            "When you see a good move, look for a better one." — Emanuel Lasker
+          </p>
+        </div>
+        <button onclick="nextChessQuote()" class="whitespace-nowrap px-4 py-2 rounded-xl bg-terracotta hover:bg-opacity-90 text-white font-mono text-xs transition">
+          Next Thought ↻
+        </button>
+      </div>
+
+    </section>
+
+    <!-- SECTION 06: EDUCATION — "CURRENT CHAPTER" -->
+    <section id="education" class="relative scroll-mt-20">
+      
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-3 h-3 rounded-full bg-sage"></div>
+        <h2 class="font-mono text-xs uppercase tracking-widest text-stone-500 dark:text-stone-400">EDUCATION — CURRENT CHAPTER</h2>
+        <div class="flex-1 h-[1px] bg-stone-200 dark:bg-stone-800"></div>
+        <span class="font-mono text-xs text-stone-400">ACADEMICS</span>
+      </div>
+
+      <div class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-6 sm:p-8 paper-shadow relative">
+        <div class="tape-strip -top-3 left-10 rotate-2"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+          
+          <div class="md:col-span-8 space-y-3">
+            <span class="font-mono text-xs px-2.5 py-1 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 font-bold">
+              CURRENT DEGREE
+            </span>
+
+            <h3 class="font-editorial text-3xl font-bold text-ink dark:text-white">
+              BSc. IT (Bachelor of Science in Information Technology)
+            </h3>
+
+            <div class="space-y-1 font-sans text-stone-700 dark:text-stone-300 text-sm sm:text-base">
+              <p class="font-semibold text-ink dark:text-stone-200">
+                🏫 Techspire University, Nepal
+              </p>
+              <p class="text-stone-500 dark:text-stone-400">
+                🤝 Affiliated with <strong>Asia Pacific University of Technology & Innovation (APU), Malaysia</strong>
+              </p>
+            </div>
+
+            <div class="pt-2 font-mono text-xs text-stone-500 flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              Status: Currently studying & active learner
+            </div>
+          </div>
+
+          <div class="md:col-span-4 bg-amber-50 dark:bg-stone-800 p-5 rounded-xl border border-amber-200 dark:border-stone-700 text-center space-y-2">
+            <div class="text-4xl">🎓</div>
+            <p class="font-handwriting text-2xl text-amber-900 dark:text-amber-200">
+              "Learning one thing at a time."
+            </p>
+            <p class="font-mono text-[10px] text-stone-400 uppercase tracking-widest">
+              ACADEMIC JOURNEY
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SECTION 07: "NOW" — WHAT I'M DOING RIGHT NOW -->
+    <section id="now" class="relative scroll-mt-20">
+      
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-3 h-3 rounded-full bg-terracotta"></div>
+        <h2 class="font-mono text-xs uppercase tracking-widest text-stone-500 dark:text-stone-400">WHAT I'M DOING RIGHT NOW</h2>
+        <div class="flex-1 h-[1px] bg-stone-200 dark:bg-stone-800"></div>
+        <span class="font-mono text-xs text-stone-400">LIVE PAGE</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        
+        <div class="bg-stickyYellow dark:bg-stickyYellowDark text-stone-900 dark:text-amber-100 p-5 rounded-xl shadow-sm border border-amber-200 dark:border-amber-900 transform -rotate-1 hover:rotate-0 transition-transform">
+          <span class="font-mono text-[10px] text-amber-800 dark:text-amber-400 font-bold">FOCUS 01</span>
+          <p class="font-editorial text-xl font-bold mt-1">🐍 Learning Python</p>
+          <p class="font-sans text-xs text-stone-600 dark:text-amber-300/80 mt-1">Building clean scripts, understanding data structures, and automation basics.</p>
+        </div>
+
+        <div class="bg-stickyMint dark:bg-emerald-950/40 text-stone-900 dark:text-emerald-100 p-5 rounded-xl shadow-sm border border-emerald-200 dark:border-emerald-900 transform rotate-1 hover:rotate-0 transition-transform">
+          <span class="font-mono text-[10px] text-emerald-800 dark:text-emerald-400 font-bold">FOCUS 02</span>
+          <p class="font-editorial text-xl font-bold mt-1">🌐 Web Projects</p>
+          <p class="font-sans text-xs text-stone-600 dark:text-emerald-300/80 mt-1">Refining responsive layouts, JavaScript logic, and PHP backend integration.</p>
+        </div>
+
+        <div class="bg-stickyPink dark:bg-pink-950/40 text-stone-900 dark:text-pink-100 p-5 rounded-xl shadow-sm border border-pink-200 dark:border-pink-900 transform -rotate-2 hover:rotate-0 transition-transform">
+          <span class="font-mono text-[10px] text-pink-800 dark:text-pink-400 font-bold">FOCUS 03</span>
+          <p class="font-editorial text-xl font-bold mt-1">📡 Networking</p>
+          <p class="font-sans text-xs text-stone-600 dark:text-pink-300/80 mt-1">Understanding TCP/IP, routing protocols, and Cisco Packet Tracer configurations.</p>
+        </div>
+
+        <div class="bg-stickyBlue dark:bg-sky-950/40 text-stone-900 dark:text-sky-100 p-5 rounded-xl shadow-sm border border-sky-200 dark:border-sky-900 transform rotate-2 hover:rotate-0 transition-transform">
+          <span class="font-mono text-[10px] text-sky-800 dark:text-sky-400 font-bold">FOCUS 04</span>
+          <p class="font-editorial text-xl font-bold mt-1">🛡️ Cybersecurity</p>
+          <p class="font-sans text-xs text-stone-600 dark:text-sky-300/80 mt-1">Diving into web security fundamentals, defensive tools, and ethical concepts.</p>
+        </div>
+
+        <div class="bg-stone-100 dark:bg-stone-800 text-stone-900 dark:text-stone-100 p-5 rounded-xl shadow-sm border border-stone-200 dark:border-stone-700 transform -rotate-1 hover:rotate-0 transition-transform">
+          <span class="font-mono text-[10px] text-stone-500 font-bold">FOCUS 05</span>
+          <p class="font-editorial text-xl font-bold mt-1">🧠 Experimenting AI</p>
+          <p class="font-sans text-xs text-stone-600 dark:text-stone-300 mt-1">Testing AI prompts, workflow automation, and Stockfish engine ideas.</p>
+        </div>
+
+        <div class="bg-amber-100/60 dark:bg-amber-950/40 text-stone-900 dark:text-amber-100 p-5 rounded-xl shadow-sm border border-amber-200 dark:border-amber-900 transform rotate-1 hover:rotate-0 transition-transform">
+          <span class="font-mono text-[10px] text-amber-800 dark:text-amber-400 font-bold">GOAL</span>
+          <p class="font-editorial text-xl font-bold mt-1">⚡ Becoming Better</p>
+          <p class="font-sans text-xs text-stone-600 dark:text-amber-300/80 mt-1">Trying to write cleaner code and improve as a software thinker every single day.</p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SECTION 08: CONTACT — "LEAVE A NOTE" -->
+    <section id="contact" class="relative scroll-mt-20">
+      
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-3 h-3 rounded-full bg-terracotta"></div>
+        <h2 class="font-mono text-xs uppercase tracking-widest text-stone-500 dark:text-stone-400">LEAVE A NOTE</h2>
+        <div class="flex-1 h-[1px] bg-stone-200 dark:bg-stone-800"></div>
+        <span class="font-mono text-xs text-stone-400">SAY HI</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left Direct Contact Card -->
+        <div class="lg:col-span-5 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-6 sm:p-8 paper-shadow space-y-6">
+          
+          <div>
+            <h3 class="font-editorial text-3xl font-bold text-ink dark:text-white">Let's Connect</h3>
+            <p class="font-sans text-sm text-stone-600 dark:text-stone-300 mt-2">
+              If you found something interesting here, feel free to say hi or drop a message!
+            </p>
+          </div>
+
+          <!-- Email Button with Instant Copy -->
+          <div class="p-4 rounded-xl bg-stone-50 dark:bg-stone-800/80 border border-stone-200 dark:border-stone-700 space-y-2">
+            <span class="font-mono text-[10px] text-stone-400 uppercase tracking-widest block">DIRECT EMAIL</span>
+            <div class="font-mono text-sm font-bold text-ink dark:text-stone-200 break-all">
+              kb9291972@gmail.com
+            </div>
+            <button onclick="copyEmail('kb9291972@gmail.com')" class="w-full py-2 px-3 rounded-lg bg-terracotta hover:bg-opacity-90 text-white font-mono text-xs transition flex items-center justify-center gap-1.5 shadow-sm">
+              <span>📋</span> Copy Email Address
+            </button>
+          </div>
+
+          <!-- Links -->
+          <div class="space-y-3 font-mono text-xs">
+            <a href="https://github.com/Krishna-Bhatt-369" target="_blank" rel="noopener" onclick="playAudio('click')" class="w-full p-3 rounded-xl bg-stone-100 dark:bg-stone-800/60 hover:bg-stone-200 dark:hover:bg-stone-700 border border-stone-200 dark:border-stone-700 transition flex items-center justify-between">
+              <span class="flex items-center gap-2"><span>🐙</span> GitHub Profile</span>
+              <span>→</span>
+            </a>
+            <a href="https://www.linkedin.com/in/krishna-parshad-bhatt-a80402330/" target="_blank" rel="noopener" onclick="playAudio('click')" class="w-full p-3 rounded-xl bg-stone-100 dark:bg-stone-800/60 hover:bg-stone-200 dark:hover:bg-stone-700 border border-stone-200 dark:border-stone-700 transition flex items-center justify-between">
+              <span class="flex items-center gap-2"><span>💼</span> LinkedIn Network</span>
+              <span>→</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right Interactive Sticky Note Guestbook -->
+        <div class="lg:col-span-7 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-6 sm:p-8 paper-shadow space-y-6">
+          
+          <div>
+            <h3 class="font-editorial text-2xl font-bold text-ink dark:text-white">Pin a Sticky Note on Krishna's Board 📌</h3>
+            <p class="font-handwriting text-xl text-stone-500">Leave a quick message for my digital desk board (saved locally)!</p>
+          </div>
+
+          <!-- Note Form -->
+          <form id="guestbook-form" onsubmit="addStickyNote(event)" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <input type="text" id="note-author" placeholder="Your Name or Alias" required class="p-3 rounded-xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-sm font-sans focus:outline-none focus:border-terracotta text-ink dark:text-white">
+              
+              <!-- Color Selector -->
+              <div class="flex items-center gap-2">
+                <span class="font-mono text-xs text-stone-500">Color:</span>
+                <label class="cursor-pointer"><input type="radio" name="noteColor" value="yellow" checked class="hidden peer"><span class="w-6 h-6 rounded-full bg-stickyYellow inline-block border-2 border-transparent peer-checked:border-terracotta"></span></label>
+                <label class="cursor-pointer"><input type="radio" name="noteColor" value="mint" class="hidden peer"><span class="w-6 h-6 rounded-full bg-stickyMint inline-block border-2 border-transparent peer-checked:border-terracotta"></span></label>
+                <label class="cursor-pointer"><input type="radio" name="noteColor" value="pink" class="hidden peer"><span class="w-6 h-6 rounded-full bg-stickyPink inline-block border-2 border-transparent peer-checked:border-terracotta"></span></label>
+                <label class="cursor-pointer"><input type="radio" name="noteColor" value="blue" class="hidden peer"><span class="w-6 h-6 rounded-full bg-stickyBlue inline-block border-2 border-transparent peer-checked:border-terracotta"></span></label>
+              </div>
+            </div>
+
+            <textarea id="note-message" placeholder="Type your friendly note here..." rows="2" required class="w-full p-3 rounded-xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-sm font-sans focus:outline-none focus:border-terracotta text-ink dark:text-white resize-none"></textarea>
+
+            <button type="submit" class="px-5 py-2.5 rounded-xl bg-stone-900 text-white dark:bg-stone-100 dark:text-stone-900 font-mono text-xs font-bold hover:opacity-90 transition shadow-sm">
+              Pin Note 📌
+            </button>
+          </form>
+
+          <!-- Pinned Sticky Notes Display Board -->
+          <div id="sticky-board" class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <!-- Dynamic sticky notes loaded via JS -->
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="w-full border-t border-stone-200 dark:border-stone-800 py-10 px-4 bg-paper/60 dark:bg-paperDark/60">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-stone-500">
+      
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-terracotta"></span>
+        <span>Made by Krishna Bhatt</span>
+      </div>
+
+      <div class="font-handwriting text-xl text-stone-600 dark:text-stone-400 text-center">
+        "Thanks for visiting my little corner of the internet."
+      </div>
+
+      <div class="flex items-center gap-4">
+        <span>PAGE 01 / ∞</span>
+        <a href="#hero" onclick="playAudio('paper')" class="px-3 py-1.5 rounded bg-stone-200 dark:bg-stone-800 hover:bg-stone-300 text-stone-800 dark:text-stone-200 transition">
+          Ribbon Top ↑
+        </a>
+      </div>
+
     </div>
+  </footer>
 
-    <!-- TOAST NOTIFICATION CONTAINER -->
-    <div id="toast" class="fixed bottom-6 right-6 z-50 glass-panel px-4 py-3 rounded-lg border border-accentCyan/40 text-xs font-mono text-white flex items-center gap-3 shadow-xl transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
-        <i class="fa-solid fa-circle-check text-accentCyan text-sm"></i>
-        <span id="toast-message">Email address copied to clipboard!</span>
-    </div>
+  <!-- Toast Notification Box -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-stone-900 text-white px-4 py-3 rounded-xl font-mono text-xs shadow-2xl flex items-center gap-2">
+    <span id="toast-icon">✨</span>
+    <span id="toast-msg">Notification</span>
+  </div>
 
-    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
-    <script>
-        // PRELOADER TIMING ENGINE
-        window.addEventListener('load', () => {
-            const bar = document.getElementById('loader-bar');
-            const status = document.getElementById('loader-status');
-            const preloader = document.getElementById('preloader');
+  <script>
+    /* Audio FX Synthesizer using Web Audio API */
+    let audioEnabled = true;
+    let audioCtx = null;
 
-            bar.style.width = '50%';
-            setTimeout(() => {
-                bar.style.width = '100%';
-                status.textContent = 'KRISHNA BHATT // ONLINE';
-                status.classList.add('text-accentCyan');
+    function getAudioContext() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
 
-                setTimeout(() => {
-                    preloader.classList.add('opacity-0');
-                    setTimeout(() => {
-                        preloader.style.display = 'none';
-                    }, 700);
-                }, 600);
-            }, 400);
-        });
+    function toggleSound() {
+      audioEnabled = !audioEnabled;
+      document.getElementById('sound-icon').innerText = audioEnabled ? '🔊' : '🔇';
+      showToast(audioEnabled ? "Audio FX Enabled" : "Audio FX Muted", "🔔");
+    }
 
-        // PARTICLE CANVAS STARFIELD ENGINE
-        (function initCanvas() {
-            const canvas = document.getElementById('bg-canvas');
-            const ctx = canvas.getContext('2d');
+    function playAudio(type) {
+      if (!audioEnabled) return;
+      try {
+        const ctx = getAudioContext();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.connect(gain);
+        gain.connect(ctx.destination);
 
-            let width, height;
-            let particles = [];
-            const particleCount = 45;
-
-            function resize() {
-                width = canvas.width = window.innerWidth;
-                height = canvas.height = window.innerHeight;
-            }
-
-            class Particle {
-                constructor() {
-                    this.reset();
-                }
-
-                reset() {
-                    this.x = Math.random() * width;
-                    this.y = Math.random() * height;
-                    this.vx = (Math.random() - 0.5) * 0.4;
-                    this.vy = (Math.random() - 0.5) * 0.4;
-                    this.radius = Math.random() * 1.5 + 0.5;
-                    this.alpha = Math.random() * 0.5 + 0.2;
-                }
-
-                update() {
-                    this.x += this.vx;
-                    this.y += this.vy;
-
-                    if (this.x < 0 || this.x > width) this.vx *= -1;
-                    if (this.y < 0 || this.y > height) this.vy *= -1;
-                }
-
-                draw() {
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(6, 182, 212, ${this.alpha})`;
-                    ctx.fill();
-                }
-            }
-
-            function setup() {
-                resize();
-                particles = [];
-                for (let i = 0; i < particleCount; i++) {
-                    particles.push(new Particle());
-                }
-            }
-
-            function connectParticles() {
-                for (let i = 0; i < particles.length; i++) {
-                    for (let j = i + 1; j < particles.length; j++) {
-                        const dx = particles[i].x - particles[j].x;
-                        const dy = particles[i].y - particles[j].y;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
-
-                        if (dist < 130) {
-                            ctx.beginPath();
-                            ctx.moveTo(particles[i].x, particles[i].y);
-                            ctx.lineTo(particles[j].x, particles[j].y);
-                            ctx.strokeStyle = `rgba(59, 130, 246, ${0.15 * (1 - dist / 130)})`;
-                            ctx.lineWidth = 0.6;
-                            ctx.stroke();
-                        }
-                    }
-                }
-            }
-
-            function animate() {
-                ctx.clearRect(0, 0, width, height);
-
-                // Draw background grid lines
-                ctx.strokeStyle = 'rgba(255, 255, 255, 0.015)';
-                ctx.lineWidth = 1;
-                const gridSize = 80;
-                for (let x = 0; x < width; x += gridSize) {
-                    ctx.beginPath();
-                    ctx.moveTo(x, 0);
-                    ctx.lineTo(x, height);
-                    ctx.stroke();
-                }
-                for (let y = 0; y < height; y += gridSize) {
-                    ctx.beginPath();
-                    ctx.moveTo(0, y);
-                    ctx.lineTo(width, y);
-                    ctx.stroke();
-                }
-
-                particles.forEach(p => {
-                    p.update();
-                    p.draw();
-                });
-
-                connectParticles();
-                requestAnimationFrame(animate);
-            }
-
-            window.addEventListener('resize', resize);
-            setup();
-            animate();
-        })();
-
-        // MOBILE MENU TOGGLE
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = document.getElementById('menu-icon');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            if (mobileMenu.classList.contains('hidden')) {
-                menuIcon.className = 'fa-solid fa-bars text-xl';
-            } else {
-                menuIcon.className = 'fa-solid fa-xmark text-xl';
-            }
-        });
-
-        document.querySelectorAll('.mobile-nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                menuIcon.className = 'fa-solid fa-bars text-xl';
-            });
-        });
-
-        // TERMINAL TYPING ANIMATION
-        const typingElement = document.getElementById('typing-text');
-        const phrases = ['python3 script.py', 'git commit -m "Learning AI"', 'ping techspire.edu.np'];
-        let phraseIdx = 0;
-        let charIdx = 0;
-        let isDeleting = false;
-
-        function typeLoop() {
-            const currentPhrase = phrases[phraseIdx];
-            
-            if (isDeleting) {
-                typingElement.textContent = currentPhrase.substring(0, charIdx - 1);
-                charIdx--;
-            } else {
-                typingElement.textContent = currentPhrase.substring(0, charIdx + 1);
-                charIdx++;
-            }
-
-            let typeSpeed = isDeleting ? 40 : 80;
-
-            if (!isDeleting && charIdx === currentPhrase.length) {
-                typeSpeed = 2000; // Pause at end
-                isDeleting = true;
-            } else if (isDeleting && charIdx === 0) {
-                isDeleting = false;
-                phraseIdx = (phraseIdx + 1) % phrases.length;
-                typeSpeed = 500; // Pause before typing next
-            }
-
-            setTimeout(typeLoop, typeSpeed);
+        const now = ctx.currentTime;
+        if (type === 'click') {
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(320, now);
+          osc.frequency.exponentialRampToValueAtTime(120, now + 0.05);
+          gain.gain.setValueAtTime(0.15, now);
+          gain.gain.exponentialRampToValueAtTime(0.01, now + 0.05);
+          osc.start(now);
+          osc.stop(now + 0.05);
+        } else if (type === 'paper') {
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(180, now);
+          osc.frequency.exponentialRampToValueAtTime(80, now + 0.08);
+          gain.gain.setValueAtTime(0.1, now);
+          gain.gain.exponentialRampToValueAtTime(0.01, now + 0.08);
+          osc.start(now);
+          osc.stop(now + 0.08);
+        } else if (type === 'stamp') {
+          osc.type = 'square';
+          osc.frequency.setValueAtTime(140, now);
+          osc.frequency.exponentialRampToValueAtTime(40, now + 0.1);
+          gain.gain.setValueAtTime(0.2, now);
+          gain.gain.exponentialRampToValueAtTime(0.01, now + 0.1);
+          osc.start(now);
+          osc.stop(now + 0.1);
         }
-        typeLoop();
+      } catch (e) {
+        // Audio fallback ignore
+      }
+    }
 
-        // COPY EMAIL FUNCTION WITH FALLBACK
-        function copyEmailToClipboard() {
-            const email = 'kb9291972@gmail.com';
-            
-            // Fallback execCommand for iframe compatibility
-            const tempInput = document.createElement('input');
-            tempInput.value = email;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand('copy');
-            document.body.removeChild(tempInput);
+    /* Desk Lamp / Theme Switch Logic */
+    function toggleTheme() {
+      playAudio('click');
+      const html = document.documentElement;
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        document.getElementById('theme-icon').innerText = '💡';
+        document.getElementById('theme-text').innerText = 'Day Desk';
+        showToast("Switched to Day Desk Mode ☀️", "💡");
+      } else {
+        html.classList.add('dark');
+        document.getElementById('theme-icon').innerText = '🌙';
+        document.getElementById('theme-text').innerText = 'Night Desk';
+        showToast("Switched to Cozy Night Desk 🌙", "💡");
+      }
+    }
 
-            showToast('Email address copied to clipboard!');
+    /* Nepal Live Clock */
+    function updateNepalClock() {
+      const now = new Date();
+      // Nepal offset is UTC +5:45
+      const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000);
+      const nepalTime = new Date(utcTime + (5.75 * 3600000));
+      
+      let hours = nepalTime.getHours();
+      let minutes = nepalTime.getMinutes();
+      let seconds = nepalTime.getSeconds();
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12;
+      hours = hours ? hours : 12;
+      minutes = minutes < 10 ? '0' + minutes : minutes;
+      seconds = seconds < 10 ? '0' + seconds : seconds;
+
+      const clockEl = document.getElementById('nepal-clock');
+      if (clockEl) {
+        clockEl.innerText = `${hours}:${minutes}:${seconds} ${ampm}`;
+      }
+    }
+    setInterval(updateNepalClock, 1000);
+    updateNepalClock();
+
+    /* Toast Notification */
+    function showToast(msg, icon = "✨") {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-msg').innerText = msg;
+      document.getElementById('toast-icon').innerText = icon;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 2500);
+    }
+
+    /* Copy Email Logic */
+    function copyEmail(email) {
+      playAudio('click');
+      const tempInput = document.createElement('input');
+      tempInput.value = email;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+      showToast("Email address copied to clipboard!", "📋");
+    }
+
+    /* Project Filtering */
+    function filterProjects(category, btn) {
+      playAudio('paper');
+      document.querySelectorAll('.proj-btn').forEach(b => {
+        b.classList.remove('bg-terracotta', 'text-white', 'font-semibold');
+        b.classList.add('bg-stone-200', 'dark:bg-stone-800');
+      });
+      btn.classList.remove('bg-stone-200', 'dark:bg-stone-800');
+      btn.classList.add('bg-terracotta', 'text-white', 'font-semibold');
+
+      const cards = document.querySelectorAll('.project-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.classList.contains(category)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
         }
+      });
+    }
 
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            const toastMsg = document.getElementById('toast-message');
-            toastMsg.textContent = message;
-            
-            toast.classList.remove('translate-y-20', 'opacity-0');
-            toast.classList.add('translate-y-0', 'opacity-100');
+    /* Interactive Skill Stamper */
+    const stampedSkills = new Set();
+    function stampSkill(skillName) {
+      playAudio('stamp');
+      const board = document.getElementById('stamp-board');
+      const emptyText = document.getElementById('empty-stamp-text');
+      if (emptyText) emptyText.remove();
 
-            setTimeout(() => {
-                toast.classList.remove('translate-y-0', 'opacity-100');
-                toast.classList.add('translate-y-20', 'opacity-0');
-            }, 3000);
+      const stamp = document.createElement('div');
+      const rotation = Math.floor(Math.random() * 20) - 10;
+      stamp.style.setProperty('--stamp-rotate', `${rotation}deg`);
+      
+      stamp.className = "animate-stamp inline-block font-mono text-xs font-bold px-3 py-1.5 rounded-lg border-2 border-terracotta text-terracotta bg-amber-50 dark:bg-stone-800 shadow-sm cursor-pointer select-none";
+      stamp.innerHTML = `★ ${skillName}`;
+      stamp.title = "Click to unstamp";
+      
+      stamp.onclick = function() {
+        playAudio('paper');
+        stamp.remove();
+        if (board.children.length === 0) {
+          board.innerHTML = `<span id="empty-stamp-text" class="font-handwriting text-2xl text-stone-400 select-none">[ Pad is clean. Click a skill to stamp here! ]</span>`;
         }
+      };
 
-        // COPY HERO CODE
-        document.getElementById('copy-hero-code')?.addEventListener('click', () => {
-            const codeText = "Krishna Parshad Bhatt\nBSc. IT Student\nTechspire University / APU Malaysia\nEmail: kb9291972@gmail.com";
-            const tempInput = document.createElement('textarea');
-            tempInput.value = codeText;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand('copy');
-            document.body.removeChild(tempInput);
+      board.appendChild(stamp);
+      showToast(`Stamped "${skillName}" onto notebook!`, "🏷️");
+    }
 
-            showToast('Developer info copied to clipboard!');
-        });
+    function clearStamps() {
+      playAudio('paper');
+      const board = document.getElementById('stamp-board');
+      board.innerHTML = `<span id="empty-stamp-text" class="font-handwriting text-2xl text-stone-400 select-none">[ Pad is clean. Click a skill to stamp here! ]</span>`;
+    }
 
-        // PROJECT MODAL HANDLER
-        function openProjectModal(title, description, techArray, status) {
-            const modal = document.getElementById('project-modal');
-            const modalTitle = document.getElementById('modal-title');
-            const modalDesc = document.getElementById('modal-description');
-            const modalTech = document.getElementById('modal-tech');
-            const modalStatus = document.getElementById('modal-status');
+    /* Interests Modal Note */
+    function showInterestNote(title, text, emoji) {
+      playAudio('click');
+      showToast(`${emoji} ${title}: ${text}`, emoji);
+    }
 
-            modalTitle.textContent = title;
-            modalDesc.textContent = description;
-            modalStatus.textContent = status;
+    /* Chess Thought Generator */
+    const chessQuotes = [
+      '"When you see a good move, look for a better one." — Emanuel Lasker',
+      '"Play the opening like a book, the middlegame like a magician, and the endgame like a machine." — Rudolf Spielmann',
+      '"Chess is the gymnasium of the mind." — Blaise Pascal',
+      '"Every chess master was once a beginner." — Irving Chernev',
+      '"In chess, as in life, foresight is the key to victory."'
+    ];
+    let chessIdx = 0;
+    function nextChessQuote() {
+      playAudio('click');
+      chessIdx = (chessIdx + 1) % chessQuotes.length;
+      document.getElementById('chess-quote-text').innerText = chessQuotes[chessIdx];
+    }
 
-            modalTech.innerHTML = '';
-            techArray.forEach(tech => {
-                const tag = document.createElement('span');
-                tag.className = 'px-2.5 py-1 rounded bg-slate-800 text-3xs font-mono text-gray-300';
-                tag.textContent = tech;
-                modalTech.appendChild(tag);
-            });
+    /* Timeline Node Highlight */
+    function highlightNode(el) {
+      showToast("Inspecting Krishna's Journey Node", "🗺️");
+    }
 
-            modal.classList.remove('hidden');
-            setTimeout(() => {
-                modal.classList.remove('opacity-0');
-                modal.querySelector('div').classList.remove('scale-95');
-                modal.querySelector('div').classList.add('scale-100');
-            }, 10);
-        }
+    /* Guestbook Sticky Board (localStorage) */
+    let stickyNotes = [
+      { name: "Krishna Bhatt", text: "Welcome to my digital notebook! Feel free to leave a note here.", color: "yellow", date: "Initial" },
+      { name: "Guest #01", text: "Love the scrapbook aesthetic! Greetings from Nepal 🇳🇵", color: "mint", date: "Today" }
+    ];
 
-        function closeProjectModal() {
-            const modal = document.getElementById('project-modal');
-            modal.classList.add('opacity-0');
-            modal.querySelector('div').classList.remove('scale-100');
-            modal.querySelector('div').classList.add('scale-95');
-            setTimeout(() => {
-                modal.classList.add('hidden');
-            }, 300);
-        }
+    function loadNotes() {
+      const saved = localStorage.getItem('kb_sticky_notes');
+      if (saved) {
+        try { stickyNotes = JSON.parse(saved); } catch (e) {}
+      }
+      renderNotes();
+    }
 
-        // Close Modal on backdrop click
-        document.getElementById('project-modal')?.addEventListener('click', (e) => {
-            if (e.target.id === 'project-modal') {
-                closeProjectModal();
-            }
-        });
+    function saveNotes() {
+      localStorage.setItem('kb_sticky_notes', JSON.stringify(stickyNotes));
+    }
 
-        // Current Year Update
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
+    function addStickyNote(e) {
+      e.preventDefault();
+      playAudio('stamp');
+      
+      const author = document.getElementById('note-author').value.trim();
+      const message = document.getElementById('note-message').value.trim();
+      const color = document.querySelector('input[name="noteColor"]:checked').value;
+
+      if (!author || !message) return;
+
+      stickyNotes.unshift({
+        name: author,
+        text: message,
+        color: color,
+        date: new Date().toLocaleDateString()
+      });
+
+      saveNotes();
+      renderNotes();
+
+      document.getElementById('guestbook-form').reset();
+      showToast("Note pinned to Krishna's board!", "📌");
+    }
+
+    function renderNotes() {
+      const board = document.getElementById('sticky-board');
+      board.innerHTML = '';
+
+      stickyNotes.forEach((note, index) => {
+        let colorClasses = "bg-stickyYellow text-stone-900 border-amber-200 dark:bg-stickyYellowDark dark:text-amber-100 dark:border-amber-900";
+        if (note.color === 'mint') colorClasses = "bg-stickyMint text-stone-900 border-emerald-200 dark:bg-emerald-950 dark:text-emerald-100 dark:border-emerald-900";
+        if (note.color === 'pink') colorClasses = "bg-stickyPink text-stone-900 border-pink-200 dark:bg-pink-950 dark:text-pink-100 dark:border-pink-900";
+        if (note.color === 'blue') colorClasses = "bg-stickyBlue text-stone-900 border-sky-200 dark:bg-sky-950 dark:text-sky-100 dark:border-sky-900";
+
+        const card = document.createElement('div');
+        const rot = (index % 2 === 0) ? '-rotate-1' : 'rotate-1';
+        card.className = `${colorClasses} p-4 rounded-xl border shadow-sm ${rot} hover:rotate-0 transition-transform relative space-y-2`;
+        
+        card.innerHTML = `
+          <div class="flex justify-between items-center border-b border-black/10 dark:border-white/10 pb-1">
+            <span class="font-mono text-xs font-bold">${escapeHtml(note.name)}</span>
+            <span class="font-mono text-[9px] opacity-60">${note.date}</span>
+          </div>
+          <p class="font-handwriting text-lg leading-snug break-words">"${escapeHtml(note.text)}"</p>
+        `;
+
+        board.appendChild(card);
+      });
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/[&<>"']/g, function(m) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m];
+      });
+    }
+
+    // Initialize on load
+    window.onload = function() {
+      loadNotes();
+    };
+  </script>
 </body>
 </html>
