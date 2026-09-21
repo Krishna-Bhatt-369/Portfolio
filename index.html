@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Krishna Bhatt — Personal Website & Digital Notebook</title>
 
-  <link rel="stylesheet" href="style.css" />
-  <link rel="javascript" herf="script.js" />
-
   <!-- Add your tab picture (favicon) here -->
     <link rel="icon" type="image/png" href="krishna.jpg">
 </head>
@@ -20,8 +17,151 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            paper: '#FAF7F2',
+            paperDark: '#161513',
+            ink: '#1E1C1A',
+            inkLight: '#E8E5DF',
+            terracotta: '#D96B43',
+            sage: '#5C8374',
+            inkBlue: '#2C3E50',
+            stickyYellow: '#FEF3C7',
+            stickyYellowDark: '#2D2816',
+            stickyMint: '#D1FAE5',
+            stickyPink: '#FCE7F3',
+            stickyBlue: '#E0F2FE',
+          },
+          fontFamily: {
+            handwriting: ['Caveat', 'cursive'],
+            editorial: ['Newsreader', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['Space Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
 
-  </head>
+  <style>
+    /* Dot Grid Backgrounds */
+    .bg-grid-light {
+      background-image: radial-gradient(#1E1C1A 0.8px, transparent 0.8px);
+      background-size: 24px 24px;
+      background-position: 0 0;
+      background-color: #FAF7F2;
+    }
+    .dark .bg-grid-light {
+      background-image: radial-gradient(#E8E5DF 0.8px, transparent 0.8px);
+      background-size: 24px 24px;
+      background-position: 0 0;
+      background-color: #161513;
+    }
+
+    /* Paper Effect & Tape Strips */
+    .tape-strip {
+      background: rgba(240, 235, 224, 0.7);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      backdrop-filter: blur(2px);
+      position: absolute;
+      height: 26px;
+      width: 110px;
+      z-index: 10;
+      border-left: 2px dashed rgba(0,0,0,0.05);
+      border-right: 2px dashed rgba(0,0,0,0.05);
+    }
+    .dark .tape-strip {
+      background: rgba(50, 48, 44, 0.7);
+    }
+
+    /* Pushpin graphic */
+    .pushpin {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #D96B43;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3), inset -2px -2px 0px rgba(0,0,0,0.2);
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+    }
+
+    /* Stamp graphic effect */
+    .stamp-badge {
+      border: 2px dashed #D96B43;
+      color: #D96B43;
+      border-radius: 6px;
+      padding: 4px 10px;
+      display: inline-block;
+      font-family: 'Space Mono', monospace;
+      font-weight: 700;
+      transform: rotate(-3deg);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FAF7F2;
+    }
+    .dark ::-webkit-scrollbar-track {
+      background: #161513;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D5CFC5;
+      border-radius: 5px;
+    }
+    .dark ::-webkit-scrollbar-thumb {
+      background: #3A3732;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #D96B43;
+    }
+
+    /* Animated Underline */
+    .underline-sketch {
+      background-image: linear-gradient(120deg, #D96B43 0%, #D96B43 100%);
+      background-repeat: no-repeat;
+      background-size: 100% 30%;
+      background-position: 0 88%;
+      transition: background-size 0.25s ease-in;
+    }
+    .underline-sketch:hover {
+      background-size: 100% 88%;
+    }
+
+    /* Paper Shadows */
+    .paper-shadow {
+      box-shadow: 3px 4px 15px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .dark .paper-shadow {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+
+    /* Desk Light Spotlight Effect in Dark Mode */
+    .dark .desk-spotlight {
+      background: radial-gradient(circle at 50% 20%, rgba(217, 107, 67, 0.08) 0%, transparent 70%);
+    }
+
+    /* Interactive Stamp Animation */
+    @keyframes stampDrop {
+      0% { transform: scale(3) rotate(15deg); opacity: 0; }
+      100% { transform: scale(1) rotate(var(--stamp-rotate, 0deg)); opacity: 1; }
+    }
+    .animate-stamp {
+      animation: stampDrop 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+  </style>
+</head>
 
 <body class="bg-grid-light text-ink dark:text-inkLight transition-colors duration-300 antialiased font-sans min-h-screen relative selection:bg-terracotta selection:text-white desk-spotlight">
 
