@@ -1372,5 +1372,64 @@
       loadNotes();
     };
   </script>
+  <!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyAcJUNFNpI-_eAOyWTNsB8pXThsQ_AUnCM",
+    authDomain: "krishna-portfolio-724eb.firebaseapp.com",
+    databaseURL: "https://krishna-portfolio-724eb-default-rtdb.firebaseio.com",
+    projectId: "krishna-portfolio-724eb",
+    storageBucket: "krishna-portfolio-724eb.firebasestorage.app",
+    messagingSenderId: "1060147149416",
+    appId: "1:1060147149416:web:ea836b4dbac775cbdbd9dd"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+
+  let stickyNotes = [];
+
+  // 1. Fetch & Listen for live updates from Firebase
+  function loadNotes() {
+    db.ref('stickyNotes').on('value', (snapshot) => {
+      const data = snapshot.val();
+      stickyNotes = [];
+      if (data) {
+        Object.keys(data).forEach(key => {
+          stickyNotes.unshift(data[key]);
+        });
+      }
+      renderNotes();
+    });
+  }
+
+  // 2. Add new note to Firebase cloud
+  function addStickyNote(e) {
+    e.preventDefault();
+    if (typeof playAudio === 'function') playAudio('stamp');
+    
+    const author = document.getElementById('note-author').value.trim();
+    const message = document.getElementById('note-message').value.trim();
+    const color = document.querySelector('input[name="noteColor"]:checked').value;
+
+    if (!author || !message) return;
+
+    const newNote = {
+      name: author,
+      text: message,
+      color: color,
+      date: new Date().toLocaleDateString()
+    };
+
+    // Save directly to Firebase
+    db.ref('stickyNotes').push(newNote);
+
+    document.getElementById('guestbook-form').reset();
+    if (typeof showToast === 'function') showToast("Note pinned to Krishna's board!", "📌");
+  }
+</script>
 </body>
 </html>
